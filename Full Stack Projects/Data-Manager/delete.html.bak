@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: url(vector4.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .head_box {
+            width: 700px;
+            position: absolute;
+            top: 20%;
+            left: 40%;
+            transform: translate(-30%, -30%);
+        }
+
+        .head_box h1 {
+            float: left;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf4c;
+            margin-bottom: 150px;
+            padding: 10px 0;
+        }
+
+        .textbox {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 10px 0;
+            margin: 10px 0;
+        }
+
+        .textbox input {
+            border: 1px dashed white;
+            outline: none;
+            background: none;
+            color: #49FF00;
+            font-size: 20px;
+            width: 50%;
+            float: right;
+            margin: 0 20px;
+        }
+
+        .btn {
+            width: 100%;
+            background: none;
+            border: 2px double #4caf4c;
+            color: white;
+            font-size: 18px;
+            padding: 5px;
+            cursor: pointer;
+            margin: 12px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="deleteser" method="post" class="box">
+        <div class="head_box">
+            <h1>Delete Record From The Database</h1>
+
+            <div class="textbox">
+                <label>Roll Number You Want To Delete : </label>
+                <input type="text" name="sno" placeholder="Roll Number">
+            </div>
+
+            <input type="submit" value="Delete Record" class="btn">
+
+        </div>
+    </form>
+</body>
+
+</html>
