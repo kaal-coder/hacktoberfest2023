@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Record</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: serif;
+        background: url(vector.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .heading {
+        color: white;
+        width: 480px;
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        transform: translate(-30%, -30%);
+    }
+
+    .heading h1 {
+        float: left;
+        font-size: 35px;
+        border-bottom: 6px solid #4caf4c;
+        margin-bottom: 50px;
+        padding: 13px 0;
+    }
+
+    .heading h3 {
+        float: left;
+        font-size: 24px;
+        font-weight: bolder;
+        color: #ff9156;
+        width: 100%;
+        margin-bottom: 40px;
+        padding: 10px 0;
+        border-bottom: 4px solid #4caf4c;
+    }
+
+    .textbox {
+        width: 100%;
+        overflow: hidden;
+        font-size: 20px;
+        padding: 8px 0;
+        margin: 8px 0;
+        border-bottom: 3px solid #4caf4c;
+    }
+
+    .textbox input {
+        border: none;
+        outline: none;
+        background: none;
+        color: white;
+        font-size: 18px;
+        width: 40%;
+        float: right;
+        margin: 0 10px;
+    }
+
+    .btn {
+        width: 100%;
+        background: none;
+        border: 2px solid #4caf4c;
+        color: white;
+        font-size: 18px;
+        padding: 5px;
+        cursor: pointer;
+        margin: 12px 0;
+    }
+</style>
+
+<body>
+    <form action="addser" method="post">
+
+        <div class="heading">
+            <h1>Add Records In The Database</h1>
+
+            <section>
+                <h3>** Enter the Fill The Information Correctly **</h3>
+            </section>
+
+            <div class="textbox">
+                <label>Enter the Roll Number : </label>
+                <input type="text" name="rno" placeholder="Roll Number">
+            </div>
+
+            <div class="textbox">
+                <label>Enter the Name : </label>
+                <input type="text" name="name" placeholder="Roll Number">
+            </div>
+
+            <div class="textbox">
+                <label>Enter the Marks of Subject 1 : </label>
+                <input type="text" name="m1" placeholder="Roll Number">
+            </div>
+
+            <div class="textbox">
+                <label>Enter the Marks of Subject 2 : </label>
+                <input type="text" name="m2" placeholder="Roll Number">
+            </div>
+
+            <div class="textbox">
+                <label>Enter the Marks of Subject 3 : </label>
+                <input type="text" name="m3" placeholder="Roll Number">
+            </div>
+            <input type="submit" value="Add The Record" class="btn">
+
+        </div>
+
+    </form>
+</body>
+
+</html>

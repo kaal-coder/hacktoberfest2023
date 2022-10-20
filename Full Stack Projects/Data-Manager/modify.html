@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifying Page</title>
+    <style>
+        body {
+            font-family: Verdana;
+            /* background-image: linear-gradient(to right, #71C5EE, #025091); */
+            background: url(vector4.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .heading {
+            width: 620px;
+            position: absolute;
+            top: 25%;
+            left: 30%;
+            transform: translate(-15%, -15%);
+        }
+
+        .heading h1 {
+            float: left;
+            font-size: 32px;
+            border-bottom: 6px solid #4caf50;
+            margin-bottom: 50px;
+            padding: 13px 0;
+        }
+
+        .textbox{
+            width: 100%;
+            overflow: hidden;
+            font-size: 26px;
+            margin: 46px 0;
+            padding: 8px 0;
+        }
+
+        .textbox input{
+            background: none;
+            border:1px dotted white;
+            text-align: center;
+            outline: none;
+            color:#4caf50;
+            font-size: 24px;
+            width:40%;
+            float: right;
+            margin: 6px 0; 
+        }
+
+        .btn{
+            width:100%;
+            background: none;
+            color:white;
+            border:2px solid whitesmoke;
+            padding:10px 0;
+            margin:0 8px;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor:pointer;
+        }
+
+        .btn:hover{
+            background:#4caf50;
+            border:2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="modifyser" method="get">
+        <div class="heading">
+            <h1>Modify The Record From Database</h1>
+            <div class="textbox">
+                <label>Enter the Student Roll no : </label>
+                <input type=text name="sno" placeholder="Roll Number">
+            </div>
+                <!-- <a href=modifyser> -->
+                    <input type="submit" value="Submit" class="btn">
+                <!-- </a> -->
+            
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana;
+            background: url(vector2.jpg) no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .heading {
+            width: 280px;
+            position: absolute;
+            top: 30%;
+            left: 45%;
+            transform: translate(-30%,-30%);
+        }
+
+        .heading h1{
+            float: left;
+            font-size: 40px;
+            border-bottom: 6px solid #4caf4c;
+            margin-bottom: 50px;
+            padding:15px 0;
+        }
+
+        .textbox input{
+            width: 100%;
+            font-size: 30px;
+            overflow: hidden;
+            border: none;
+            background: none;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-bottom: 6px solid #4caf4c;
+            color: white;
+            float: left;
+            position:relative;
+            cursor: pointer;
+        }
+
+        .addbtn:hover{
+            background-color: #4caf4c;
+        }
+        .deletebtn:hover{
+            background-color: #4caf4c;
+        }
+        .listbtn:hover{
+            background-color: #4caf4c;
+        }
+        .modifybtn:hover{
+            background-color: #4caf4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1>MAIN MENU</h1>
+
+
+        <div class="textbox">
+            <form action="one" method="get">
+                <a href="add.html">
+                    <input type="button" value="Add Record" class="addbtn">
+                </a>
+
+                <a href="listser">
+                    <input type="button" value="List Record" class="listbtn">
+                </a>
+
+                <a href="delete.html">
+                    <input type="button" value="Delete Record" class="deletebtn">
+                </a>
+
+                <a href="modify.html">
+                    <input type="button" value="Modify Record" class="modifybtn">
+                </a>
+        </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
