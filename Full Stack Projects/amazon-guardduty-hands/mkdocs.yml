@@ -1,0 +1,44 @@
+# Project information
+
+site_name: Getting Hands on with Amazon GuardDuty
+site_short_name: Amazon GuardDuty Hands On
+site_description: 'This hands-on workshop is where you will learn about a number of AWS services involved with threat detection and response as we walk through real-world threat scenarios. Learn about the threat detection capabilities of Amazon GuardDuty, Amazon Macie and AWS Security Hub and the available response options. For each hands-on scenario, we review methods to detect and respond to threats using the following services: AWS CloudTrail, Amazon VPC flow logs, Amazon CloudWatch Events, Amazon Macie, AWS Lambda, Amazon Inspector, Amazon GuardDuty and Amazon Security Hub.'
+site_author: 'aws-security-workshops@amazon.com'
+site_url: 'https://hands-on-guardduty.awssecworkshops.com/'
+
+# Repository
+repo_name: 'aws-samples/amazon-guardduty-hands-on'
+repo_url: 'https://github.com/aws-samples/amazon-guardduty-hands-on'
+
+# Copyright
+copyright: '<a href="https://aws.amazon.com/privacy/" target="_blank">Privacy</a> | <a href="https://aws.amazon.com/terms/" target="_blank">Site terms</a> | &copy; 2020, Amazon Web Services, Inc. or its affiliates. All rights reserved.'
+
+# Configuration
+theme:
+  name: 'material'
+  logo: 'assets/images/aws_smile_logo.png'
+  favicon: 'assets/images/aws-favicon.ico'
+
+# Customization
+extra_css:
+  - 'stylesheets/custom.css'
+extra:
+  social:
+    - icon: fontawesome/solid/home
+      link: https://awssecworkshops.com
+    - icon: fontawesome/solid/shield-alt
+      link: https://aws.amazon.com/security/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/awssecurityinfo?lang=en
+    - icon: fontawesome/solid/rss-square
+      link: https://aws.amazon.com/blogs/security/
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite
+  - pymdownx.details
+
+# Navigation
+nav:
+  - Overview: 'index.md'
