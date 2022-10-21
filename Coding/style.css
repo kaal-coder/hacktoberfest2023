@@ -1,0 +1,21 @@
+body {
+    width: 250px;
+    height: 250px;
+    background: antiquewhite;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    background: whitesmoke;
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 2%;
+    box-shadow: 10px 10px;
+    font-size: medium;
+}
