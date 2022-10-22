@@ -1,0 +1,538 @@
+.leftfixedprofile
+{
+	width: 790px;
+	height: 900px;
+	background-color: #F3F3F3;
+	float:left;
+}
+
+.bubble
+{
+	left: 46%;
+	top: 12px;
+	position: absolute;
+	z-index: 8888;
+}
+
+.dot
+{
+  background-color: #bbb;
+  border-radius: 50%;
+  height: 15px;
+  width:15px;
+  margin:0 4px;
+  display: inline-block;
+}
+
+.active, .dot:hover
+{
+  background-color: #717171;
+}
+
+.slideshowcontainer
+{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	height: 360px;
+}
+
+.chooseslide
+{
+	position: absolute;
+	right: 14px;
+	top: 7px;
+	z-index:7777;
+	width: 20px;
+	opacity: 0;
+}
+
+.slideEdit
+{
+	cursor: pointer;
+	transform: scaleX(-1);
+	position:absolute;
+	right: 10px;
+	font-size: 26px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 7666;
+	color: blue;
+}
+
+.chooseslide:hover ~ .slideEdit
+{
+	color: black;
+	opacity: 1;
+}
+
+/*change profile pic*/
+.chooseslide1
+{
+	position: absolute;
+	top: 38%;
+	right: 15px;
+	z-index:7777;
+	width: 20px;
+	opacity: 0;
+}
+
+.sidebarleftprofile .slideEdit1
+{
+	cursor: pointer;
+	transform: scaleX(-1);
+	position:absolute;
+	top: 35%;
+	right: 13px;
+	font-size: 26px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 7666;
+	color: blue;
+}
+
+
+.chooseslide1:hover ~ .slideEdit1
+{
+	color: black;
+}
+
+
+.slideshowcontainer .singleslide img
+{
+	width: 100%;
+	height: 360px;
+}
+
+.singleslide
+{
+  width: 100%;
+  display:none;
+  animation: 1s fade;
+}
+
+@keyframes fade
+{
+  from
+  {
+    opacity: 0.2;
+    position: relative;
+    left: 100%;
+    width:0%;
+  }
+  to
+  {
+    opacity: 1;
+    position: relative;
+    width:100%;
+    left:0%;
+  }
+}
+
+.slideshowcontainer .singleslide .number
+{
+	position: absolute;
+	padding: 10px;
+	font-size: 18px;
+	font-family: verdana;
+	color: rgba(0,0,0,0.5);
+}
+
+.prev, .next
+{
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 10px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.next
+{
+	right: 0px;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.prev:hover, .next:hover
+{
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+
+.sidebarleftprofile
+{
+	width: 200px;
+	/*height: 100px;*/
+	background-color: transparent;
+	/*border: 1px solid #B7B7B7;*/
+/*	border-radius: 4px;*/
+/*	box-shadow: 2px 6px 6px #999999;*/
+	margin: 0px auto;
+	position: relative;
+	top: -80px;
+}
+
+
+.sidebarleftprofile img
+{
+	width: 150px;
+	height: 150px;
+	/*padding: 15px;*/
+	/*padding-bottom: 10px;*/
+	border-radius: 50%;
+	display: block;
+	margin: 4px auto 25px auto;
+}
+
+.sidebarleftprofile #sidename
+{
+	text-align: center;
+	position: relative;
+	top: -10px;
+	margin: 0px;
+	font-size: 16px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.sidebarleftprofile p
+{
+	text-align: center;
+	margin: 0px;
+	font-size: 12px;
+	font-family: "verdana";
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #525252;
+}
+
+#nosociety
+{
+
+	color: #E91E63;
+	font-size: 24px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+}
+
+#societyname a
+{
+	color: black;
+}
+
+#societyname a:hover
+{
+	color: #E91E63;
+}
+
+#logout
+{
+	color: #009688;
+	margin: 2px;
+	margin-top: 18px;
+	text-align: center;
+	background-color: #009688;
+}
+
+#logout a
+{
+	display: block;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 4px;
+}
+
+#logout a:hover
+{
+	color: black;
+}
+
+.line
+{
+	position: relative;
+	top: -50px;
+	width: 90%;
+}
+
+.line1
+{
+	width: 0px;
+	border: 0.5px solid rgba(0,0,0,0.4);
+	height: 20%;
+	position: relative;
+	top: -60px;
+}
+
+/*parent of timeline*/
+.timeline
+{
+	width: 700px;
+	padding: 45px;
+	/*height: 400px;*/
+	position: relative;
+	top: -58px;
+	background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 45px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline:after
+{
+	content:'';
+	position: absolute;
+	left: 50%;
+	width: 6px;
+	background-color: white;
+	/*height: 100%;*/
+	top: 0px;
+	bottom: 0px;
+	margin-left: -3px;
+}
+
+/* Container around content */
+.container
+{
+	background-color: white;
+	padding: 10px 30px;
+	position:relative;
+	width: 35%;
+}
+
+.container p
+{
+	margin: 4px;
+}
+
+/* The circles on the timeline  left*/
+.container::after
+{
+	content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -61px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* The circles on the timeline right */
+.right::after
+{
+	content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -61px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left
+{
+	left: 0px;
+}
+
+/* Place the container to the right */
+.right
+{
+	left: 56.34%;
+}
+
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: -10px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -10px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+h2
+{
+	color: #009688;
+}
+
+h4
+{
+	margin: 4px;
+}
+.tcontent p
+{
+	font-size: 15px;
+	margin: 4px;
+}
+
+.container .slideEdit2
+{	
+	cursor: pointer;
+	position: absolute;
+	transform: scaleX(-1);
+	font-size: 24px;
+	color: blue;
+	right: 5px;
+	top: -4px;
+}
+
+.container .slideEdit2:hover
+{
+	color: black;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 999998;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/*modal content to edit*/
+.Edit
+{
+
+	background-color: #fefefe;
+    margin: 0% auto 10% auto;
+    border: 1px solid #888;
+    width: 50%;
+    position: relative;
+
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.Edit form
+{
+	margin: 20px auto;
+	width: 40%;
+}
+
+/* Full-width input fields */
+.Edit form input[type=text], .Edit form input[type=password],
+.Edit form input[type=number], .Edit form input[type=email] {
+    width: 100%;
+    padding: 10px 16px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Set a style for all buttons */
+.Edit form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 25px 0 6px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Edit form button:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Extra styles for the cancel button */
+.Edit form .cancelbtn {
+	margin-top: 13px;
+    background-color: #f44336;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0);} 
+    to {-webkit-transform: scale(1);}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0);} 
+    to {transform: scale(1);}
+}
+
+/*Add Zoom out animation*/
+.deanimate
+{
+	animation: animatezoomout 0.6s;
+}
+
+@keyframes animatezoomout
+{
+	from{transform: scale(1);}
+	to{transform: scale(0);}
+}
+
+/*----Removing the number increment in input --*/
+.Edit form input[type=number]::-webkit-inner-spin-button, 
+.Edit form input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
