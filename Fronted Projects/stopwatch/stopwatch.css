@@ -1,0 +1,49 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:rgb(240, 133, 34);
+    color: white;
+    text-align:center;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main p{
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+#main b{
+    font-family:sans-serif;
+    font-size: 80px;
+    text-size-adjust: 30px;
+    padding-bottom: 10px;
+}
+#main span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+#main span div button{
+    height: 100%;
+    width: 120px;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border:2px solid white;
+    border-radius: 50px;
+}
+#main span div button:focus{
+    animation-delay: 2s;
+    background-color: white;
+    color: rgb(240, 133, 34) ;
+    outline: none;
+}

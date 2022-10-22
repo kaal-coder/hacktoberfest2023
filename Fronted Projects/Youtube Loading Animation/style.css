@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #414247;
+}
+.card{
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid #656871;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.card .header{
+    display: flex;
+    align-items: center;
+}
+
+.card .header .img{
+    height: 70px;
+    width: 70px;
+    background: #656871;
+    border-radius: 5px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.header .details{
+    margin-left: 100px;
+}
+
+
+
+.card .content{
+    margin: 25px 0;
+}
+
+.content .line{
+    background: #656871;
+    height: 13px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.content .line-1{
+    width: calc(100% - 60%);
+}
+.content .line-3{
+    width: calc(100% - 40%);
+}
+
+.card .btns{
+    display: flex;
+}
+.card .btns .btn{
+    height: 45px;
+    width: 100%;
+    background: #656871;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btns .btn-1{
+    margin-right: 10px;
+}
+.btns .btn-2{
+    margin-left: 10px;
+}
+.card .header .img::before,
+.content .line::before,
+.btns .btn::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, #656871 0%, #888b94 20%, #656871 40%, #656871 100%);
+    background-size: 450px 400px;
+    background-repeat: no-repeat;
+    animation: shimmer 1s linear infinite;
+}
+
+@keyframes shimmer{
+    0%{
+        background-position: -450px 0;
+    }
+    100%{
+        background-position: 450px 0;
+    }
+}

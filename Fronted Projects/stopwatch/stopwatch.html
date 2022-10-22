@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>js-stopwatch</title>
+        <link rel="stylesheet" type="text/css" href="stopwatch.css">
+    </head>
+    <body>
+        <section class="container">
+            <div id="main">
+                <b>STOPWATCH</b>
+                <p id="display">00:00:00</p>
+                <span>
+                    <div>
+                        <button id="jstart" onclick="clockstart()">START</button>
+                    </div>
+                    <div>
+                        <button id="jstop" onclick="clockstop()">STOP</button>
+                    </div>
+                    <div>
+                        <button id="jreset" onclick="clockreset()">RESET</button>
+                    </div>
+                </span>
+            </div>    
+        </section>
+        <script src="stopwatch.js"></script>
+    </body>
+</html>
