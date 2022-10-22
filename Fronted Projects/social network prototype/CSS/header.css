@@ -1,0 +1,572 @@
+body
+{
+	margin:0px;
+	padding: 0px;
+	width: 100%;
+	border:0px;
+	background-color: #d7dbd7;
+	font-family: arial;
+}
+
+.wrapper
+{
+	margin: 0 auto;
+	width: 1100px;
+	height: 100%;
+}
+
+/*============	HEADER	===================*/
+
+.logoletter:hover
+{
+	animation: shake 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+.header
+{
+	width: 100%;
+	height: 50px;
+	background-color: #009688;
+	position: fixed;
+	z-index: 9999;
+}
+
+.headerfixed
+{
+	width: 100%;
+	height: 50px;
+}
+
+.header .wrapper .logoletter
+{
+	padding-top: 5px;
+}
+
+#searching
+{
+	display: inline;
+}
+
+#search
+{
+	/*width: 420px;*/
+	width: 220px;
+	background-image: url('../images/login/search.png');
+	background-position: 5px 4px;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	border-radius: 8px;
+	font-size: 16px;
+	padding: 10px 20px 10px 40px;
+	background-color: #E1E9EE;
+	border: 0px;
+	position : absolute;
+	top: 5px;
+	/*margin-left: 100px;*/
+	margin-left: 50px;
+	transition: width 1.5s ease-in-out;
+}
+
+#search:focus
+{
+	width: 420px;
+	outline: 0px
+}
+
+.icon-bar
+{
+	float: right;
+	/*width: 420px;*/
+	width: 410px;
+	height: 45px;
+	position:relative;
+}
+
+.icon-bar ul
+{
+	margin:0px;
+	margin-top: 3px;
+	height: 42px;
+	padding-left: 40px;
+}
+
+.icon-bar ul li
+{
+  	display: inline-block;
+  	/*margin-left: 20px;
+  	padding: 0px 5px;*/
+  	height: 42px;
+  	width: 70px;
+}
+
+#notify
+{
+	position: absolute;
+	width: 80%;
+	height: 370px;
+	background-color: rgba(0,0,0,0.7);
+	right: -4px;
+	top:112%;
+	display:none;
+	animation: notifyzoom 0.5s;
+}
+
+@keyframes notifyzoom
+{
+	0%
+	{
+		transform: scaleY(0);
+	}
+	100%
+	{
+		transform: scaleY(1);
+	}
+}
+
+.icon-bar ul li:hover #notify
+{
+	display: block;
+}
+
+#notify p
+{
+	color:white;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+.icon-bar img
+{
+	width: 34px;
+	height: 27px;
+	padding-left:20px;
+}
+
+.icon-bar a
+{
+	width: 52px;
+	height: 50px;
+	position: relative;
+}
+.icon-bar a p
+{
+	display: inline;
+	position: absolute;
+	left:0px;
+	top: 2px;
+	color: black;
+	font-size: 13px;
+	margin-bottom: 0px;
+}
+
+#p1
+{
+	padding-left: 20px;
+}
+
+#p2
+{
+	padding-left: 20px;
+}
+
+#p3
+{
+	padding-left: 18px;
+}
+
+#p4
+{
+	padding-left: 10px;
+}
+
+#p5
+{
+	padding-left: 4px;
+}
+
+
+/*============== Message box ===========*/
+.message
+{
+	position: fixed;
+	bottom: 2px;
+	right: 20px;
+	height: 30px;
+	background-color: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	border-top-right-radius: 3px;
+	border-top-left-radius:  3px;
+	transition: height 1s ease-in-out;
+}
+
+.message button
+{
+	width: 250px;
+	height: 30px;
+	font-size: 14px;
+	padding: 0px;
+	margin: 0px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	text-align: center;
+	border:0px;
+}
+
+.message p
+{
+	text-align: center;
+	font-size: 14px;
+	color: #666666;
+}
+
+.message button:focus
+{
+	outline: 0px
+}
+
+.content
+{
+	margin-top: 4%;
+}
+
+/*========== SIDEBAR LEFT ================*/
+.sidebarleft
+{
+	width: 200px;
+	/*height: 100px;*/
+	background-color: #FFFFFF;
+	position: fixed;
+	border: 1px solid #B7B7B7;
+	border-radius: 4px;
+	box-shadow: 2px 6px 6px #999999;
+}
+
+.leftfixed
+{
+	width: 200px;
+	height: 500px;
+	float: left;
+	margin-right: 20px;
+}
+
+.sidebarleft img
+{
+	width: 150px;
+	height: 150px;
+	padding: 25px;
+	/*padding-bottom: 10px;*/
+	border-radius: 50%;
+}
+
+.sidebarleft #sidename
+{
+	text-align: center;
+	position: relative;
+	top: -25px;
+	margin: 0px;
+	font-size: 16px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.sidebarleft p
+{
+	text-align: center;
+	margin: 0px;
+	font-size: 12px;
+	font-family: "verdana";
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #525252;
+}
+
+#ssn
+{
+	position: relative;
+	top: -8px;
+}
+
+#country
+{
+	margin-bottom: 13px;
+}
+
+#viewall
+{
+	display: block;
+	/*margin-left: 75px;*/
+	margin: 0 auto;
+	font-size: 13px;
+	border-radius: 5px;
+	border: 0px;
+	outline: 0px;
+	background-color: #00aeef;
+	color: white;
+	text-decoration: none;
+	width: 55px;
+	text-align: center;
+	padding: 2px;
+	margin-bottom: 15px;
+}
+
+#viewall:hover
+{
+	background-color: #4F82C3;
+}
+
+.sidebarleft hr
+{
+	width: 80%;
+	border: 0.8px solid #B7B7B7;
+	margin-bottom: 15px;
+}
+
+#nosociety
+{
+
+	color: #E91E63;
+	font-size: 24px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+}
+
+#societyname a
+{
+	color: black;
+}
+
+#societyname a:hover
+{
+	color: #E91E63;
+}
+
+#logout
+{
+	color: #009688;
+	margin: 2px;
+	margin-top: 18px;
+	text-align: center;
+	background-color: #009688;
+}
+
+#logout a
+{
+	display: block;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 4px;
+}
+
+#logout a:hover
+{
+	color: black;
+}
+
+/*=========== SIDEBAR RIGHT =============*/
+
+/*parent of suggestion*/
+.rightfixed
+{
+	float: right;
+	width: 290px;
+	height: 300px;
+	clear: right;
+}
+
+/*parent of right content*/
+.sidebarright
+{
+	position: fixed;
+	/*float: right;*/
+	width: 250px;
+	/*height: 240px;*/
+	background-color: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	border-radius: 4px;
+	box-shadow: 2px 6px 6px #999999;
+	padding: 20px;
+}
+
+/*design of suggestion content*/
+.suggesfixed
+{
+	position: fixed;
+}
+
+/*design of suggestion text*/
+#suggestion
+{
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	float: left;
+	top: -18px;
+	left: 2px;
+	text-decoration: underline;
+	color: #666666;
+	font-size: 14px;
+	height: 300px;
+}
+
+/*design of rightcontent i.e suggestion*/
+.rightcontent
+{
+	/*margin-top: -20px;*/
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	height: 40px;
+}
+
+/*design userimage in suggestion*/
+.sidebarright .rightcontent img
+{
+	display: inline;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	float: left;
+}
+
+/*design of username in suggestion*/
+.rightcontent p
+{
+	display: block;
+	width: 120px;
+	margin: auto auto;
+	margin-left: 15px;
+	margin-top: 12px;
+	float: left;
+	text-align: left;
+	font-size: 14px;
+
+}
+
+/*design of connect in suggestion*/
+.rightcontent a
+{
+	display: block;
+	float: right;
+	width: 68px;
+	font-size: 13px;
+	margin-top: 7px;
+	text-decoration: none;
+	text-align: center;
+	color: rgba(0,0,0,.85);
+	height: 19px;
+	padding: 1px;
+	border: 2px solid #B7B7B7;
+	border-radius: 4px;
+	/*transition: width 2s ease-in-out;*/
+}
+
+/*hover effect on connect button*/
+.rightcontent a:hover
+{
+	background-color: #009688;
+	width: 70px;
+	height: 21px;
+	border: none;
+	color: white;
+}
+
+/*horizontal line below suggestion*/
+.rightfixed .sidebarright hr
+{
+	border: 0.5px solid #B7B7B7;
+	outline: 0px;
+	width: 80%;
+	box-shadow: 1px 1px 5px #999999;
+	margin-bottom: 12px;
+	position: relative;
+}
+
+/*about creator info design below suggestion*/
+.foot
+{
+	background-color: white;
+	text-align: center;
+	position: relative;
+	top: -10px;
+}
+
+.foot ul
+{
+	padding: 5px;
+	list-style-type: none;
+	text-align: center;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+.foot ul li
+{
+	display: inline-block;
+	padding: 3px;
+}
+
+.foot ul li a
+{
+	text-decoration: underline;
+	/*padding: 10px;*/
+	color: #615D5E;
+	font-size: 13px;
+}
+
+/*hover effect on link below suggestion*/
+.foot ul li a:hover
+{
+	color: #009688;
+	font-size: 14px;
+}
+
+/*copyright info design*/
+.foot p
+{
+	color: #666666;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 6px;
+	padding-bottom: 1%;
+}
+
+/*homaj logo below suggestion*/
+.foot img
+{
+	width: 50px;
+	height: 40px;
+	display: block;
+	margin: 0 auto;
+} 
+
+/*creating animation when click connect*/
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
