@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  img{
+      height: 50px;
+  }
+
+ 
+  .logo {
+    color: white;
+  }
+  .nav-items > a {
+    text-decoration: none;
+    margin-left: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .nav-items > button {
+    margin-left: 15px;
+    background-color: purple;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+  }
+  .hero-section {
+    height: 60vh;
+    background-image: url("images/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .hero-text-section {
+    color: white;
+    margin-left: 4rem;
+    margin-top: 4rem;
+  }
+  .hero-text-section > h1 {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .hero-text-section > p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+  
+  .hero-text-section > button {
+    background-color:red;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+  }
+  .job-offers {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .job-offers > h1 {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  .job-offers > a {
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .jobs-section {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10vh;
+  }
+  .job {
+    width: 380px;
+    border-right: 1px solid gray;
+    padding-right: 10px;
+  }
+  .job-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  .job-location {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .job-location > p {
+    margin-left: 5px;
+    color: gray;
+    font-weight: 600;
+  }
+  .job-description > p {
+    color: gray;
+    font-weight: 600;
+  }
+  .feature-companies {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 10vh;
+  }
+  .feature-companies > h1 {
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  .companies-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .company {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .company > h2 {
+    font-size: 16px;
+  }
+  .icon-container {
+    border: 2px solid gray;
+    padding: 7px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+  }
+  .clt-section {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-bottom: 10vh;
+    background-image: url('images/Newsletter-image.jpg');
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  .clt-section {
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3rem;
+  }
+  .clt-text-section > h1 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .clt-text-section > p {
+    margin-bottom: 15px;
+  }
+  .email-container {
+    display: flex;
+    align-items: center;
+  }
+  .email-container > input {
+    width: 250px;
+    margin-right: 15px;
+    border: none;
+    padding: 8px;
+    outline: none;
+    font-size: 14px;
+  }
+  .email-container > button {
+    background-color: green;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+  }
+  .footer-container {
+     justify-content: space-evenly; 
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+  }
+  .footer-container > a {
+      
+    text-decoration: none;
+    color: gray;
+    margin-left: 35px;
+    font-weight: 600;
+    font-size: 16px;
+  }
