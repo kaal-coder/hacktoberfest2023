@@ -1,0 +1,149 @@
+html, body {
+		height:100%;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+	}
+	
+	body {
+			background: linear-gradient(-45deg, #ffffff , #ce0b46 , #3c86e7, #ffffff);
+			background-size: 400% 400%;
+			/* animation: gradient 3s ease infinite; */
+			animation: gradient 10s ease infinite;
+	}
+	
+	@keyframes gradient {
+			0% {
+					background-position: 0% 50%;
+			}
+			50% {
+					background-position: 100% 50%;
+			}
+			100% {
+					background-position: 0% 50%;
+			}
+	}
+:root {
+		--accentColor: #E6E6E6;
+		--delay: .3s;
+}
+
+
+.ending {
+                color:white;
+		text-align:center;
+		font-size:small;
+		margin-top:30px;
+                margin-bottom:30px;
+                width:90%;
+		max-width: 500px;
+}
+
+.profilePicture, .profilePicture img {
+		position: relative;
+		width: 130px;
+		height: 130px;
+		display: block;
+		margin: 35px auto 20px;
+		border-radius: 50%;
+}
+
+.aboutMe {
+		color: rgb(37, 7, 31);
+		font-size: large;
+		font-weight: normal;
+		line-height: 1;
+		display: block;
+		width: 100%;
+		text-align: center;
+		text-decoration: none;
+}
+.userName {
+		color: black;
+		font-size: x-large;
+		font-weight: bold;
+		line-height: 1.25;
+		display: block;
+		width: 100%;
+		text-align: center;
+		text-decoration: none;
+}
+.links {
+		max-width: 675px;
+		width: auto;
+		display: block;
+		margin: 27px auto;
+}
+
+.link {
+		position: relative;
+		background-color: transparent;
+		color: var(--accentColor);
+		border: solid var(--accentColor) 2px;
+		border-radius: 10px;
+		font-size: 1rem;
+		text-align: center;
+		display: block;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		padding: 10px;
+		text-decoration: none;
+		-webkit-tap-highlight-color: transparent;
+}
+
+.icons {
+	max-width: 675px;
+	width: auto;
+	display: block;
+	margin: 27px auto;
+	width: fit-content;
+}
+
+.icon {
+	position: relative;
+	background-color: transparent;
+	color: var(--accentColor);
+	border: solid var(--accentColor) 2px;
+	border-radius: 10px;
+	width: 1.2rem;
+	height: 1.2rem;
+	font-size: 1rem;
+	text-align: center;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: -5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+		.link:hover {
+				background-color: var(--accentColor);
+				color: #000; /* Fallback for older browsers */
+				color: rgba(0, 0, 0, 0.5);
+		}
+}
+
+.link:active {
+		background-color: var(--accentColor);
+		color: #000; /* Fallback for older browsers */
+		color: rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+  position: floating;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-size:small
+}
+
+.img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
