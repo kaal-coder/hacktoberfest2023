@@ -1,10 +1,22 @@
 <div align="center">
 <h1> Hacktober-2022 </h1>
+</div>
+
+![Hacktoberfest2022](https://blog.tooljet.com/content/images/2022/09/Screenshot-2022-09-27-at-08.03.21.png)
+
+# What is Hacktoberfest? 🤔
+
+It is a month-long celebration from October 1st to October 31st presented by [Digital Ocean](https://www.digitalocean.com/blog/hacktoberfest-2022-your-mission-for-open-source) and DEV Community collaborated with [GitHub](https://github.blog/2022-10-04-expand-your-open-source-contributions-during-hacktoberfest-2022/) to get people involved in [Open Source](https://github.com/open-source). You can create your very first pull request to any public repository on GitHub and contribute to the open-source developer community.
+
+# Rules 🔥
+To qualify for the official limited edition Hacktoberfest shirt, you must register here and make four Pull Requests (PRs) between October 1-31, 2022 (in any time zone). PRs can be made to any public repository on GitHub, not only the ones with issues labeled Hacktoberfest. This year, the first 40,000 participants who complete the challenge will earn a T-shirt 👕 or a you can choose to plant a tree 🌳 for you.
+
+# About this repository 🧐
 🚀 This repository is for collecting the different projects made by people who wants to contribute in open source.
 
 <br/>
 
-
+<div align="center">
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&logo=github)](https://github.com/kaal-coder/hacktoberfest) 
 [![Open Source Love](https://img.shields.io/badge/Open%20Source-%F0%9F%A4%8D-Green)](https://github.com/kaal-coder/hacktoberfest)
