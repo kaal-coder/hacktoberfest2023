@@ -1,0 +1,126 @@
+.mainnotfixed
+{
+	width: 570px;
+	float: left;
+	/*height: 500px;*/
+	background-color: white;
+	box-sizing: border-box;
+}
+
+.people
+{
+	overflow:hidden;
+}
+
+.connection
+{
+	width:122px;
+	/*height: 140px;*/
+	float: left;
+	/*background-color: magenta;*/
+	display:inline-block;
+	margin:15px 10px 20px 10px;
+}
+
+.connection img
+{
+	width: 100%;
+	border-radius: 50%;
+}
+
+.connection h5
+{
+	text-align: center;
+	margin: 4px;
+}
+
+.connection p
+{
+	font-size: 12px;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
+/*design of connect in suggestion*/
+.connection a
+{
+	display: block;
+	width: 68px;
+	font-size: 13px;
+	margin: 10px auto;
+	text-decoration: none;
+	text-align: center;
+	color: rgba(0,0,0,.85);
+	height: 19px;
+	padding: 1px;
+	border: 2px solid #B7B7B7;
+	border-radius: 4px;
+	box-shadow: 2px 8px 6px rgba(0,0,0,0.4);
+	transition: box-shadow 0.4s ease-in-out;
+	cursor: pointer;
+}
+
+/*hover effect on connect button*/
+.connection a:hover
+{
+	box-shadow: 1px 4px 2px rgba(0,0,0,0.5);
+}
+
+/*view more button in main content*/
+.viewmore
+{
+	display: block;
+	margin: 15px auto;
+	padding: 2px 5;
+	border: 2px solid #B7B7B7;
+	outline: 0px;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #999999;
+	font-size: 16px;
+	margin-top: 35px;
+}
+
+/*view more button when click change class name to loader*/
+
+.loader {
+	display: block;
+	margin: 35px auto;
+	padding: 1px;
+	outline: 0px;
+	border: 8px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 8px solid #00aeef;
+	width: 40px;
+	height: 40px;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.viewmore:hover
+{
+	border: 2px solid #2196F3;
+	background-color: #00aeef;
+	color: white;
+}
+
+.viewmore:active
+{
+  background-color: #4F82C3;
+  box-shadow: 0 5px 4px #666;
+  transform: translateY(5px);
+}

@@ -1,0 +1,297 @@
+/*====================	MAIN SECTION ================*/
+
+/*parent of main*/
+.mainnotfixed
+{
+	float: left;
+	width: 570px;
+	/*height: 240px;*/
+}
+
+/*to post an content section*/
+.main
+{
+	/*width: 558px;*/
+	/*height: 220px;*/
+	background-color: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	/*position: fixed;*/
+	border-radius: 4px;
+	padding: 15px;
+	margin-bottom: 20px;
+	box-shadow: 4px 1.5px 5px #999999;
+
+}
+
+/*horizontal line to seperate post and posted content*/
+
+.mainnotfixed hr
+{
+	border: 0.5px solid #B7B7B7;
+	outline: 0px;
+	width: 90%;
+	box-shadow: 1px 1px 5px #999999;
+	margin-bottom: 18px;
+}
+
+/*same class naem of post and posted content*/
+.mainpost
+{	
+
+	background-color: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	/*position: fixed;*/
+	border-radius: 4px;
+	padding: 15px;
+	box-shadow: 4px 1.5px 5px #999999;
+	margin-bottom: 5px;
+}
+
+/*user image size of the post and posted content*/
+.mainpost .userimg img
+{
+	width: 45px;
+	height: 45px;
+	/*padding-bottom: 30px;*/ 
+	float: left;
+}
+
+/*user name design of post and posted content*/
+.mainpost .name
+{
+	display: inline;
+	padding-left: 8px;
+	font-size: 16px;
+	position: relative;
+	top: 4px;
+	font-weight: bold;
+	/*float: left;*/
+}
+
+/*time of post of design for post and posted content*/
+.mainpost .time
+{
+	display: inline;
+	padding-left: 8px;
+	font-size: 12px;
+	color: #999999;
+	/*float: left;*/
+}
+
+/*parent of content image of the post and posted content*/
+.mainpost .post
+{
+	/*padding: 30px;*/
+	/*margin-top: 10px;*/
+	max-height: 250px;
+}
+
+
+/*content image of the post and posted content*/
+.mainpost .postimg
+{
+	max-width: 100%;
+	max-height: 250px;
+	display: block;
+	margin: 0 auto;
+}
+
+/*paragraph of the posted content*/
+.mainpost .quotes
+{
+	margin: 12px 4px 8px 4px;
+	font-size: 14px;
+	/*letter-spacing: 0.5px;*/
+	font-family: sans-serif;
+	text-align: justify;
+	padding: 5px;
+}
+
+/*post article of the input area*/
+.main .quotes textarea
+{
+	margin-top: 8px;
+	width: 100%;
+	height: 70px;
+	outline: 0px;
+	padding: 5px;
+	border: 1px solid #D1D1D1;
+	font-size: 14px;
+	font-family: sans-serif;
+	text-align: justify;
+	resize: none;
+	box-sizing: border-box;
+}
+
+/*post bar where post and image button available*/
+.main .postbar
+{
+
+	padding: 10px 10px 1px 10px;
+}
+
+/*design button of post in postbar*/
+.main .postbar .imgbttn
+{	
+	display: inline;
+	/*float: left;*/
+	font-size: 15px;
+	background-color: white;
+	border: 3px solid #615D5E;
+	border-radius: 4px;
+	outline: 0px;
+	/*position: absolute;
+	left: 10px;*/
+	box-shadow: 3px 3px 5px #999999;
+}
+
+/*design button of post in postbar*/
+.main .postbar .postmypost
+{
+	display: inline;
+	float: right;
+	font-size: 16px;
+	padding: 6px 9px 4px 9px;
+	background-color: #43d854;
+	outline: 0px;
+	border: 0px;
+	border-radius: 4px;
+	box-shadow: 3px 3px 5px #999999;
+}
+
+/*post button hover effect*/
+.main .postbar .postmypost:hover
+{
+	background-color: #009688;
+	color: white;
+}
+
+/*post button when click effect*/
+.main .postbar .postmypost:active
+{
+  background-color: #4CAF50;
+  box-shadow: 0 5px 4px #666;
+  transform: translateY(5px);
+}
+
+/*choose image which overwritten by imgbttn*/
+.main .postbar #chooseimg
+{
+	width: 90px;
+	/*float: left;*/
+	height: 28px;
+	font-size: 12px;
+	position:absolute;
+	opacity: 0;
+}
+
+.main .postimg
+{
+	max-height: 150px;
+}
+
+/*like count in posted content*/
+.likedislike .like
+{
+	font-size: 11px;
+	font-family: Verdana;
+	color: #999;
+}
+
+/*like dislike button section in posted section*/
+.likedisbttn
+{
+	margin: 0px;
+	border: 1px solid #D1D1D1;
+	padding: 5px;
+}
+
+/*common class for like and dislike button*/
+.likedisbttn .fa
+{
+	/*color: #009688;*/
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+/*like button of posted content*/
+.likedisbttn .fa-thumbs-up
+{
+	margin-left: 8px;
+}
+
+/*dislike button of posted content*/
+.likedisbttn .fa-thumbs-down
+{
+	margin-left: 13px;
+}
+
+/*mouse over effect in like and dislike button*/
+.likedisbttn .fa:hover
+{
+	color: #2196F3;
+	/*color: red;*/
+}
+
+/*mouse click effect in like and dislike button*/
+.likedisbttn .fa:active
+{
+  	transform: translateY(2px);
+}
+
+/*view more button in main content*/
+.viewmore
+{
+	display: block;
+	margin: 35px auto;
+	padding: 1px;
+	border: 2px solid #B7B7B7;
+	outline: 0px;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #999999;
+	font-size: 16px;
+}
+
+/*view more button when click change class name to loader*/
+
+.loader {
+	display: block;
+	margin: 35px auto;
+	padding: 1px;
+	outline: 0px;
+	border: 8px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 8px solid #00aeef;
+	width: 40px;
+	height: 40px;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.viewmore:hover
+{
+	border: 2px solid #2196F3;
+	background-color: #00aeef;
+	color: white;
+}
+
+.viewmore:active
+{
+  background-color: #4F82C3;
+  box-shadow: 0 5px 4px #666;
+  transform: translateY(5px);
+}
+
