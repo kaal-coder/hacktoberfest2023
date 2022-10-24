@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Balsamiq+Sans&family=Piazzolla:opsz,wght@8..30,200;8..30,300;8..30,400;8..30,900&display=swap" rel="stylesheet">
+    <title>Anolog Clock</title>
+    <script src="index.js"></script>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #e67e22;
+}
+
+#container{
+    position: relative;
+    height: 375px;
+    width: 100%;
+    background-image: url('img/clock.png');
+    background-repeat: no-repeat;
+   /* background-size: 100%; */
+   background-position: center;
+   border-radius: 10px;
+}
+#htime{
+    height: 82px;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    left: 765px;
+    top: 108.9px;
+    border-radius: 3px;
+    transform-origin: bottom;
+    opacity: .8;
+    /* display: none; */
+ 
+    
+}
+#mtime{
+    height: 87px;
+    width: 3px;
+    background-color: black;
+    position: absolute;
+    left: 766px;
+    top: 102.1px;
+    border-radius: 3px;
+    transform-origin: bottom;
+    opacity: .8;
+    /* display: none; */
+   
+    
+}
+#stime{
+    height: 93px;
+    width: 2px;
+    background-color: black;
+    position: absolute;
+    left: 766.6px;
+    top: 96px;
+    border-radius: 3px;
+    transform-origin: bottom;
+    opacity: .8;
+   
+    
+    
+}
+.text{
+    display: block;
+    margin-top: 32px;
+    margin-left: 500px;
+    
+}
+.text h1{
+    font-family:'Baloo 2', cursive;
+    color: #fff;
+}
+.text h1:hover{
+    color: black;
+}
+    </style>
+
+</head>
+<body>
+    <div class="text">
+        <h1> “Time you enjoy wasting is not wasted time.”</h1>
+    </div>
+    <div id="container">
+        <div id="htime"></div>
+        <div id="mtime"></div>
+        <div id="stime"></div>
+    </div>
+</body>
+</html>

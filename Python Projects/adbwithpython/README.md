@@ -1,0 +1,1 @@
+# the_project_adb_with_python_automatically_call_using_adb_commands.
