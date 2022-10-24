@@ -1,4 +1,4 @@
-# Instagram Clone
+# Movie DB
 
 **To View the Original Github:** https://github.com/chanakyha/movie-detail-search-bar
 **To View the Website:** https://discover-movies-kappa.vercel.app/
