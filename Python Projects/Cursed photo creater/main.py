@@ -1,8 +1,16 @@
+# 1 - How to use
+# 2 - Put all the photo you want to process in the "Phototouse" folder
+# 3 - Run the script
+# 4 - Done
+# 5 - Your processed photo will be in the "photoout" folder
+
+
+
 from PIL import Image, ImageEnhance, ImageOps
 import os
 
-path = r"C:\Users\kmdha\Documents\Coding\python\photoeditor\phototouse"
-out = r"C:\Users\kmdha\Documents\Coding\python\photoeditor\photoout"
+path = r"phototouse"
+out = r"photoout"
 
 factor = 2
 brightness = 1.5
