@@ -1,7 +1,7 @@
 # 1 - How to use
 # 2 - Put all the photo you want to process in the "Phototouse" folder
 # 3 - Run the script
-# 4 - Done
+# 4 - And that is it, Done
 # 5 - Your processed photo will be in the "photoout" folder
 
 
