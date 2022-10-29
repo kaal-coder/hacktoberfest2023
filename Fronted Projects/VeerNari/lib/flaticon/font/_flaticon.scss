@@ -1,0 +1,60 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 30/09/2020 10:47
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-water:before { content: "\f100"; }
+.flaticon-healthcare:before { content: "\f101"; }
+.flaticon-diet:before { content: "\f102"; }
+.flaticon-education:before { content: "\f103"; }
+.flaticon-home:before { content: "\f104"; }
+.flaticon-charity:before { content: "\f105"; }
+.flaticon-social-care:before { content: "\f106"; }
+.flaticon-kindness:before { content: "\f107"; }
+.flaticon-donation:before { content: "\f108"; }
+.flaticon-woman:before { content: "\f109"; }
+    
+    $font-Flaticon-water: "\f100";
+    $font-Flaticon-healthcare: "\f101";
+    $font-Flaticon-diet: "\f102";
+    $font-Flaticon-education: "\f103";
+    $font-Flaticon-home: "\f104";
+    $font-Flaticon-charity: "\f105";
+    $font-Flaticon-social-care: "\f106";
+    $font-Flaticon-kindness: "\f107";
+    $font-Flaticon-donation: "\f108";
+    $font-Flaticon-woman: "\f109";
