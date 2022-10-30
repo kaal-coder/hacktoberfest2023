@@ -5,51 +5,51 @@ Your customers, clients, visitors – and even internal employees – all rely o
 
 With the advent of DevOps practices, organizations from startups to enterprises have slowly adopted their own chaos testing practices into their development workflows. Whether chaos engineering is carried out by specific teams or as part of the responsibilities for site reliability engineers (SREs), the practice of chaos engineering is designed to uncover hidden weaknesses within systems, applications, and services, ensuring it can stand up to the most extreme situations for complete resiliency.
 
-Chaos Engineering vs. Performance Testing
+Chaos Engineering vs. Performance Testing :
 Like stress testing or load testing, chaos engineering helps teams identify breaking points or failures by creating abnormal, or unstable environments. However, one of the key differences between chaos engineering and performance testing is that chaos engineering does not just focus on a few key components, rather, it can consist of a seemingly unlimited number of factors, outside the scope of the normal and obvious testing considerations. In large, distributed network environments, systems can fail for a variety of reasons that are not as easy to uncover compared to other environments. Uncovering these vulnerabilities helps teams understand where weaknesses are located to prevent these potential failures from ever occurring.
 
-Chaos (Engineering) is Born
+Chaos (Engineering) is Born :
 The practice of chaos engineering originated with Netflix around 2008 after they had formally launched their streaming service. Following a database corruption issue around 2011, Netflix planned to transition their datacenter to the cloud via AWS (Amazon Web Services). In fact, it took them eight years to finally complete the migration. In 2015, AWS experienced an outage, which caused Netflix to go down for several hours. These were the early days of cloud computing, so it was not as robust, stable, and fail-safe as it is now. When they discovered that the move to the cloud did not create some of the benefits they expected, like scalability, uptime, avoiding single points of failure, autoscaling, etc., they decided they needed a way to test for these unexpected issues to ensure their services are up and running, and ultimately, avoiding the impact to users and causing frustration. From this experience, chaos engineering was born.
 
-Chaos Engineering Principles & Steps
+Chaos Engineering Principles & Steps :
 Chaos engineering does not seek to create chaos just to create chaos. Rather, based on a set of precise principles and steps, it is designed to thoughtfully create plans and experiments for the sole purpose of learning how to mitigate risk within large, distributed systems and networks. Listed below are the steps to creating a general guideline for chaos experiments.
 
-Step 1: Create a Hypothesis
+Step 1: 'Create a Hypothesis'
 This consists of making general assumptions about how a system will respond as unstable factors and conditions are introduced compared to the normal environment. This is also where you determine which metrics, like error rates, latency, throughput, etc., are to be measured during the chaos experiment.
 
-Step 2: Identify Variables and Anticipate Effects
+Step 2: 'Identify Variables and Anticipate Effects'
 Consider what might happen when these hypothetical events were to occur in real-life situations. For example, if your server unexpectedly crashes or there is a significant increase in traffic, what will be the effect on your overall system?
 
-Step 3: Initiate the Experiment
+Step 3: 'Initiate the Experiment'
 Ideally, you want to run your chaos experiment in a live, production environment. However, there must be protections in place to prevent a worse-case scenario from occurring. You want to ensure you still have some control over the environment if the experiment goes sideways. This is also known as controlling the blast radius. These experiments can be automated for better analysis, and are more sustainable, than executing them manually. Another method that is sometimes used is utilizing a full-fledged test environment, however, again, this might not reflect what happens in the real-world.
 
-Step 4: Measure the Impact
+Step 4: 'Measure the Impact'
 How do the results measure up to the initial hypothesis? Based upon the metrics that were set in the hypothesis, was the experiment too limited or does it need to be scaled up to better identify errors and faults? Was the blast radius too limited? Maybe it needs to be scaled to set off those faults that would occur in a real-life scenario. This experiment may also uncover additional problems that need to be investigated.
 
-Chaos Engineering Tools
+Chaos Engineering Tools :
 Let us go back to the introduction of chaos engineering with Netflix. Once they made the decision to go on the offensive and begin the process of dedicating resources for an engineering team, they needed to create a formalized set of practices and tools to assist engineering teams with carrying out chaos tests. One of the early applications that Netflix introduced was called Chaos Monkey. Each day, this application would randomly pick a set of clusters and turn off that instance at some point during the day to observe how the remaining systems responded. Obviously, this creates a painful experience for engineering teams who have enough network headaches to deal with daily, but at the end of the day, it puts teams in a better position to understand the effects of these outages, not only regarding their network, but also in terms of the impact to users.
 
 While it may seem counterintuitive to dedicate resources and individuals to go around “breaking” things, proactively carrying out these chaos tests helps to build a more resilient network and create a better, more reliable user experience. The real world does not work in a controlled test environment. Since the inception of Chaos Monkey, it has been through several updates and has become a popular open-source application. And at one time, it was just one part of a chaos engineering suite of tools called the Simian Army. The Simian Army suite was disbanded 2018, but included the following task-specific chaos engineering utilities:
 
-Chaos Kong
+Chaos Kong :
 Chaos Kong was designed to simulate a complete AWS region being dropped, or deleted, to see how the system recovered and responded by moving traffic to a different region without performance degradation. Again, this rarely happens, but within the scope of chaos engineering, nothing is out of bounds.
 
-Conformity Monkey
+Conformity Monkey :
 Conformity Monkey is a service that runs in AWS with the purpose of identifying instances that were not conforming to predefined rules. Any instance that does not conform to the rules, which were flexible enough to be customized and set to run at different frequencies, were identified and an email notification is sent to the owner or group. Conformity Monkey has since been moved to Spinnaker services.
 
-Chaos Gorilla
+Chaos Gorilla :
 Chaos Gorilla is like Chaos Monkey, but on a grander scale. Instead of simulating failures on single AWS instances, Chaos Gorilla simulated a failure of an entire AWS zone. This utility was designed to show how a large-scale disaster affected users or customers in a different region, which was perfect for how Netflix’s infrastructure and business model was set up. If the cloud platform can withstand this test by properly ensuring load balancers respond appropriately and services remain interrupted, then it can withstand anything thrown at it.
 
-Latency Monkey
+Latency Monkey :
 Latency Monkey, as the name implies, is used to test services against network delays, or complete failures, to help identify how services, and their dependencies, responded to these simulated delays. However, like web services in general, there may be unknown consequences within other applications that may not be easily identified at first glance, which is why a utility like Latency Monkey is so important for gauging fault tolerance across services.
 
-Doctor Monkey
+Doctor Monkey :
 The Doctor Monkey utility was used to perform health checks across individual instances and monitor the health (CPU load, memory, resources, etc.) of the overall system. Additionally, Doctor Monkey can report on the instance status and remove any instances from service that it deemed unfit to the overall system.
 
-10-18 Monkey
+10-18 Monkey :
 The name for 10-18 Monkey comes from the abbreviations for localization and internationalization and localization, L10n and i18n. The numbers represent the number of letters between the first and last letters. Since Netflix customers reside all over the world, having a method to monitor reliability of their streaming services, across different regions, was of utmost importance. The advantage of the 10-18 Monkey utility is that it can check for configuration and performance issues across multiple geographic regions that serve and utilize different languages and character sets.
 
-Janitor Monkey
+Janitor Monkey :
 What about all those unused AWS resources? Enter Janitor Monkey. The purpose of the Janitor Monkey utility is to find and remove unused resources. Like Chaos Monkey, it is also customizable and extendible enough to be used with other cloud providers. Users provide a set of rules and Janitor Monkey goes to work, identifying those unused resources, groups, and volumes that are candidates for cleanup and removal and sends outs a notification. Over time, the functionality was replaced by a new service called Swabbie.
 
 Conclusion: Chaos Engineering – Principles, Examples & Tools
