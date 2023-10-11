@@ -1,6 +1,6 @@
                     /* User defined Package */
                     /* private package */
-package yash;   
+ 
 class L
 {
     private void show() {

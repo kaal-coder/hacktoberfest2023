@@ -36,7 +36,7 @@ import java.util.Scanner;
             default:
             System.out.print("invalid choice");
         }
-        
+        s.close();
     }
 
 }

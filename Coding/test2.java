@@ -24,8 +24,7 @@ class B extends A
 class test2 {
     public static void main(String[] args) 
     {
-     B r=new B();
-      
+     new B();
     }
 }
 
