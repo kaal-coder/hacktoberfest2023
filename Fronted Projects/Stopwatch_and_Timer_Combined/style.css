@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+    
+}
+body{
+    background:#2b3239;
+    
+}
+.container,.button,.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 40px;
+
+}
+.container{
+    margin-top: 100px;
+    flex-direction: column;
+}
+
+
+.result h4{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+.result{
+    font-size: 3rem;
+    color: #1d2630;
+    background: #fff;
+    padding: 30px 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 40px;
+}
+
+.result span{
+    width: 3rem;
+}
+
+.button button{
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    border: none;
+    outline: none;
+    height: 43px;
+    width: 100px;
+    color: #1d2630;
+    font-weight: bold ;
+    font-size:1.1rem ;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button button:hover{
+    background-color: #dfe0e0;
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    flex-direction: column;
+    width: 40%;
+    margin-top: 4%;
+    margin-left: 30%;
+    padding: 30px;
+    border-radius: 10px;
+}
+.container2 h2{
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+.container2 h1{
+    font-size: 2.4rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 18px;
+}
+.timerbtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+}
+.timerbtns button{
+    padding:7px 18px;
+    border: none;
+    border-radius: 7px;
+    background-color:#1d2630;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+#startbtn,#stopbtn,#custombtn,#resetbtn{
+    cursor: pointer;
+}
+
+#startbtn:hover,#stopbtn:hover,#custombtn:hover,#resetbtn:hover{
+    background-color:#343435;
+}
+
+button span{
+    align-content: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width:425px) {
+    .container2{
+        width: 80%;
+        margin-left: 12%;
+    }
+    .timerbtns{
+        gap:15px;
+    }
+}
