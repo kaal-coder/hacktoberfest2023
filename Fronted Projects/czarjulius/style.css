@@ -1,80 +1,87 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .wrapper {
   width: 50%;
-  height: 100px;
+  height: 50%;
   background-color: rgb(10, 1, 1);
   display: flex;
-  margin: auto;
   justify-content: space-between;
-  padding: 10px;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  border-radius: 5px;
 }
 #button {
   width: 10rem;
   height: 5rem;
-  margin: auto;
   border-radius: 10px;
-  border: 1px solid #091053;
+  border: 1px solid red;
+
+  animation-name: u-button;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 0%;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation-name: u-button;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-  position: absolute;
-  top: 17%;
-  right: 10%;
-  z-index: 1;
 }
-#arrow {
+#arrow-in {
   width: 0;
   height: 0;
-  border-top: 25px solid transparent;
-  border-left: 50px solid #091053;
-  border-bottom: 25px solid transparent;
-
-  animation-name: u-arrow;
-  animation-duration: 5s;
+  animation-name: u-arrow-in;
+  animation-duration: 6s;
   animation-fill-mode: forwards;
+
   z-index: 100;
-
-  position: absolute;
-
-  top: 30%;
-  left: 10%;
 }
 
 @keyframes u-button {
   0% {
+    bottom: 10%;
     border: 1px solid rgb(11, 98, 219);
   }
   25% {
     border: 1px solid rgb(184, 195, 203);
-    right: 20%;
+    bottom: 20%;
   }
   75% {
     background-color: rgb(65, 10, 10);
-    right: 35%;
+    bottom: 35%;
   }
   100% {
     background-color: red;
     border: 0px solid none;
-    right: 40%;
+    bottom: 45%;
+    margin: auto;
   }
 }
-@keyframes u-arrow {
+
+@keyframes u-arrow-in {
   0% {
-    border-left: 50px solid rgb(11, 98, 219);
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
   }
   25% {
-    border-left: 50px solid rgb(184, 195, 203);
-    left: 20%;
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
   }
   75% {
-    border-left: 50px solid rgb(233, 228, 228);
-    left: 35%;
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
   }
   100% {
+    border-top: 25px solid transparent;
     border-left: 50px solid #fff;
-    left: 48%;
+    border-bottom: 25px solid transparent;
   }
 }
