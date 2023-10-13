@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+   /* background-image: linear-gradient(	rgb(20, 74, 1),  rgb(17, 173, 22),rgb(108, 189, 121));*/
+    background-color:rgb(2, 56, 72) ;
+    background-repeat: no-repeat;
+    height: 700px;
+
+}
+h1{
+    font-size: 100px;
+    color: goldenrod;
+
+}
+h1 , p {
+    text-align: center;
+}
+   div {
+    display: flex;
+    justify-content: center;
+   }
+   #message-el{
+    font-size: 35px;
+color: rgb(209, 238, 248);
+font-family:'italic, arial' ;
+   }
+   #cards-el, #sum-el,#player-el{
+    color: white;
+    font-size: larger;
+   }
+   button{
+    height:40px;
+    width:90px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bolder;
+    box-shadow: 10px 10px 10px rgba(3, 3, 3, 0.9);
+    background-image: linear-gradient(	rgb(67, 62, 1),  rgb(161, 151, 74),rgb(200, 206, 132));
+    border:rgb(161, 151, 74);
+   }
+   </style>
+</head>
+<body>
+    <h1>BlackJack Game</h1>
+    <p id="message-el">Want to play a round?</p>
+    <p id="cards-el">Cards: </p>
+    <p id="sum-el">Sum: </p>
+<div> <button onclick="startGame()">Start Game</button></div>
+
+   <div> <button onclick="newCard()">New Card</button></div>
+    <p id="player-el"></p>
+    <script src="index.js"></script>
+</body>
+</html>
