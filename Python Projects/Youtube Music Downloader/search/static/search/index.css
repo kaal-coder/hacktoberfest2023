@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "GothamBold";
+  src:url(../fonts/GothamBold.ttf);
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "GothamRegular";
+  src:url(../fonts/Gotham-Regular.ttf);
+
+}
+
+@import url( "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+@font-face {
+  font-family: "GothamMedium";
+  src:url(../fonts/GothamMedium.ttf);
+
+}
+
+
+
+body{
+  margin:0;
+  padding: 0;
+  height:100%;
+
+
+}
+
+.bg{
+  background: url(../images/pinkpantheress.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center center;
+  animation: fadeIn .5s;
+  -webkit-animation: fadeIn .5s;
+  -moz-animation: fadeIn .5s;
+  -o-animation: fadeIn .5s;
+  -ms-animation: fadeIn .5s;
+
+}
+
+.fullpage{
+  display: block;
+}
+
+.mainContent{
+  left:5%;
+  width:90%;
+  height:500px;
+  position: relative;
+
+}
+
+.ContentContent{
+  position: absolute;
+  top:60%;
+  width: 95%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+
+
+.mainContentTitle{
+  font-family: "GothamBold";
+  width: 100%;
+  text-align: center;
+
+
+}
+
+
+
+.mainContentSubTitle{
+  text-align: center;
+  position: relative;
+  top: -10px;
+  width: 100%;
+  font-family: "GothamRegular";
+  font-size: 15px;
+
+}
+
+.searchContent{
+  text-align:  center;
+}
+
+
+.searchContentSearchButton{
+    margin-top: 2%;
+}
+
+.searchContentSearchInput input{
+  width:97%;
+  height: 2.5Rem;
+  border-radius: 10px;
+  border: none;
+  font-family: "GothamRegular";
+  font-size: 90%;
+  color: black;
+  background-color: White;
+}
+
+.searchContentSearchInput input:focus{
+  border: none;
+  outline: none;
+
+}
+
+.searchContentSearchButton button{
+  width:40%;
+  height: 3Rem;
+  font-family: "GothamRegular";
+  font-size: 100%;
+  background-color: Black;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.5s;
+
+}
+
+.buttonspan span{
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonspan span:after{
+  font-family: "Font Awesome 5 Free";
+  content: "\f002";
+  font-weight: 900;
+  position: absolute;
+  opacity: 0;
+  top:0;
+  right:-20px;
+  transition: 0.5s;
+}
+
+.buttonspan:hover span{
+  padding-right: 25px;
+}
+
+.buttonspan:hover span:after{
+  opacity: 1;
+  right:0;
+}
+
+
+.subIcons a{
+  padding-right: 8%;
+  color: black;
+}
+
+
+
+
+.fa-angle-right, .fa-angle-left{
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  padding: 1px;
+  transition: 0.5s ease;
+  user-select: none;
+  color: transparent;
+
+}
+
+.NextPrevious i:hover {
+
+  color: black;
+}
+
+.fa-angle-right{
+  right: 0;
+}
+
+.fa-angle-left{
+  left: 0;
+}
+
+.searchquerysugg{
+  color: black;
+  background-color: White;
+  margin-top:-7px;
+  width:97.2%;
+  text-align: left;
+  display: block;
+  height: 100px;
+  overflow-y: auto;
+  margin-left: 1.4%;
+  font-family: "GothamRegular";
+  border-radius: 0px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.searchqueryul li a{
+  text-decoration: none;
+  color: black;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.searchquerysugg::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.searchquerysugg {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.searchqueryul li{
+  list-style: none;
+  padding-top:3%;
+  cursor: pointer;
+  color:black;
+  border-color: black;
+  background-color: #F9F9F9;
+
+}
+
+.searchqueryul li a{
+  font-size: 95%;
+}
+
+.searchqueryul li:hover{
+  background-color: #F9F9F9;
+}
+
+@keyframes fadeIn{
+  0%{opacity: .5;}
+  100%{opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn{
+  0% {opacity: .5;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn{
+  0%{opacity: .5;}
+  100%{opacity: 1;}
+}
+
+@-o-keyframes fadeIn{
+  0%{opacity: .5;}
+  100%{opacity: 1}
+}
+/*.firstHeaderStyling{
+  float:left;
+  width: 30%;
+outline: dashed 1px blue;
+}
+.secondHeaderStyling{
+  float:left;
+  width:70%;
+  padding-top:1%;
+}*/
+
+/*Mobile devices*/
+@media only screen and (max-width:1000px) {
+  .searchquerysugg{
+    /*margin-top:-25px;*/
+    width:97.9%;
+    margin-left: 1%;
+
+  }
+}

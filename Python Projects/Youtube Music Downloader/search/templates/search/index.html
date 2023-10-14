@@ -1,0 +1,124 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SoundScape || Music Downloader</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="icon" type="img/jpg/gif" href="{% static 'images/catlinkcon.png' %}">
+
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="https://kit.fontawesome.com/2b91c6cb62.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="{% static 'search/index.css' %}">
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#searchquerycont').css("display", "block");
+        $('#searchinputfield').keyup(function(){
+          if ($(this).val() === ''){
+            $('#searchquerycont').css("display", "none");
+          }
+          else {
+            $('#searchquerycont').css("display", "block");
+          }
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div class='bg'>
+        <!--Section1-->
+        <section id="fullpage" class="fullpage">
+
+          <div class="mainContent">
+            <div class="ContentContent">
+            <div class="contentTitle">
+              <div class="mainContentTitle">
+                <h2><i class="fa-solid fa-headphones" aria-hidden="true"></i> SoundScape Music Downloader</h2>
+              </div>
+
+              <div class="mainContentSubTitle">
+                <p>Search and download your songs here. Popup ads are so annoying so here is my gift to you</p>
+                <div class="subIcons">
+                  <a href=""><i class="fa-solid fa-folder fa-lg"></i></a>
+                  <a href=""><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-tiktok fa-lg" aria-hidden="true"></i></a>
+                  <a href=""><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="searchContent">
+              <form method="post">
+              <div class="searchContentSearchInput">
+                {% csrf_token %}
+                  <input id="searchinputfield" type="text" name="search"  placeholder="Search Fredthedev...">
+
+                  <div class="searchquerysugg" id="searchquerycont">
+                    <ul class="searchqueryul">
+                      {% for video in videos %}
+                      <li><a href="{{video.url}}"> {{video.title}}</a></li>
+                      {% endfor %}
+
+
+                    </ul>
+                  </div>
+                </input>
+              </div>
+              <div class="searchContentSearchButton">
+                <button type="submit" name="submit" class="buttonspan"><span>Search.. </span></button>
+              </div>
+              </form>
+            </div>
+
+            <div class="NextPrevious">
+             <i class="fa-solid fa-angle-left" onclick="rightleftnextdre(-1)"></i>
+             <i class="fa-solid fa-angle-right" onclick="rightleftnextdre(1)"></i>
+           </div>
+
+
+
+            <footer class="footerContent">
+
+            </footer>
+          </div>
+         </div>
+
+       </section>
+    </div>
+
+    <script>
+
+    function changeBg(){
+
+
+      const images = [
+        'url("{% static "images/pinkpantheress.jpg" %}")',
+        'url("{% static "images/Rema.jpg" %}")',
+        'url("{% static "images/kanye2.jpg" %}")',
+        'url("{% static "images/kaytranada.jpg" %}")',
+        'url("{% static "images/TylertheCreator.jpg" %}")',
+        'url("{% static "images/playboicarti.jpg" %}")'
+
+      ]
+      const section = document.querySelector('.bg')
+      const bg = images[Math.floor(Math.random()*images.length)];
+      section.style.backgroundImage = bg;
+
+    }
+
+    setInterval(changeBg,6000)
+
+    </script>
+
+</body>
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/sugappear.js'  %}"></script>
+</html>
