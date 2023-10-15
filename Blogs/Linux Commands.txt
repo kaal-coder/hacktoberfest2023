@@ -1,0 +1,156 @@
+Linux Commands
+
+1. cd
+change dir
+cd .. - to move up
+cd ~ - move to home dir from anywhere
+
+2. ls
+list dir contents
+ls -l : long listing info
+ls -a : list all files (including hidden files)
+ls -r : list in reverse order
+ls -t : sort by time & date
+ls -s : sort by file size
+
+3. man (manual)
+man ls
+
+4. echo
+echo -n : no new line
+echo -e : for backslash esc seq
+
+5. cal (calendar)
+cal -1 : single month (curr)
+cal -3 : 3 months spanning curr
+cal -s : 1st day as sun
+cal -m : 1st day as mon
+cal -j : feb 1st = 32nd day format
+cal -y : full yr cal
+
+6. date
+
+7. clear
+
+8. cat
+create
+display
+concatenate
+---cat > file1.txt
+creates file1.txt & allows us to insert content in it. Press ctrl+c to exit.
+---cat file.txt > newfile.txt
+copy content of file to newfile (override the present content of newfile). Create newfile if it doesn't already exists.
+---cat file.txt >> newfile.txt
+append. create newfile if not there.
+---cat file1.txt file2.txt
+display contents of both files
+---cat f1.txt f2.txt > combinedfile.txt
+concatenates f1 & f2 & writes in combinedfile
+
+9. pwd
+
+10. who
+
+11. whoami
+prints  username associated with the curr effective user ID
+
+12. uname
+prints info about curr sys
+
+13. passwd
+to change password of user acc
+
+14. mkdir
+to make dirs
+
+15. rmdir
+removes empty dirs from ur file sys
+
+16. cp (copy cmd)
+
+17. mv (move)
+
+18. rm (remove)
+to delete files & dirs
+
+19. cut
+extracts a given number of chars or cols from a file
+
+20. paste
+displays the corresponding lines of multiple files side-by-side
+
+21. more
+The more command is a command line utility for viewing the contents of a file or files once screen at a time.
+
+22. cmp
+
+23. comm
+Compare two sorted files line by line.
+
+24. diff
+This command is used to display the differences in the files by comparing the files line by line.
+
+25. chmod
+
+26. chown
+change owner
+
+27. chgrp 
+change group
+
+28. file
+to determine a file's type
+
+29. finger
+looks up and displays information about system users.
+
+30. sleep
+to delay for a specified amount of time.
+
+31. ps (proc state)
+Reports a snapshot of the status of currently running processes.
+
+32. kill
+to terminate processes manually.
+
+33. wc
+used to find out number of newline count, word count, byte and characters count in a files specified by the file arguments.
+
+34. ln
+creates links between files.
+
+35. nl
+numbers the lines in a file.
+
+36. head
+makes it easy to output the first part (10 lines by default) of files.
+
+37. tail
+prints the last few number of lines (10 lines by default) of a certain file, then terminates.
+
+38. sort
+used to sort a file, arranging the records in a particular order.
+
+39. find
+searches for files in a directory hierarchy.
+
+40. uniq
+reports or filters out repeated lines in a file.
+
+41. grep
+searches a file for a particular pattern of characters, and displays all lines that contain that pattern.
+
+42. pipe ( | ) 
+output of each process directly as input to the next one like a pipeline.
+
+43. tr (translate)
+for translating or deleting characters.
+
+44. history
+to view the previously executed command.
+
+45. write
+sends a message to another user.
+
+46. wall
+send a message to everybody’s terminal.
