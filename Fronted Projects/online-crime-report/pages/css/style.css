@@ -1,0 +1,365 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.slideshow{
+    height:600px;
+    
+}
+
+.icon{
+    height: 150px;
+    width: 150px;
+    margin: auto;
+}
+#carouselExampleControls{
+    padding: 10px;
+}
+.txt-col{
+    color:black;
+}
+
+.card{
+    transition: .5s ease;   
+}
+
+.percent{
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background-color: #101010;
+}
+
+
+.percent-pad{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+/* .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(76, 77, 78);
+    border: 10px solid rgb(76, 164, 247);
+} */
+
+.footer{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-color:rgba(5, 5, 59, 1);
+}
+
+.about{
+    width: 100%;
+    height:400px;
+    position: relative;
+
+}
+
+.btn {
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: white;
+    border-color: #286287;
+    background: #286287;
+}
+
+.w300 {
+    width: 100%;
+    height: 40px;
+    background-color: #d3d3d3;
+    color: #696969;
+}
+
+svg {
+    justify-content: center;
+    position: relative;
+    z-index: 1000;
+
+}
+svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #191919;
+    stroke-width: 10;
+    stroke-linecap: round;
+}
+
+svg circle:nth-child(2)
+{
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+
+svg:nth-child(1) circle:nth-child(2)
+{
+    stroke-dashoffset:calc(440 - (440*90)/100);
+    stroke: #00ff43;
+}
+svg:nth-child(2) circle:nth-child(2)
+{
+    stroke-dashoffset:calc(440 - (440*80)/100);
+    stroke: #00a1ff;
+}
+svg:nth-child(3) circle:nth-child(2)
+{
+    stroke-dashoffset:calc(440 - (440*44)/100);
+    stroke: #ff04f7;
+}
+svg:nth-child(4) circle:nth-child(2)
+{
+    stroke-dashoffset:calc(440 - (440*69)/100);
+    stroke: #ff0037;
+}
+
+
+
+.covering:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    transition: 0.5s;
+}
+
+.insidecircle{
+    font-weight: 700;
+    color: #777;
+    font-size: 40px;
+    transition: 0.5s;
+    text-align: center;
+    justify-content: center;
+}
+
+text{
+    font-size: 25px;
+}
+/* .new
+{
+    position: relative;
+    border-radius: 50%;
+    box-shadow: inset 0 0 50px #000;
+} */
+
+.txt-col:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 10px rgba(0,0,0,.5);
+    transition: 0.5s;
+}
+/* teams section styling */
+
+.teams .carousel .card {
+    background: #222;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover {
+    background: crimson;
+}
+
+.teams .carousel .card .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover .box {
+    transform: scale(1.05);
+}
+
+.teams .carousel .card .text {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.teams .carousel .card img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid crimson;
+    transition: all 0.3s ease;
+}
+
+.teams .carousel .card:hover img {
+    border-color: #fff;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border-radius: 50%;
+    border: 2px solid crimson !important;
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active {
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+    background: crimson !important;
+}
+
+
+
+
+
+
+.scroll-up-btn {
+    right: 15px;
+    bottom: 15px;
+    height: 38px;
+    width: 35px;
+    font-size: 23px;
+    line-height: 38px;
+}
+
+#teams {
+    background-color: #111;
+}
+
+/* iCons */
+.icon-1 {
+    color: blueviolet;
+}
+
+/* developer name */
+.text {
+    color: green;
+}
+
+.pragraph-1 {
+    color: #FFABE1;
+}
+section.title-2 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section.title-2::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section.title-2::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.teams {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+section.title-2 {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section.title-2::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section.title-2::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <script src=" https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 shadow p-3 mb-5 bg-white rounded" style="margin: 0 auto; margin-top: 150px;">
+                <!-- Default form login -->
+                <form class="text-center border border-light p-5" action="#!">
+
+                    <p class="h4 mb-4">Sign in</p>
+
+                    <!-- Email -->
+                    <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Station Id">
+
+                    <!-- Password -->
+                    <input type="text" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Area">
+
+
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4" onclick="police_signIn()">Sign in</button>
+
+
+                </form>
+                <!-- Default form login -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function police_signIn() {
+            console.log("Inside")
+            var id = $('#defaultLoginFormEmail').val()
+            var addr = $('#defaultLoginFormPassword').val()
+            console.log(id)
+            console.log(addr)
+            var data = {
+                id:id,
+                place:addr
+            }
+            $.ajax({
+                url: "/crime/policeLogin",
+                type: 'POST',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                contentType: 'application/json',
+                success: function (res) {
+                    console.log("Response" + JSON.stringify(res))
+                    if (res.success) {
+                        console.log(res.data)
+                        localStorage.setItem("police",res.data)
+                        window.loction.href = '/police'
+                    }
+                    else {
+                        alert(res.message)
+                    }
+
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

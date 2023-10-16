@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+    
+
+
+    <title>Crime Management</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <a class="navbar-brand ml-3" href="#">
+            <img src="images/brand.png" width="40" height="40" alt=""><b>Online Crime Report</b>
+        </a>
+        <ul class="navbar-nav ml-auto ">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="#complaincards">Complain</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="#aboutus">About Us</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="emergency.html">Emergency Contact</a>
+            </li>
+
+          
+            <li class="nav-item ">
+                <a class="nav-link" href="official.html">Official login</a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="" id="loginModal" onclick="openLogin()" data-toggle="modal">Login</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- login modal -->
+    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="defaultForm-email" class="form-control validate" placeholder="Your email">
+                        <!-- <label data-error="wrong" data-success="right" for="defaultForm-email">Your email</label> -->
+                    </div>
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="defaultForm-pass" class="form-control validate" placeholder="Your password">
+                        <!-- <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-default" onclick="login()">Login</button>
+                    <span> / </span>
+                    <a href="" data-toggle="modal" onclick="openSignUp()">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- login modal -->
+
+    <!-- signupmodal -->
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                        <i class="fas fa-user prefix grey-text"></i>
+                        <input type="text" id="orangeForm-name" class="form-control validate" placeholder="Your name">
+                        <!-- <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label> -->
+                    </div>
+                    <div class="md-form mb-5">
+                        <i class="fas fa-envelope prefix grey-text"></i>
+                        <input type="email" id="orangeForm-email" class="form-control validate" placeholder="Your email">
+                        <!-- <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label> -->
+                    </div>
+
+                    <div class="md-form mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input type="text" id="orangeForm-mobnumber" class="form-control validate" placeholder="Your mobie number">
+                            <!-- <label data-error="wrong" data-success="right" for="orangeForm-mobnumber">Your mobile number</label> -->
+                        </div>
+    
+
+                    <div class="md-form mb-4">
+                        <i class="fas fa-lock prefix grey-text"></i>
+                        <input type="password" id="orangeForm-pass" class="form-control validate" placeholder="Your password">
+                        <!-- <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label> -->
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-deep-orange" onclick="signup()">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- signupmodal -->
+
+
+
+
+    <div id="carouselExampleControls" class="container carousel slide border mt-2" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/crime.jpg" class="d-block  slideshow" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/crime2.png" class="d-block  slideshow" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="images/crime3.png" class="d-block  slideshow" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- complaincards -->
+
+    <div class="container my-5" id="complaincards">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a id="Theft" onclick="getCrimeDetails(this.id)" class="card txt-col">
+
+                    <img src="images/card1.jpg" class="card-img-top icon" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" >Theft</h5>
+                        <p class="card-text">Complain for theft or burglary</p>
+
+                    </div>
+
+                </a>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a id="Sexual Harrasment" onclick="getCrimeDetails(this.id)" class="card txt-col">
+
+                    <img src="images/card2.jpg" class="card-img-top icon" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Sexual Harrasment</h5>
+                        <p class="card-text">Click here to register a complaint for harrasment</p>
+
+                    </div>
+
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a onclick="getCrimeDetails(this.id)" id="Assault" class="card txt-col">
+
+                    <img src="images/card3.png" class="card-img-top icon" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Assault</h5>
+                        <p class="card-text">Complain here for any Assault</p>
+
+                    </div>
+
+                </a>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <a onclick="getCrimeDetails(this.id)" id="Accident" class="card txt-col">
+
+                        <img src="images/card4.jpg" class="card-img-top icon" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Accident</h5>
+                            <p class="card-text">Form for reporting Accident</p>
+
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <a onclick="getCrimeDetails(this.id)" id="Legal Affairs" class="card txt-col">
+
+                        <img src="images/card5.png" class="card-img-top icon" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Legal Affairs</h5>
+                            <p class="card-text">Complain for legal affairs</p>
+
+                        </div>
+
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <a onclick="getCrimeDetails(this.id)" id="Theft" class="card txt-col">
+
+                        <img src="images/card1.jpg" class="card-img-top icon" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Consumer Forum</h5>
+                            <p class="card-text">Complain for Consumer</p>
+
+                        </div>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- complaincards -->
+
+
+
+    <!-- progresscircle -->
+    <div class="percent">
+        
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-11 mt-5 new">
+                    
+                    <svg width="240" height="250" class="covering" >
+                        <circle cx="120" cy="100" r="70"  />
+                        <circle cx="120" cy="100" r="70"  />
+                        <text x="90" y="110" fill="white"class="insidecircle">90%</text>
+                        <text x="90" y="220" fill="white">Theft</text>
+                    </svg>
+                    
+                    <svg width="240" height="250" class="covering">
+                        <circle cx="120" cy="100" r="70"  />
+                        <circle cx="120" cy="100" r="70"  />
+                        <text x="90" y="110" fill="white" class="insidecircle">80%</text>
+                        <text x="60" y="220" fill="white">Cyber Crime</text>
+                    </svg>
+
+                    <svg width="240" height="250" class="covering">
+                        <circle cx="120" cy="100" r="70"  />
+                        <circle cx="120" cy="100" r="70"  />
+                        <text x="90" y="110" fill="white"class="insidecircle">44%</text>
+                        <text x="80" y="220" fill="white">Assault</text>
+                    </svg>
+
+                    <svg width="240" height="250" class="covering">
+                        <circle cx="120" cy="100" r="70"  />
+                        <circle cx="120" cy="100" r="70"  />
+                        <text x="90" y="110" fill="white"class="insidecircle">69%</text>
+                        <text x="90" y="220" fill="white">Legal</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about" id="aboutus">
+        <div class="container mt-5">
+            <h2 class="aboutus">About Us</h2>
+        </div>
+
+        <div class="container mt-5">
+            <p>
+                Providing India with security services for over 20 years
+
+                Founded in 1947,Online Crime Management has provided security services for over 20 years.
+
+                Our company was established by: current and retired law enforcement, private citizens and security
+                specialists.
+
+                Our founding group realized that traditional law enforcement agencies could not effectively safeguard
+                private property in all situations. In most instances, the crime is in process and completed by the time
+                a police officer has arrived.
+
+                The security industry calls for proactive units rather than reactive units. Should the need arise and
+                with our officers on-site,Crime Management affords our clients the knowledge that their property is
+                protected in real-time.
+            </p>
+        </div>
+    </div>
+    <!-- developer-->
+    <div>
+        <b style="color:black;margin-bottom:10%;">
+            <center>Developers</center>
+        </b>
+    </div>
+    <section class="dev teams" id="teams">
+        <div class="max-width">
+
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="image/Sahil-123.png" alt="">
+                        <div class="text">Sahil Hossain</div>
+                        <p class="pragraph-1">IEM, KOLKATA</p>
+                        <a class="icon-1" href="https://github.com/Sahil1786">
+                            <ion-icon size="large" name="logo-github"></ion-icon>
+                        </a>
+                        <a class="icon-1" href="https://www.linkedin.com/in/sahil-hossain-b14164188/">
+                            <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="image/sahin.jpeg" alt="">
+                        <div class="text">Sahin Rizwana</div>
+                        <p class="pragraph-1">IEM, KOLKATA</p>
+                        <a class="icon-1" href="https://github.com/Shahin2003/C-projects">
+                            <ion-icon size="large" name="logo-github"></ion-icon>
+                        </a>
+                        <a class="icon-1" href="https://www.linkedin.com/in/shahin-rizwana-089286216">
+                            <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="image/arnab.png" alt="">
+                        <div class="text">Arnab Karmakar</div>
+                        <p class="pragraph-1">IEM, KOLKATA</p>
+                        <a class="icon-1" href="https://www.linkedin.com/in/arnab-karmakar-856979218">
+                            <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- footer -->
+
+
+    <div class="bg-gray-100" id="footer-bg-img" style="color: #000;">
+        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">© 2022 Online Crime Report —
+                <a href="https://sahil1786.github.io/My-Portfolio/" rel="noopener noreferrer" class="text-gray-600 ml-1"
+                    target="_blank">@Team</a>
+            </p>
+            
+        </div>
+    </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<!-- <script src="work.js"></script> -->
+<script src="./js/main.js"></script>
+
+</body>
+
+</html>

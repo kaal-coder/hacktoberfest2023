@@ -1,0 +1,24 @@
+/* img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.70;
+    z-index: -1;
+} */
+
+body,html{
+    height: 100%;
+}
+
+.bckdrop{
+    background-image: url(../images/backgrnd.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    /* -webkit-filter: blur(10px); */
+}
+
+.blur{
+    z-index: 1000;
+}

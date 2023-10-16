@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- s<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Register Fir</title>
+    <!-- <script src="work.js"></script> -->
+</head>
+
+<body style="background-image: url( https://designshack.net/wp-content/uploads/best-subtle-black-white-background-textures.jpg);">
+    
+    <div class="body_part container">
+        <div class="row mt-4">
+            <div class="col-md-8 mt-4">
+                <div style="margin-top:4%;background-color: darkgreen;">
+                    <img src="./images/brand.png" class="img-thumbnail" alt="">
+                    <h3 style="color:#120d5c;text-align: center;padding:20px;border-bottom:3px solid black;">
+                        Register Your Fir
+                    </h3>
+                        <p style="color:#120d5c;text-align: center;font-size:25px;">
+                            Every criminal deserves a punishment.
+                        </p>
+                        <br>
+                </div>
+            </div>
+            <div class="col-md-4" style="margin: 0 auto; margin-bottom: 10px;">
+                <form style="width: 100%;">
+                    <label>
+                        <h2 style="color:burlywood;">Enter Details.</h2>
+                    </label>
+                    <div class="form-group">
+                        <div>
+                            <!-- <select class="mdb-select md-form w300 rounded"
+                                style="border-color: #d3d3d3;margin-top: 0px;color: black;" id="inputMain">
+                                <option value="" disabled selected>&nbsp;FIR type</option>
+                                <option value="1">&nbsp;Rape</option>
+                                <option value="2">&nbsp;Crime</option>
+                            </select> -->
+                        
+                            <label for="inputFirType" style="color: #d3d3d3;">FirType:</label>
+                            <input class="form-control w300 rounded" id="inputFirType" placeholder="Fir Type" required>
+                            <!-- <label id="inputFirType" class="mdb-select md-form w300 rounded"style="padding:6px 12px;">FIR type: <span id="firType">Aman</span></label> -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                            <label for="inputName" style="color: #d3d3d3;">Name:</label>
+                        <input class="form-control w300 rounded" id="inputName" placeholder="Full Name*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputNumber" style="color: #d3d3d3;">Mobile Number</label>
+                        <input class="form-control w300 rounded" id="inputNumber" aria-describedby="mobileHelp"
+                            placeholder="10 Digit Mobile Number*" required>
+                        <!-- <small id="mobileHelp" class="form-text text-muted" style="color:black!important;"><b>OTP Verification Required.</b></small> -->
+                    </div>
+                    <!-- <div class="form-group">
+                                <input class="form-control w300 rounded" id="" placeholder="Alternate Number">
+                            </div> -->
+                    <div class="form-group">
+                        <div>
+                            <select class="mdb-select md-form w300 rounded" style="border-color: #d3d3d3"
+                                id="inputGender">
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control w300 rounded" id="inputCity" placeholder="City Name" required>
+                    </div>
+                    <div class="form-group">
+
+
+                        <div class='input-group date w300' id='datetimepicker3'>
+                            <input type='text' class="form-control" id="inputTime"  placeholder="Time of incident"/>
+                            <span class="input-group-addon">
+                                <span><i class="fa fa-clock-o fa-2x"></i></span>
+                            </span>
+                        </div>
+
+                        <!-- <input class="form-control w300 rounded" type="date" id="inputDate" placeholder="Date" required> -->
+                    </div>
+                    <div class="form-group">
+                            <div class='input-group date w300' id='datetimepicker1'>
+                                    <input type='text' id="inputDate" class="form-control" />
+                                    <span class="input-group-addon">
+                                <span><i class="fa fa-clock-o fa-2x"></i></span>
+                                    </span>
+                                </div>
+                        </div>
+
+
+                    <div class="form-group">
+                        <textarea class="form-control w300 rounded" id="inputAddress" placeholder="Address"
+                            required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control w300 rounded" id="inputDetails" placeholder="Crime Details"
+                            required></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-primary" onclick="register_fir()" style="float: right;"
+                        data-toggle="modal">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+        <script src="./js/main.js"></script>    
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+        });
+    </script>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>singup from</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form class="signup-form" action="/register" method="post">
+
+      <!-- form header -->
+      <div class="form-header">
+        <h1>signup From</h1>
+      </div>
+
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">First name *</label>
+            <input type="text" id="firstname" class="form-input" placeholder="enter your first name" required="required" />
+          </div>
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Last name</label>
+            <input type="text" id="lastname" class="form-input" placeholder="enter your last name" />
+          </div>
+        </div>
+<!-- user -->
+        <div class="form-group">
+          <label for="email" class="label-title">User Name*</label>
+          <input type="text" id="email" class="form-input" placeholder="enter user name" required="required">
+        </div>
+<!-- password -->
+<div class="form-group">
+  <label for="email" class="label-title">Password*</label>
+  <input type="password" id="email" class="form-input" placeholder="enter password" required="required">
+</div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="label-title">Email*</label>
+          <input type="email" id="email" class="form-input" placeholder="enter your email" required="required">
+        </div>
+        <!-- Phone No -->
+        <div class="form-group">
+          <label for="Phone" class="label-title">Phone No*</label>
+          <input type="phone" id="phone" class="form-input" placeholder="enter your Phone No." required="required">
+        </div>
+
+        <!-- FIR Type -->
+        <div class="form-group right">
+          <label class="label-title">FIR Type</label>
+          <div >
+            <label><input type="checkbox" value="Web">Muder</label>
+            <label><input type="checkbox" value="iOS">Robbery</label>
+            <label><input type="checkbox" value="Andriod">Accident</label>
+            <label><input type="checkbox" value="Game">Others</label>
+            
+            <textarea placeholder="other" aria-placeholder="other details" >
+
+            </textarea>
+          </div>
+        </div>
+
+        <!-- Gender and Pin Code -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Gender:</label>
+            <div class="input-group">
+              <label for="male"><input type="radio" name="gender" value="male" id="male"> Male</label>
+              <label for="female"><input type="radio" name="gender" value="female" id="female"> Female</label>
+            </div>
+          </div>
+          <div class="form-group right">
+            <label for="confirm-password" class="label-title">Pin Code*</label>
+            <input type="text" class="form-input" id="text" placeholder="Enter your Pin Code " required="required">
+          </div>
+        </div>
+
+        <!-- City and State  -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="password" class="label-title">City*</label>
+            <input type="text" id="text" class="form-input" placeholder="Enter your City" required="required">
+          </div>
+          <div class="form-group right">
+            <label for="confirm-password" class="label-title">State*</label>
+            <input type="text" class="form-input" id="text" placeholder="Enter your State " required="required">
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label for="Phone" class="label-title">Enter Your full Address</label>
+          <input type="phone" id="phone" class="form-input" placeholder="Enter Your full Address" required="required">
+        </div>
+
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="choose-file" class="label-title" required="required">Upload Requard Doqument (goverment id)</label>
+            <input type="file" id="choose-file" size="80">
+          </div>
+          <div class="form-group right">
+            <label for="experience" class="label-title">Age</label>
+            <input type="number" min="18" max="100"  value="18" class="form-input">
+          </div>
+        </div>
+
+        
+
+        <!-- Details -->
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Details</label>
+          <textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+        </div>
+
+        
+
+        <!-- Witnesses -->
+        <div class="form-group">
+         <label for="text" class="label-title">Witnesses</label><br>
+         <label for = "subject">Witnesses 1</label>
+        <input type="text" id="text" class="form-input" placeholder="Enter your Witnesses 1." required="required">
+        <label for = "subject">Witnesses 2</label>
+       <input type="text" id="text" class="form-input" placeholder="Enter your Witnesses 2." required="required">
+       <label for = "subject">Witnesses 3</label>
+       <input type="text" id="text" class="form-input" placeholder="Enter your Witnesses 3." required="required">
+       <label for = "subject">Witnesses 4</label>
+       <input type="text" id="text" class="form-input" placeholder="Enter your Witnesses 4." required="required">
+        </div>
+
+
+
+
+
+      </div>
+      
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+        <button type="submit" class="btn">Submit</button>
+      </div>
+
+    </form>
+
+    <!-- Script for range input label -->
+    <script>
+      var rangeLabel = document.getElementById("range-label");
+      var experience = document.getElementById("experience");
+
+      function change() {
+      rangeLabel.innerText = experience.value + "K";
+      }
+    </script>
+
+  </body>
+</html>
