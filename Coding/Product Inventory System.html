@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: rgb(0, 100, 0);
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 30px auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(0, 128, 128);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(220, 220, 220);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(198, 213, 217);
+        }
+
+        tr:hover {
+            background-color: rgb(125, 218, 32);
+            color: white;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: rgb(0, 128, 128);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(0, 100, 0);
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("MyApp", []);
+        app.controller("MyController", function ($scope) {
+            $scope.products = [];
+
+            $scope.addProduct = function () {
+                if ($scope.name != undefined && $scope.price) {
+                    let data = {
+                        name: $scope.name,
+                        price: $scope.price
+                    }
+                    $scope.products.push(data);
+                    $scope.name = ''; 
+                    $scope.price = '';
+                }
+                else {
+                    alert("Please enter the data..")
+                }
+            }
+
+            $scope.remove = function (index) {
+                $scope.products.splice(index, 1);
+            }
+        });
+    </script>
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+    <h1>Product Inventory System</h1>
+    Enter the Product Name <input type="text" ng-model="name"><br><br>
+    Enter the Product Price <input type="text" ng-model="price"><br><br>
+    <button ng-click="addProduct()">Add Product</button>
+    <hr>
+    <table border='1'>
+        <tr>
+            <th>SI No.</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Remove</th>
+        </tr>
+
+        <tr ng-repeat="x in products">
+            <td>{{$index+1}}</td>
+            <td>{{x.name | lowercase}}</td>
+            <td>{{x.price | currency:'Rs.'}}</td>
+            <td>
+                <button ng-click="remove($index)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
