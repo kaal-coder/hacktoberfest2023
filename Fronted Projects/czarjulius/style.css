@@ -1,0 +1,87 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(10, 1, 1);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 5px;
+}
+#button {
+  width: 10rem;
+  height: 5rem;
+  border-radius: 10px;
+  border: 1px solid red;
+
+  animation-name: u-button;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: 0%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#arrow-in {
+  width: 0;
+  height: 0;
+  animation-name: u-arrow-in;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+
+  z-index: 100;
+}
+
+@keyframes u-button {
+  0% {
+    bottom: 10%;
+    border: 1px solid rgb(11, 98, 219);
+  }
+  25% {
+    border: 1px solid rgb(184, 195, 203);
+    bottom: 20%;
+  }
+  75% {
+    background-color: rgb(65, 10, 10);
+    bottom: 35%;
+  }
+  100% {
+    background-color: red;
+    border: 0px solid none;
+    bottom: 45%;
+    margin: auto;
+  }
+}
+
+@keyframes u-arrow-in {
+  0% {
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
+  }
+  25% {
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
+  }
+  75% {
+    border-top: 25px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 25px solid transparent;
+  }
+  100% {
+    border-top: 25px solid transparent;
+    border-left: 50px solid #fff;
+    border-bottom: 25px solid transparent;
+  }
+}
