@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: antiquewhite;
+}
+
+#container {
+    text-align: center;
+}
+
+button#getAdviceButton {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button#getAdviceButton:hover {
+    background-color: #0056b3;
+}
+
+p#advice {
+    background: rgb(211, 211, 211);
+    width: auto;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 2%;
+    box-shadow: 10px 10px;
+    font-size: medium;
+    margin-top: 10px;
+}
