@@ -1,0 +1,46 @@
+name: Update README
+
+on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: main # Replace with the desired branch name
+
+      - name: Install Node.js and Dependencies
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # Use the Node.js version you need
+
+      - name: Install Dependencies
+        run: |
+          npm install axios fs
+        working-directory: ${{ github.workspace }}
+
+      - name: Debug
+        run: |
+          echo "Contents of the workspace:"
+          ls -la
+          cat README.md
+        working-directory: ${{ github.workspace }}
+
+      - name: Run External Script
+        run: node ./updateReadme.js
+        
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Update README and dynamic content"
+          git push origin HEAD:main # Replace 'main' with your branch name if different
+        working-directory: ${{ github.workspace }}
