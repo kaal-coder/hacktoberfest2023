@@ -1,0 +1,101 @@
+name: Update
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      # Check if the README file exists
+      - name: Check for README file
+        run: |
+          if [ ! -f ./README.md ]; then
+            echo "README file not found"
+            exit 1
+          else
+            echo "README file found"
+          fi
+
+      - name: Install dependencies
+        run: |
+          npm install axios fs
+
+      - name: Run the script
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const axios = require("axios");
+            const fs = require("fs");
+            const os = require("os");
+
+            const owner = "kaal-coder";
+            const repo = "hacktoberfest2023";
+            const filePath = "./README.md";
+
+            const fetchDataAndUpdateReadme = async () => {
+              try {
+                // Fetch contributors' data from kaal-coder/hacktoberfest2023
+                const response = await axios.get(
+                  `https://api.github.com/repos/${owner}/${repo}/contributors`
+                );
+                const contributors = response.data;
+
+                // Build a new list of contributors with images and names
+                let contributorsList = "## Contributors to this Repository\n\n";
+                contributors.forEach((contributor) => {
+                  contributorsList += `<a href="https://github.com/${contributor.login}" target="_blank"><img src="${contributor.avatar_url}" alt="${contributor.login}" style="border-radius: 50%; width: 50px; height: 50px;"></a>\n`;
+                });
+
+                // Read your existing README content with consistent line endings
+                let readmeContent = fs
+                  .readFileSync(filePath, "utf8")
+                  .replace(/\r\n/g, "\n");
+
+                // Check if the "Contributors to this Repository" section already exists
+                const sectionExists = readmeContent.includes(
+                  "## Contributors to this Repository"
+                );
+
+                if (sectionExists) {
+                  // If the section exists, replace it with the new contributors
+                  const startIndex = readmeContent.indexOf(
+                    "## Contributors to this Repository"
+                  );
+                  const endIndex = readmeContent.indexOf("##", startIndex + 1);
+                  readmeContent =
+                    readmeContent.slice(0, startIndex) +
+                    contributorsList +
+                    readmeContent.slice(endIndex);
+                } else {
+                  // If the section doesn't exist, simply add it with the new contributors
+                  readmeContent += contributorsList;
+                }
+
+                // Write the updated content with consistent line endings
+                fs.writeFileSync(
+                  filePath,
+                  readmeContent.replace(/\n/g, os.EOL),
+                  "utf8"
+                );
+                console.log("Updated Readme.md with new contributors section");
+              } catch (error) {
+                console.error("Error:", error);
+              }
+            };
+
+            fetchDataAndUpdateReadme();
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git add .
+          git commit -m "Update README and dynamic content"
+          git push origin HEAD:main # Replace 'main' with your branch name if different || { echo "Git push failed"; exit 0; }
