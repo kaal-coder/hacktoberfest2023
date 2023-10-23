@@ -10,7 +10,7 @@ const fetchDataAndUpdateReadme = async () => {
     try {
         // Fetch contributors' data from varunrmantri23/workflows
         const response = await axios.get(
-            `https://api.github.com/repos/${owner}/${repo}/contributors`
+            `https://api.github.com/repos/${owner}/${repo}/contributors?per_page=500`
         );
         const contributors = response.data;
 
