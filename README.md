@@ -124,5 +124,10 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 ```
 <a align="center" href="https://www.linkedin.com/in/kaushik-lakhani-08012001/"><kbd><img src="https://avatars.githubusercontent.com/u/85815858?v=4" width="100px;" alt=""/></kbd><br /><sub><b>Kaushik Lakhani</b></sub></a><br />
 
+Contributors to this repository:
+<a href="https://github.com/kaal-coder/hacktoberfest2023/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kaal-coder/hacktoberfest2023" />
+</a>
+
 `For doubts contact kaushik.lakhani123@gmail.com`
 ### Happy coding fellas!!💕✨
