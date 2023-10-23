@@ -1,0 +1,119 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Vollkorn', serif;
+}
+
+body
+{
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container
+{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(8, 6, 133);
+    letter-spacing: 1;
+    margin: 30px 0;
+}
+
+.context
+{
+    width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.contain
+{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 18px;
+}
+
+.list
+{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    outline: none;
+}
+
+.btn
+{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(8, 6, 133);
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.btn.active
+{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.task
+{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.item
+{
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item p
+{
+    font-size: 18px;
+    font-weight: 400;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+.item.completed p
+{
+    text-decoration: line-through;
+    color: #11111180;
+}
+
+.item-btn
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-btn i
+{
+    color: rgb(8, 6, 133);
+    font-size: 18px;
+    cursor: pointer;
+}
