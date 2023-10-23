@@ -2,8 +2,8 @@ const axios = require("axios");
 const fs = require("fs");
 const os = require("os");
 
-const owner = "varunrmantri23";
-const repo = "workflows";
+const owner = "kaal-coder";
+const repo = "hacktoberfest2023";
 const filePath = "./README.md";
 
 const fetchDataAndUpdateReadme = async () => {
