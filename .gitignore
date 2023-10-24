@@ -1,0 +1,4 @@
+checkpoints/
+.ipynb_checkpoints/
+my_log.csv
+mymodel.h5
