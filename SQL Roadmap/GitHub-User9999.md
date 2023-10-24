@@ -53,5 +53,3 @@ Absolutely, here's an even simpler and highly understandable roadmap for learnin
     - Apply SQL skills to roles like data analysis, database administration, or other careers.
 
 Remember that SQL is a step-by-step journey, and practice is the key to mastering it. Start with the basics and gradually explore more advanced topics as you become more comfortable with SQL
-
-Thank You 
