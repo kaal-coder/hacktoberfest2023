@@ -1,0 +1,84 @@
+body {
+    background-color:#000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    
+}
+
+.starry-sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.pond5.com/moving-stars-night-sky-footage-045601496_iconl.jpeg');
+    background-size: cover;
+}
+
+
+
+.rocket {
+    position: relative;
+    animation: launch 5s linear infinite;
+    transform-origin: bottom center;
+}
+
+.rocket-body {
+    width: 40px;
+    height: 100px;
+    background-color:#fff;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    animation: body-bounce 2s ease-in-out infinite alternate;
+}
+
+.rocket-window {
+    width: 18px;
+    height: 18px;
+    background-color: #4a90e2 ;
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    left: 12px;
+}
+
+.flame {
+    width: 38px;
+    height: 48px;
+    background-color: #ff6a00;
+    border-radius: 50%;
+    position: relative;
+    animation: burn 0.3s linear infinite;
+}
+
+@keyframes launch {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes body-bounce {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(1.1);
+    }
+}
+
+@keyframes burn {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.2);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
