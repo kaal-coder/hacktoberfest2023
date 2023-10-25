@@ -157,6 +157,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/itsmeShaurya" target="_blank"><img src="https://avatars.githubusercontent.com/u/96973160?v=4" alt="itsmeShaurya" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/surajwakka" target="_blank"><img src="https://avatars.githubusercontent.com/u/58338343?v=4" alt="surajwakka" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Aman1143" target="_blank"><img src="https://avatars.githubusercontent.com/u/100416012?v=4" alt="Aman1143" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/elguitarraverde" target="_blank"><img src="https://avatars.githubusercontent.com/u/2836337?v=4" alt="elguitarraverde" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Anurag-05-prog" target="_blank"><img src="https://avatars.githubusercontent.com/u/88226411?v=4" alt="Anurag-05-prog" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/apurwa-lohia" target="_blank"><img src="https://avatars.githubusercontent.com/u/74809495?v=4" alt="apurwa-lohia" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/arshadpatel" target="_blank"><img src="https://avatars.githubusercontent.com/u/93783536?v=4" alt="arshadpatel" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -227,5 +228,4 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/SamdeepSharma" target="_blank"><img src="https://avatars.githubusercontent.com/u/121767920?v=4" alt="SamdeepSharma" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/ThePlator" target="_blank"><img src="https://avatars.githubusercontent.com/u/121722541?v=4" alt="ThePlator" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Spyrosigma" target="_blank"><img src="https://avatars.githubusercontent.com/u/111422209?v=4" alt="Spyrosigma" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/sayaniroy579" target="_blank"><img src="https://avatars.githubusercontent.com/u/52422374?v=4" alt="sayaniroy579" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 
