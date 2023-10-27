@@ -1,0 +1,96 @@
+The market for AI companies
+Recently, I’ve been talking to founder friends of mine who have been raising money, and to some VC friends of mine who are investing money in AI companies. I want to share some of the topics that we’ve discussed, give my perspective on what I would want to invest in if I were deploying capital/what I would be looking for if I were looking for a job, and try to generally make sense of a bizarre market.1
+
+In these discussions, a few themes consistently come up:
+
+The consensus is that AI is going to be (mostly) a “sustaining” innovation, by which I mean that most of the financial benefits will make the bigger companies stronger.
+
+“Mostly” is key. There will be a few companies that do break through, and these will tend to dominate their market.
+
+Many of the large AI investments won’t pan out.
+
+Points 1 & 2 are really the same point: the winners tend to accrue all the advantages in AI. This is because, generally speaking, AI systems tend to get better over time. While there will be companies that develop new markets— we need only look at Midjourney/Dalle, or ChatGPT/Claude to see this— the majority of the applications of AI will be to make existing companies/products better. Consider image editing. While it is possible, of course, that a new image editing system is developed that replaces Photoshop, it seems far more likely that Adobe will acquire a generative AI company and/or continue to develop Firefly until it is the market leader.
+
+As another example, consider one of the oldest AI systems in production: Google search. Because it was making money and had a ton of users, Google was able to start cranking out optimizations at every level of the stack: they had custom hardware, they were globally distributed, they were able to keep hiring employees who could make it better in every way, and they had a sales team selling ads which was financing everything. If you came up with a brilliant new search algorithm, you’d have to compete with the Google search algorithm, the Google ad sales team, the Google datacenter team, and the Google Chrome team. All of these were working together to make their product better. In addition to all of this, Google was still working on their algorithm, and had more data than anyone else to train it on.
+
+This is generally true for AI systems. Yet another example, this time of a new product that has developed a strong market position, is OpenAI and Anthropic. OpenAI has, roughly, 400 employees, while Anthropic has around 100. OpenAI raised ~$10B from Microsoft, while Anthropic raised $450M. OpenAI has dominated the news, so non-technical people (like, say, my chemical engineer Dad, who’s an avid user of ChatGPT) use their products, while only geeks like myself, and you, dear reader, use Claude. As a result, if OpenAI doesn’t make any massive mistakes, they’re going to be able to scale to more users and improve more quickly. So even if Anthropic is able to make a LLM that is just as good, I struggle to see how they’ll be able to steal significant market share from OpenAI unless they come up with a fundamental breakthrough.
+
+A contributing factor to this is the scarcity of GPUs. Just being able to serve requests to customers is a competitive advantage right now. OpenAI’s model latency is reportedly ~2-4x slower than it was during April, likely because they’re hitting the limits of their cloud resources. This creates a positive feedback loop: the companies with the most money have the most GPUs, so they can serve the most requests, each of which they make a profit on, giving them more money, which they use to buy more GPUs.
+
+Another point is that machine learning relies on data, and if you’re interacting with consumers, you’re getting a large amount of data that is specifically tailored to your application. That is an advantage that will keep getting more valuable. You can hire more researchers to develop more effective techniques, which compounds with the larger amount of data. Leads to an accumulating advantage.
+
+Yet another advantage is that, as you serve your product to users, you start to accumulate research for your specific problem. With each additional improvement you layer onto your product, it becomes harder for newcomers to compete. Consider, for instance, Google Search, as discussed above, or ChatGPT, which seems like a counter-example given how many LLM chatbots have been invented to compete. But they’re all notably worse than GPT-4, and they struggle with the same problems. OpenAI has been able to iterate for 6 months and has been introducing various add-ons to improve ChatGPT. The only LLM that comes close to GPT-4 performance is Claude, and even then, there’s a gap. This is despite an absolutely outrageous amount of capital being deployed and most of the research being open source.
+
+The bar to create a ChatGPT competitor (which was released in November, 2022) was relatively low, and there are a number of products that are comparable to the original version. But the current version has improved dramatically, making it tough for competitors to keep up. It’s particularly hard because ChatGPT (and Claude) have had access to a lot of user data, which I strongly suspect they’re able to use to make their model better, through RLHF. This creates a path dependency issue, where to compete with them, one needs to have a large number of iterations, which is only possible after your model has been running for a while. The only room for competition, from what I can see, is in going after niches, particularly niches that are unsavory (sexually explicit content, politically biased content, etc.) that the big companies won’t go after.
+
+This a point worth expanding on; there is a substantial market opportunity in going after the Generative AI market in the niches which the current AI safety crowd has deemed unethical/unsavory. If we look at, for instance, Civitai, their front page is almost all pictures of pretty light-skinned women, or if we search #stablediffusion on Twitter, we see many pictures of scantily clad women, while searching #dalle returns much more surreal, sci-fi imagery. Another example, of course, is Replika, which allows one to chat with a “flirting companion.” ChatGPT/Claude very much do not provide any experience like this. There’s nothing wrong with this, of course, as these are all perfectly valid businesses for one to get into, but tech as an industry is famously prudish, with many platforms banning any form of explicit content.
+
+This brings me to another point: the current AI funding scene doesn’t make sense. There are, to the best of my knowledge, six (6!) foundation model companies:
+
+OpenAI
+
+Anthropic
+
+Google/DeepMind
+
+Stability.ai
+
+Inflection
+
+Cohere
+
+Mistral
+
+This is not to mention a bunch of other startups that are trying to compete in this space as well.
+
+To be blunt, I don’t see how these have businesses which justify their multibillion dollar valuations. The simple way to value a (mature, public) company is to assign it a multiple based on the profit it makes. Companies on the NASDAQ trade at roughly 20x profits. So to be worth $4B, which is what rumours say Anthropic recently raised at, they need to make $200M in profits. To have a 10x return on that investment, which is typically what VCs are looking to make on a successful investment, they would need to make $2B in profits. The same applies for all of these businesses.
+
+The problem is, though, that I don’t see any reason to buy the second best LLM, let alone the 6th best. I think every major cloud provider will have a foundation model API. After that? Who’s going to buy these? Maybe they’ll develop independent businesses- but I struggle to see it. I think that their best bet will be to be acquired. But at the valuations they’re currently at, it’s tough to imagine investors seeing venture scale returns.
+
+Consider the recent round that Mistral raised: $113M at a $260M valuation. For VCs to see a return on their capital, they expect to get a ~10x return on this money, which would require a $2.6B exit. There aren’t many of those!
+
+So if many investments aren’t going to pan out, why are they being made? Two reasons:
+
+FOMO.
+
+Logo hunting.
+
+As a VC, you have two ways to make money. Most VCs charge 2+20, where they charge 2% per year of the assets under management (AUM), and charge 20% of the returns from their investments. They can either keep expanding AUM and get 2% of that, even if their investments don’t pan out, or they can get money from successful investments. It’s hard to pick investments (and takes a long time to actually see returns)! But if you can consistently prove to your limited partners (LPs, the people who invest in VC funds) that you can get in the hottest deals, they’re going to give you more money.
+
+So many VCs are investing in hot companies to show they can invest in hot companies, even if the valuations don’t necessary make sense. This is not a criticism of VCs; they are making rational decisions which will, almost certainly, make them money. But it is not the case that every one of these AI unicorns will make money. I think the bets that are being made are reasonable for VCs, who are able to take a high risk, high reward approach to their portfolio, but for individuals considering which roles to take as an employee, you should view these foundation model companies as being very high risk/reward bets and value your equity accordingly.
+
+A market for lemons
+AI companies right now are incredibly odd by the standards of most companies, because many AI companies are able to make money from a very early point. They’re developing large consumer subscription businesses, which are, basically, the best businesses to have (other than search advertising). Money keeps rolling in every month. This is allowing these companies to self-fund, reducing their dependency on VCs.
+
+As such, I would be hesitant to join a company that didn’t have revenue right now, unless I was joining as part of the founding team. AI is such a dynamic place that it’s hard to justify making large R&D investments that might not pan out for 18+ months (let alone several years). That’s tough for investors. This has resulted in a strange bifurcation, with two broad categories of AI companies:
+
+Companies which require a massive amount of capital for large, long-term bets, which they use to hire expensive, ex-DeepMind researchers (wink) and give directly to Jensen Huang.
+
+Companies that require two people, a garage, and a few A100s to make a product that can be directly sold to consumers.
+
+This gap is brutal for investors. #1 has a longterm payoff, which could be over 10 years, and there are relatively few examples of this making money in AI. Sure, there’s OpenAI, but they’re a bit of a fluke. What you really want is to invest in #2, but if you’re them… why take investment? Just build the project and try to sell it! If you can start making money, then raise, but you raise on much better terms, with much less dependence on investors.
+
+This means, that, basically, there’s a trap when it comes to investing/raising funding at the pre-seed/seed stage. Companies that fall into category 2 don’t need it, so you end up funding category 1 companies, which are much riskier bets. This levels out at Series A, as then the category 2 companies become similar to standard consumer SaaS companies which can take investment as usual to build out sales, finance, support, etc., but it means that there’s a chasm of missing seed stage investor opportunities.
+
+Either you make money, in which case you can bootstrap, or you don’t, in which case you can try again. What investors want, generally speaking, is a machine with predictable returns where you can put money in and predictably make the company more valuable. The poster child is Uber, which at its peak, was able to use additional investor dollars to expand into new markets. They had the option (which they have now exercised) to stop spending on expansion and start focusing on profitably.
+
+With AI companies, however, it seems like companies are able to find (or not find) product market fit very, very quickly. Consider:
+
+Lensa
+
+Midjourney
+
+Stability.ai
+
+Character.ai
+
+Replika
+
+All of these products were able to find product market fit very quickly. Now, to a certain extent, this is because the underlying technology has been built out by research funded by the big companies, particularly Google, but the point remains.
+
+Of course, these companies are all investable, as they can now take investor money and turn it into a bigger team, more sales people, more researchers, more support staff, etc., but they can skip straight to the Series A without having to go through pre-seed/seed as it is so cheap to build these products.
+
+In short, there’s a lot of interest from investors at pre-seed/seed, but I think many, many companies will find that, when they go to raise their A, they’re not the darlings they once were.
+
+1
+In a startup, these are basically the same thing, as by taking equity in the company in exchange for salary, you are directly investing in the future success of the company.
