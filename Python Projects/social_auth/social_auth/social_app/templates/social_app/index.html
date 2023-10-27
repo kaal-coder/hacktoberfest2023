@@ -1,0 +1,18 @@
+{% load socialaccount %}
+<html>
+  <head>
+    <title>Social Registration</title>
+  </head>
+  <body>
+  <h1>My Social Login Project</h1>
+  {% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }} !</p>
+  <a href="{% url 'account_logout' %}" class="btn btn-danger">Logout</a>
+ 
+  {% else %}
+  <a href="{% provider_login_url 'google' %}">Login with Google</a><br><br>
+  <a href="{% provider_login_url 'github' %}">Login with GitHub</a>
+  {% endif %}
+
+  </body>
+</html>

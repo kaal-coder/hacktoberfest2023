@@ -1,0 +1,71 @@
+body{
+    background-color: #f8f1f1;
+    color:white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.container{
+    background-color:rgb(107, 107, 180);
+    padding: 3rem;
+    border-radius: 1rem;
+    border:2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap:1rem;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title{
+    margin: 0;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+
+}
+.character-amount-container{
+    display:flex;
+    align-items: center;
+}
+.number-input{
+    width:2rem;
+}
+.password-disp{
+    background-color: white;
+    color: black;
+    padding:1rem;
+    border: 1px solid #333;
+    height: 2rem;
+    width:350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    border-radius: .5rem;
+}
+.btn{
+    grid-column:span 2;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: .5rem 1 rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.btn:hover{
+    background-color: rgb(97, 77, 209);
+}
