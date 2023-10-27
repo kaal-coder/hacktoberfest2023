@@ -1,0 +1,28 @@
+MATHEMATICAL OPRATIONS USING NUMPY
+	1. + operation using add() method
+	2.  - operation using subtract() method
+	3. *operation using multiply() method. We can also use @(multiplication of first row and first column likewise) symbol as matrix multiplication. We can also use syntax for the same' array1.dot(array2)'
+	4. / operation using divide() method
+	5. In order to find maximum value of an array use max() function and to find the index of maximum integer use argmax() function
+	6. In order to find maximum element in a row or a column using axis =0 or 1 as an argument in max() function. Here 0 is for columns and 1 is for rows.
+	7. In order to find minimum value of a matrix use min() method and for its index use argmin() method.
+	8. In order to find the sum of all elements of a matrix use sum() method
+	9. In order to calculate the sum of elements of a row or column just pass array and axis as an argument in sum() method
+	10. In order to find the average of elements of a matrix use mean(arrayname) method
+	11. In order to find square root of each element in a matrix use sqrt() method
+	12. In order to find standard division of a matrix  use std() function
+	13. In order to find exponent of each element in a matrix use exp() method
+	14. To find log of each element of a matrix use log() method
+	15. In order to find log base 10 use log10() method
+
+FINDING TRIGNOMETRIC FUNCTIONS USING NUMPY LIBRARY
+
+	1. In order to get graphs we'll use "matplotlib" library. It consists of an plot known as "plyplot"Matplotlib.pyplot will be its syntax.
+	2. Firstly  get the vakue of x-axis ussing arange() method.
+	3. Then go for y-axis
+	4. To get the value of pi use np.pi
+	5. To get the graph of sin use the syntax plt.plot(xaxis,yaxis) and then use show() method.
+	6. plot() method is used for representation of graph
+	7. In order to get valued in angles (before we're getting values in degrees) multiply with pi and use formula syntax is here np. sin(180 *np.pi /180)
+
+
