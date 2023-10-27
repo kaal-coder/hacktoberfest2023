@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrix Transpose</title>
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background-color: rgb(127, 255, 197);
+        align-items: center;
+        text-align: center;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        color: rgb(20, 138, 44);
+        text-align: center;
+    }
+    button {
+        background-color: rgb(20, 138, 44);
+        color: white;
+        margin-top: 10px;
+    }
+    #matrix {
+        border: 2px solid rgb(20, 138, 44);
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    #transpose {
+        border: 2px solid rgb(20, 138, 44);
+        padding: 10px;
+        margin: 10px;
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(var(--cols), 1fr);
+        grid-template-rows: repeat(var(--rows), 1fr);
+        grid-gap: 10px;
+        margin: 10px;
+    }
+    .cell {
+        border: 2px solid rgb(20, 138, 44);
+        padding: 10px;
+        background-color: rgb(127, 255, 197);
+        text-align: center;
+        font-size: 2em;
+    }    
+</style>
+<body>
+    <h1>Matrix Transpose</h1>
+    <form>
+        <label for="rows">Number of Rows:</label>
+        <input type="number" id="rows" name="rows"><br><br>
+        <label for="cols">Number of Columns:</label>
+        <input type="number" id="cols" name="cols"><br><br>
+        <button type="button" onclick="transposeMatrix()">Submit</button>
+    </form>
+    <br>
+    <div id="matrix"></div>
+    <br>
+    <div id="transpose"></div>
+    <script>
+        function transposeMatrix() {
+            var rows = document.getElementById("rows").value;
+            var cols = document.getElementById("cols").value;
+
+            var matrix = new Array(rows);
+            for (var i = 0; i < rows; i++) {
+                matrix[i] = new Array(cols);
+            }
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    matrix[i][j] = prompt("Enter element at position (" + (i+1) + "," + (j+1) + ")");
+                }
+            }
+            var transpose = new Array(cols);
+            for (var i = 0; i < cols; i++) {
+                transpose[i] = new Array(rows);
+            }
+            for (var i = 0; i < cols; i++) {
+                for (var j = 0; j < rows; j++) {
+                    transpose[i][j] = matrix[j][i];
+                }
+            }
+            var matrixDiv = document.getElementById("matrix");
+            matrixDiv.innerHTML = "<h2>Original Matrix</h2>";
+            matrixDiv.style.setProperty('--rows', rows);
+            matrixDiv.style.setProperty('--cols', cols);
+            var grid = "<div class='grid'>";
+            for (var i = 0; i < rows; i++) {
+                for (var j = 0; j < cols; j++) {
+                    grid += "<div class='cell'>" + matrix[i][j] + "</div>";
+                }
+            }
+            grid += "</div>";
+            matrixDiv.innerHTML += grid;
+            var transposeDiv = document.getElementById("transpose");
+            transposeDiv.innerHTML = "<h2>Transpose</h2>";
+            transposeDiv.style.setProperty('--rows', cols);
+            transposeDiv.style.setProperty('--cols', rows);
+            grid = "<div class='grid'>";
+            for (var i = 0; i < cols; i++) {
+                for (var j = 0; j < rows; j++) {
+                    grid += "<div class='cell'>" + transpose[i][j] + "</div>";
+                }
+            }
+            grid += "</div>";
+            transposeDiv.innerHTML += grid;
+        }
+    </script>
+</body>
+</html>
