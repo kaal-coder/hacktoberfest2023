@@ -1,0 +1,54 @@
+---
+
+Leetcode Problem 664. Undestanding the Strange Printer Problem | Dynamic Programming Solution| Intuitive Approach and insights
+The Strange Printer problem on LeetCode is a challenging dynamic programming (DP) problem.I wanted to share my easy and intuitive pythonic approach to tackle this problem efficiently.
+In simple words, the Strange Printer is a unique printer that can only print one character at a time. Understanding this limitation is crucial to build our intuition. For example, it cannot print the sequence 'ab' in one turn.
+To grasp the problem better, let's consider an example
+Given the string 'ab', the printer would work as follows:
+First turn -> 'aa'
+Second turn -> 'ab' (it printed 'b' starting and ending at position 1) The output would be 2, as the minimum number of turns required are 2.
+
+---
+
+Intuition behind the solution:
+The key insight is that we can break the problem down into smaller subproblems. For example, if we are given the string "ab", we can break it down into the two subproblems of printing "a" and printing "b". Once we have solved these subproblems, we can combine the solutions to find the minimum number of turns required to print the entire string.
+
+---
+
+To approach this problem, we use the following logic:
+Create two indices, i and j, to represent the starting and ending positions of the string.
+If the character at position i is the same as the character at position j, we can merge these characters and reduce the minimum number of turns by 1. This is due to the fact that the printer can print one character at a time.
+We use dynamic programming and memoization to optimize the solution, storing the minimum number of turns required in the dp[i][j] array
+
+Now visualize here:
+Test case :
+Here i = starting index of string , j = ending index of string
+Note :
+if s[i] == s[j]
+The minimum number of turns will reduce by 1
+(Use the fact that the printer can print one character at a time)
+Explanation: 'aba' (since both the a's were printed in one turn)
+We can resolve all this to show that:
+if s[i] == s[j]
+return 1
+if (dp[i][j] != -1)
+return dp[i][j]
+Here we are using dp[i][j] for memoization,
+
+---
+
+Code Explanation:
+This code works by first creating a 2D array called dp. The dp array stores the minimum number of turns required to print the substring from index i to index j. We initially intialize it to -1.
+Solve function:
+The function solve takes two indices i and j, a parameter string s and the dp array to store the results. It returns minimum number of turns required to print the substring from index i to index j .
+The function first checks if the substring contains only one character. If it does, then the minimum number of turns is 1. Otherwise, the function recursively calls itself to find the minimum number of turns required to print the substrings from index i +1 to j and from index i to j-1. The minimum of these two values is then returned.
+
+---
+
+Complexity analysis:
+n² -> For two recursive calls ( n* n)
+And inside every recursive call a loop of order n is run so, O (n² * n) => O(n³)
+If you have read this far, you can follow me on my github :
+https://github.com/marwashahid
+and my medium account:
+https://medium.com/@marvashahid09
