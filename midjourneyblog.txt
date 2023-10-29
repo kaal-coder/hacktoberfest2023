@@ -1,0 +1,67 @@
+                                     MIDJOURNEY 
+
+Today AI reinforces itself with a wide range of capabilities like learning, understanding, reasoning, solving problems, making decisions, and engaging in various forms of creative and critical thinking. It finds different technologies to do those extraordinary things just in a while using human intelligence and creativity. Nowadays Generative AI become so famous for creating exquisite and creative images just from the user’s text. And the best thing is you don’t need to be a professional artist or something before doing this. People just need to write their imagination in words and then this brilliant AI will automatically give colors and images to your imagination.
+One of the most popular generative AI for generating images is MIDJOURNEY. With this machine learning-based image generator you can generate high-quality amazing images from text prompts. This AI will bring a new revolution in the art world with limitless ideas. 
+
+HOW TO USE MIDJOURNEY
+
+To use Midjourney and its stunning features, firstly you need a Discord account on the Discord app. Then users can make use of it by joining the Midjourney server and then accessing Midjourney’s discord bot. You just need to chat or give a command to the bot to get the desired image output.
+ There are channels labeled as general-# or newbie-# which are created for beginners or newcomers to understand and use easily in their starting phase.
+Give /imagine command in the message box to get the prompt section.
+Now give an overview of the image you desire to create in the prompt section and send it.
+The bot will start generating your image as soon as you command it.
+Midjourney then form 4 images according to your command with the help of an advanced Graphics Processing Unit.
+You will be given 3 choices for a more personalized image : 
+Image selection and Upscale (U buttons) -  Previously used to upscale a picture among all. But now it already gives you an image in the maximum size. So, U( U1, U2, U3, U4 ) now helps to select the desired image from the grid to download and further editing and tools.
+Re-run or Re-roll ( blue double-arrow button) - It re-runs the whole process again and forms a new grid of images.
+Image Variation ( V buttons) - These are used to design variations of the selected image.
+
+SOME IMAGE PARAMETERS IN MIDJOURNEY 
+
+--aspect or --ar : It changes the aspect ratio( width-to-height ratio ) of the generated image.
+--aspect 1:1 Default aspect ratio.
+--aspect 5:4 Common frame and print ratio.
+--aspect 3:2 Print photography ratio
+--aspect 7:4 Near to HD TVs and smartphone screens.
+--chaos: It is used to maximize the amount of variety in our images.
+--no: It is used to tell what not to include in our image.
+--quality or --q: It is responsible for the time spent by GPUs for image generation.
+However, this does not affect the resolution of the images.
+--version: It is used to change the version or deep learning model.
+
+There are many more parameters added in Midjourney to give more options to generate the best image. You can read all those parameters on the Midjourney website. https://docs.midjourney.com/docs/parameter-list
+
+As with any other technology, Midjourney also tends to improve its efficiency, quality, and coherency (how accurately the bot responds to the prompt text). Its latest versions 5 and 5.1 have remarkable coherency. By default, it has the latest version but you can also change its version by --version parameter according to your convenience.
+
+MORE FEATURES ADDED IN MIDJOURNEY
+
+Pan feature: These are the directional arrows that come after upscaling an image which is used to extend an image in any direction while the content of the image remains unchanged. It also supports “Remix mode” which allows you to change the prompt text while panning your image.
+Zoom feature: Users can zoom out present upscale options by --zoom.
+Turbo mode: This feature rapidly increases the speed of image generation by giving /turbo command.
+Repeat and Permutations feature: With the help of these features, the user can form up to 64 images simultaneously and ask for up to 40 combinations of prompts in a single query by listing your ideas separated with commas and within curly braces {} in your prompt.
+Describe feature: Midjourney converts text prompts into art but is also capable of vice versa. So, you can /describe in order to write text from an image.
+
+David Holz, founder of Midjourney said that technology is an engine for the imagination. 
+We can take this world to new heights with our unstoppable imagination and positively grow to introduce new technologies. Midjourney is now used by millions of people all over the world either to present a new form of art by using it or adding art into it to make a more powerful tool. Go ahead and spill your creative imagination with Midjourney.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
