@@ -1,4 +1,5 @@
 {
     "python.formatting.provider": "black",
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "cmake.sourceDirectory": "/Users/adigulalkari/Desktop/Hacktoberfest/hacktoberfest2023/Coding/C++/Sudoku"
 }
