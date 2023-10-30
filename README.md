@@ -222,10 +222,10 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/Hardik-Jain08" target="_blank"><img src="https://avatars.githubusercontent.com/u/77958121?v=4" alt="Hardik-Jain08" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/harshmann10" target="_blank"><img src="https://avatars.githubusercontent.com/u/97180515?v=4" alt="harshmann10" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/HarshVR1947" target="_blank"><img src="https://avatars.githubusercontent.com/u/133820482?v=4" alt="HarshVR1947" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/jalajbhandula" target="_blank"><img src="https://avatars.githubusercontent.com/u/123353344?v=4" alt="jalajbhandula" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/kevinmf1" target="_blank"><img src="https://avatars.githubusercontent.com/u/97342935?v=4" alt="kevinmf1" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Kola-Prabhas" target="_blank"><img src="https://avatars.githubusercontent.com/u/104453116?v=4" alt="Kola-Prabhas" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/KrunalGupta02" target="_blank"><img src="https://avatars.githubusercontent.com/u/101408619?v=4" alt="KrunalGupta02" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Kruti-Amrutiya" target="_blank"><img src="https://avatars.githubusercontent.com/u/68064644?v=4" alt="Kruti-Amrutiya" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/marwashahid" target="_blank"><img src="https://avatars.githubusercontent.com/u/93277246?v=4" alt="marwashahid" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/Hittitech" target="_blank"><img src="https://avatars.githubusercontent.com/u/87484115?v=4" alt="Hittitech" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 
