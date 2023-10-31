@@ -1,0 +1,59 @@
+What is Open-Source?
+Open source is a source code that is made uninhibitedly accessible for modifications, tweaks, and later redistribution. Products incorporate authorization to utilize the source code, documentation, or content. The open-source model is a decentralized programming development model that encourages open collaborations. The primary rule of open-source programming is peer creation, with products, for example, source code, diagrams, blueprints, and documentation freely accessible to people in general. The open-source wave in programming started as a reaction to the limitations of restricted and proprietary code. The model is utilized for activities like open-source technologies and tools. The expression “open source,” as connected with “free” software, was commonly used by 1995.
+
+Originally referred to as open-source programming intended to be publicly available so that anybody can view, edit, and disperse the code. Projects created in a decentralized and cooperative manner depends on reviews and community culture as this is less expensive, adaptable, and more vivid. And is not reliant upon a single creator or organization. This eventually values decentralized creation, production, and creativity.
+
+Why Open source?
+Open-source software is software that is delivered under a permit in which the copyright holder awards clients the freedom to utilize, study, change, and distribute the product and its source code to anybody and for any reason. Numerous huge organizations have jumped up to help the development of the open-source wave, including the Apache Software Foundation, which upholds local area undertaking projects like the open-source Apache Hadoop and the open-source Apache HTTP server. While independent engineers are still a significant piece of the open-source community, now a large part of the work on open-source projects is being handled by corporate companies and developers.
+
+Few examples include (along with annual revenues) Adobe ($5.854 billion), Canonical ($103.3 million), Cloudera ($166.05 million), Docker ($2.5 billion), Facebook ($27.638 billion), Google ($89.5 Billion), Huawei ($75.103 billion), IBM ($ 79.919 billion), Intel ($59.38 billion), LinkedIn ($3 billion), Microsoft ($85.32 billion), Oracle ($37.04 billion), Red Hat ($2.4 billion) and countless tech giants.
+
+Some prerequisites:
+Git, Github & VCS: You do not need to be a master it, to start contributing. Once you are comfortable with the basics, you can start contributing to open-source.
+
+A basic hand-on a tech stack or tool maybe: Coding language or any framework. or You can also look for many non-technical contributions that include- Documentations, Editing, etc.
+
+
+How can you be a part of the wave?
+Find projects or associations that you are keen on adding to. Go to their GitHub repos, read the documentation, and quest for first-timer issues as referenced previously. Join a few communities and channels channel (Gitter/Discord/Slack, etc.). Present yourself and request help when stuck. You can find the connection to the channels on their GitHub pages. You can likewise make issues in the wake of running the application locally. When you are OK with contributing to open-source, start taking part in open-source programs.
+
+Major programs for learners:
+Google Summer of Code (February-November)— The Google Summer of Code, frequently truncated to GSoC, is a global annual program where Google grants stipends to contributors who effectively complete a free and open-source software coding project throughout the summer. The Google Summer of Code program has united more than 18,000 students with 746 open-sourced organizations under the guidance of 17,000+ mentors. check FAQs here.
+
+Hacktoberfest (October) is the most famous open-source program that is facilitated by Digital Ocean and is available to everybody across the world. Here, you need to submit at least four quality contributions/pull requests and you’ll either be able to establish a tree or get a limited-release T-shirt.
+This is exceptionally valuable for people, specifically, those who are simply beginning with open source. You can contribute projects on GitHub and regardless of whether you’re not ready to create a significant contribution what you can get in return is the manner by which you can utilize Git and GitHub. Check the official blog by Digital Ocean here.
+
+GirlScript Summer/Winter of Code are Open Source program during summers as well as winters directed by GirlScript , beginning in 2018, to assist fledglings with beginning with Open Source Development while empowering variety. Hey are very helpful communities and good for beginners.
+
+Outreachy is a program that coordinates three-month paid temporary jobs with free and open-source programming projects. It is for individuals who are regularly underrepresented in those tasks. This is for the most part completed semiannually over time.
+
+MLH Fellowship is focused alternate as an internship for all the young software engineers. Rather than dealing with a task for only one organization, chose up-and-comers to add to Open-Source projects that are utilized by organizations all over the globe and are paid a stipend during this tenure.
+
+More such programs are detailed here [Credits: GeeksForGeeks].
+Open-source software can be helpful in a variety of ways:
+It is freely available to use, modify, and distribute, which means that anyone can access and contribute to the source code. This can lead to a more collaborative and transparent development process.
+
+It fosters a sense of community and cooperation among users and developers.
+
+It leads to more reliable and high-quality software, as the source code is open for anyone to review and suggest improvements.
+
+It is a cost-effective solution for individuals and organizations, as there are no licensing fees associated with using open-source software.
+
+It promotes innovation and encourage the creation of new and improved software tools.
+
+
+How can it be beneficial for you?
+It can provide a valuable learning opportunity. Participating in the development of open-source projects can give students hands-on experience working on real-world software projects and collaborating with other developers.
+
+It can help students build a portfolio of work to showcase to potential employers.
+
+It can provide a way for students to give back to the software community and make a positive impact.
+
+It can help students stay up-to-date with the latest technologies and best practices in the field.
+
+It can provide a way for students to network with other professionals in the field and potentially find job opportunities.
+
+Conclusion:
+In conclusion, open-source software has the potential to bring many benefits to individuals, organizations, and society as a whole. It is freely available for anyone to use, modify, and distribute, which can foster a sense of collaboration and transparency in the development process. Open-source software can also lead to more reliable and high-quality products, as the source code is open for anyone to review and suggest improvements. In addition, it can be a cost-effective solution and can promote innovation and encourage the creation of new and improved software tools. Overall, open-source has the power to bring positive change and make a significant impact on the world of software development.
+
+Participating in the development of open-source projects can give students valuable hands-on experience and the opportunity to build a portfolio of work to showcase to potential employers. Open source can also provide a way for students to give back to the software community and make a positive impact. In addition, it can help students stay up to date with the latest technologies and best practices in the field and can provide a way for students to network with other professionals in the field and potentially find job opportunities. Overall, open source can be a valuable resource for students looking to further their education and career in the field of software development.
