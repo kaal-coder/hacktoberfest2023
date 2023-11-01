@@ -28,7 +28,7 @@ body {
 .container {
   width: 768px;
   margin: 0 auto;
-  z-index: 1
+  z-index: inherit;
   /* outline: 1px solid white; */
 }
 

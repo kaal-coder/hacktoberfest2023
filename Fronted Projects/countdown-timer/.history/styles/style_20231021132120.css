@@ -28,7 +28,6 @@ body {
 .container {
   width: 768px;
   margin: 0 auto;
-  z-index: 1
   /* outline: 1px solid white; */
 }
 
@@ -214,8 +213,8 @@ button:hover {
 
 .box {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 300px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +222,6 @@ button:hover {
   overflow: hidden;
   border-radius: 16px;
   padding-left: 0px;
-  z-index: 0;
 }
 
 .box::before {
