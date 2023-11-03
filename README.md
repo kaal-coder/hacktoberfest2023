@@ -158,6 +158,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/DevyDhanish" target="_blank"><img src="https://avatars.githubusercontent.com/u/105561827?v=4" alt="DevyDhanish" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/IshitaPathak" target="_blank"><img src="https://avatars.githubusercontent.com/u/75848598?v=4" alt="IshitaPathak" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/sahanihit" target="_blank"><img src="https://avatars.githubusercontent.com/u/47920088?v=4" alt="sahanihit" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/Nazim9945" target="_blank"><img src="https://avatars.githubusercontent.com/u/127049743?v=4" alt="Nazim9945" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/itsmeShaurya" target="_blank"><img src="https://avatars.githubusercontent.com/u/96973160?v=4" alt="itsmeShaurya" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/surajwakka" target="_blank"><img src="https://avatars.githubusercontent.com/u/58338343?v=4" alt="surajwakka" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/lucashchang" target="_blank"><img src="https://avatars.githubusercontent.com/u/146160465?v=4" alt="lucashchang" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -227,5 +228,4 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/FarazRashid" target="_blank"><img src="https://avatars.githubusercontent.com/u/129024354?v=4" alt="FarazRashid" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Hardik-Jain08" target="_blank"><img src="https://avatars.githubusercontent.com/u/77958121?v=4" alt="Hardik-Jain08" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/harshmann10" target="_blank"><img src="https://avatars.githubusercontent.com/u/97180515?v=4" alt="harshmann10" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/HarshVR1947" target="_blank"><img src="https://avatars.githubusercontent.com/u/133820482?v=4" alt="HarshVR1947" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 
