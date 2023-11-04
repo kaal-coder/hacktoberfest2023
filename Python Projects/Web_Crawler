@@ -1,0 +1,97 @@
+# ANSI escape codes for colors
+YELLOW = "\033[38;2;255;241;0m"
+GREEN = "\033[38;2;0;255;0m"
+RED = "\033[38;2;255;0;0m"
+RESET = "\033[0m"
+
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+from bs4 import BeautifulSoup
+import queue
+import threading
+
+class discoveryWebCrawlerClass():
+    
+    def __init__(self, domain, levels):
+        self.domain = domain
+        self.q = queue.Queue()
+        self.urls = []
+        self.levelsToCrawl = levels
+
+    def crawlURL(self, crawlUrl, currentLevel):
+        s = requests.Session()
+        r = s.get(crawlUrl, verify=False, timeout=10)
+        soup = BeautifulSoup(r.content, 'html.parser') 
+        links = soup.find_all('a')
+        for url in links:
+            try:
+                url = url.get('href')
+                # some href values dont have a full url. They look somthing like : /login.php
+                if url[0] == '/':
+                    url = self.domain + url
+                # check to see if link matches crawl domain and is not a duplicate
+                if url.split("/")[2] == self.domain.split('/')[2] and url not in [u['url'] for u in self.urls]:
+                    self.urls.append({'url':url, 'level':currentLevel})
+                    # insert into queue update crawl level
+                    if currentLevel+1 < self.levelsToCrawl:
+                        self.q.put({'url':url,'level':currentLevel +1})
+            except Exception as e:
+                pass
+
+    def worker(self):
+        while 1:
+            crawlUrlDict = self.q.get()
+            self.crawlURL(crawlUrlDict['url'], crawlUrlDict['level'])
+            self.q.task_done()
+
+    def start(self):
+        self.q.put({'url':self.domain,'level':0})
+        for i in range(0,100):
+            t = threading.Thread(target=self.worker)
+            t.daemon = True
+            t.start()
+        self.q.join()
+
+print(f"{YELLOW}   _____ ____   _____  _____                    _ ")
+print(f"  / ____|  _ \ / ____|/ ____|                  | |")
+print(f" | (___ | |_) | (___ | |     _ __ __ ___      _| |")
+print(f"  \___ \|  _ < \___ \| |    | '__/ _` \ \ /\ / / |")
+print(f"  ____) | |_) |____) | |____| | | (_| |\ V  V /| |")
+print(f" |_____/|____/|_____/ \_____|_|  \__,_| \_/\_/ |_|")
+print(f"-By ShortBus Security{RESET}")
+
+# Prompt user for domain
+while True:
+    domain = input("Enter a domain to crawl: ")
+    if domain.startswith("http://") or domain.startswith("https://"):
+        break
+    else:
+        print(f"{RED}Please enter a domain with HTTP or HTTPS.{RESET}")
+
+# Specify the levels to crawl
+levels = 2
+
+# Create an instance of the web crawler class
+webcrawler = discoveryWebCrawlerClass(domain, levels)
+
+# Start crawling
+webcrawler.start()
+
+# Print the results for each level
+for i in range(levels):
+    print(f"\n{GREEN}Level {i+1} URLs{RESET}")
+    for url in webcrawler.urls:
+        if url['level'] == i:
+            print(url['url'])
+print(f"{YELLOW}___________________")
+print(f"|,-----.,-----.,---.\\")
+print(f"||     ||     ||    \\")
+print(f"|`-----'|-----||-----\`----.")
+print(f"[       |    -||-   _|    (|")
+print(f"[  ,--. |_____||___/.--.   |")
+print(f"=-(( `))-----------(( `))-==")
+print(f"   `--'             `--'")
+print(f"{YELLOW}Your Bus Has Arrived! Beep Beep!{RESET}")
+print(RESET)
