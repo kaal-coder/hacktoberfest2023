@@ -190,6 +190,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/ALphaTrion21" target="_blank"><img src="https://avatars.githubusercontent.com/u/144452060?v=4" alt="ALphaTrion21" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Athens0111" target="_blank"><img src="https://avatars.githubusercontent.com/u/119130012?v=4" alt="Athens0111" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Aanchi-glitch2744" target="_blank"><img src="https://avatars.githubusercontent.com/u/63657840?v=4" alt="Aanchi-glitch2744" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/AdarshKannarath" target="_blank"><img src="https://avatars.githubusercontent.com/u/100022179?v=4" alt="AdarshKannarath" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Aditi22Bansal" target="_blank"><img src="https://avatars.githubusercontent.com/u/142652964?v=4" alt="Aditi22Bansal" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/AdityaDhavale" target="_blank"><img src="https://avatars.githubusercontent.com/u/108582762?v=4" alt="AdityaDhavale" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/adityakr1410" target="_blank"><img src="https://avatars.githubusercontent.com/u/92170363?v=4" alt="adityakr1410" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -227,5 +228,4 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/EshaalakshmiDS" target="_blank"><img src="https://avatars.githubusercontent.com/u/97681609?v=4" alt="EshaalakshmiDS" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/FarazRashid" target="_blank"><img src="https://avatars.githubusercontent.com/u/129024354?v=4" alt="FarazRashid" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Hardik-Jain08" target="_blank"><img src="https://avatars.githubusercontent.com/u/77958121?v=4" alt="Hardik-Jain08" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/harshmann10" target="_blank"><img src="https://avatars.githubusercontent.com/u/97180515?v=4" alt="harshmann10" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 
