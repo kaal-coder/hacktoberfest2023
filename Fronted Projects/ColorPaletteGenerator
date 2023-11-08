@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #color-palette {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 1px solid #000;
+        }
+
+        #generate-palette {
+            margin-top: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-palette">
+        <button id="generate-palette">Generate Palette</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const colorPalette = document.getElementById("color-palette");
+            const generateButton = document.getElementById("generate-palette");
+
+            generateButton.addEventListener("click", generatePalette);
+
+            function generateRandomColor() {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                return `rgb(${r},${g},${b})`;
+            }
+
+            function generatePalette() {
+                colorPalette.innerHTML = ""; // Clear the previous palette
+
+                for (let i = 0; i < 5; i++) { // Generate 5 random colors
+                    const colorBox = document.createElement("div");
+                    colorBox.classList.add("color-box");
+                    colorBox.style.backgroundColor = generateRandomColor();
+                    colorPalette.appendChild(colorBox);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
