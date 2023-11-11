@@ -162,6 +162,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/itsmeShaurya" target="_blank"><img src="https://avatars.githubusercontent.com/u/96973160?v=4" alt="itsmeShaurya" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/surajwakka" target="_blank"><img src="https://avatars.githubusercontent.com/u/58338343?v=4" alt="surajwakka" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/lucashchang" target="_blank"><img src="https://avatars.githubusercontent.com/u/146160465?v=4" alt="lucashchang" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/Akshada-26" target="_blank"><img src="https://avatars.githubusercontent.com/u/130067077?v=4" alt="Akshada-26" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Aman1143" target="_blank"><img src="https://avatars.githubusercontent.com/u/100416012?v=4" alt="Aman1143" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/elguitarraverde" target="_blank"><img src="https://avatars.githubusercontent.com/u/2836337?v=4" alt="elguitarraverde" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Anurag-05-prog" target="_blank"><img src="https://avatars.githubusercontent.com/u/88226411?v=4" alt="Anurag-05-prog" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -198,7 +199,6 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/Adityavyshnav-2001" target="_blank"><img src="https://avatars.githubusercontent.com/u/148896965?v=4" alt="Adityavyshnav-2001" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/AkashSawarkar" target="_blank"><img src="https://avatars.githubusercontent.com/u/38210650?v=4" alt="AkashSawarkar" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/akshbswas98" target="_blank"><img src="https://avatars.githubusercontent.com/u/64808720?v=4" alt="akshbswas98" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/Akshada-26" target="_blank"><img src="https://avatars.githubusercontent.com/u/130067077?v=4" alt="Akshada-26" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Git-Akshat01" target="_blank"><img src="https://avatars.githubusercontent.com/u/100118854?v=4" alt="Git-Akshat01" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/AlfatTaufik" target="_blank"><img src="https://avatars.githubusercontent.com/u/145849640?v=4" alt="AlfatTaufik" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/ameykaran" target="_blank"><img src="https://avatars.githubusercontent.com/u/44658273?v=4" alt="ameykaran" style="border-radius: 50%; width: 50px; height: 50px;"></a>
