@@ -1,0 +1,28 @@
+import random
+
+def guess_the_number():
+    print("Welcome to Guess the Number!")
+    lower_limit = 1
+    upper_limit = 100
+    number_to_guess = random.randint(lower_limit, upper_limit)
+    attempts = 0
+
+    print(f"I'm thinking of a number between {lower_limit} and {upper_limit}.")
+
+    while True:
+        try:
+            player_guess = int(input("Your guess: "))
+            attempts += 1
+
+            if player_guess < number_to_guess:
+                print("Too low. Try again.")
+            elif player_guess > number_to_guess:
+                print("Too high. Try again.")
+            else:
+                print(f"Congratulations! You guessed the number {number_to_guess} in {attempts} attempts.")
+                break
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+if __name__ == "__main__":
+    guess_the_number()
