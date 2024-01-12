@@ -219,7 +219,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/sayaniroy579" target="_blank"><img src="https://avatars.githubusercontent.com/u/52422374?v=4" alt="sayaniroy579" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Shreya04082001" target="_blank"><img src="https://avatars.githubusercontent.com/u/56251597?v=4" alt="Shreya04082001" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/ShreyaShukla03" target="_blank"><img src="https://avatars.githubusercontent.com/u/93048997?v=4" alt="ShreyaShukla03" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/paradoxical-bin0" target="_blank"><img src="https://avatars.githubusercontent.com/u/114408921?v=4" alt="paradoxical-bin0" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/shreyanshi-bhatt" target="_blank"><img src="https://avatars.githubusercontent.com/u/114408921?v=4" alt="shreyanshi-bhatt" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Shubhiidixit" target="_blank"><img src="https://avatars.githubusercontent.com/u/123651074?v=4" alt="Shubhiidixit" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/ShuvamBag" target="_blank"><img src="https://avatars.githubusercontent.com/u/82321197?v=4" alt="ShuvamBag" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/SimardeepSingh-zsh" target="_blank"><img src="https://avatars.githubusercontent.com/u/134756717?v=4" alt="SimardeepSingh-zsh" style="border-radius: 50%; width: 50px; height: 50px;"></a>
