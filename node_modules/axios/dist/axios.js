@@ -1,4 +1,4 @@
-// Axios v1.7.9 Copyright (c) 2024 Matt Zabriskie and contributors
+/*! Axios v1.8.1 Copyright (c) 2025 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -1266,23 +1266,6 @@
   var toFiniteNumber = function toFiniteNumber(value, defaultValue) {
     return value != null && Number.isFinite(value = +value) ? value : defaultValue;
   };
-  var ALPHA = 'abcdefghijklmnopqrstuvwxyz';
-  var DIGIT = '0123456789';
-  var ALPHABET = {
-    DIGIT: DIGIT,
-    ALPHA: ALPHA,
-    ALPHA_DIGIT: ALPHA + ALPHA.toUpperCase() + DIGIT
-  };
-  var generateString = function generateString() {
-    var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 16;
-    var alphabet = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : ALPHABET.ALPHA_DIGIT;
-    var str = '';
-    var length = alphabet.length;
-    while (size--) {
-      str += alphabet[Math.random() * length | 0];
-    }
-    return str;
-  };
 
   /**
    * If the thing is a FormData object, return true, otherwise return false.
@@ -1399,8 +1382,6 @@
     findKey: findKey,
     global: _global,
     isContextDefined: isContextDefined,
-    ALPHABET: ALPHABET,
-    generateString: generateString,
     isSpecCompliantForm: isSpecCompliantForm,
     toJSONObject: toJSONObject,
     isAsyncFn: isAsyncFn,
@@ -2720,8 +2701,9 @@
    *
    * @returns {string} The combined full path
    */
-  function buildFullPath(baseURL, requestedURL) {
-    if (baseURL && !isAbsoluteURL(requestedURL)) {
+  function buildFullPath(baseURL, requestedURL, allowAbsoluteUrls) {
+    var isRelativeUrl = !isAbsoluteURL(requestedURL);
+    if (baseURL && isRelativeUrl || allowAbsoluteUrls == false) {
       return combineURLs(baseURL, requestedURL);
     }
     return requestedURL;
@@ -3676,7 +3658,7 @@
     });
   }
 
-  var VERSION = "1.7.9";
+  var VERSION = "1.8.1";
 
   var validators$1 = {};
 
@@ -3867,6 +3849,13 @@
             }, true);
           }
         }
+
+        // Set config.allowAbsoluteUrls
+        if (config.allowAbsoluteUrls !== undefined) ; else if (this.defaults.allowAbsoluteUrls !== undefined) {
+          config.allowAbsoluteUrls = this.defaults.allowAbsoluteUrls;
+        } else {
+          config.allowAbsoluteUrls = true;
+        }
         validator.assertOptions(config, {
           baseUrl: validators.spelling('baseURL'),
           withXsrfToken: validators.spelling('withXSRFToken')
@@ -3939,7 +3928,7 @@
       key: "getUri",
       value: function getUri(config) {
         config = mergeConfig(this.defaults, config);
-        var fullPath = buildFullPath(config.baseURL, config.url);
+        var fullPath = buildFullPath(config.baseURL, config.url, config.allowAbsoluteUrls);
         return buildURL(fullPath, config.params, config.paramsSerializer);
       }
     }]);
