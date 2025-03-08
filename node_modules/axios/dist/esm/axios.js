@@ -1,4 +1,4 @@
-/*! Axios v1.8.1 Copyright (c) 2025 Matt Zabriskie and contributors */
+/*! Axios v1.8.2 Copyright (c) 2025 Matt Zabriskie and contributors */
 function bind(fn, thisArg) {
   return function wrap() {
     return fn.apply(thisArg, arguments);
@@ -3066,7 +3066,7 @@ function dispatchRequest(config) {
   });
 }
 
-const VERSION$1 = "1.8.1";
+const VERSION$1 = "1.8.2";
 
 const validators$1 = {};
 

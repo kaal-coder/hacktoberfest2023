@@ -1,4 +1,4 @@
-/*! Axios v1.8.1 Copyright (c) 2025 Matt Zabriskie and contributors */
+/*! Axios v1.8.2 Copyright (c) 2025 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -3658,7 +3658,7 @@
     });
   }
 
-  var VERSION = "1.8.1";
+  var VERSION = "1.8.2";
 
   var validators$1 = {};
 
