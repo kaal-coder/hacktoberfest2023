@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.3](https://github.com/axios/axios/compare/v1.8.2...v1.8.3) (2025-03-10)
+
+
+### Bug Fixes
+
+* add missing type for allowAbsoluteUrls ([#6818](https://github.com/axios/axios/issues/6818)) ([10fa70e](https://github.com/axios/axios/commit/10fa70ef14fe39558b15a179f0e82f5f5e5d11b2))
+* **xhr/fetch:** pass `allowAbsoluteUrls` to `buildFullPath` in `xhr` and `fetch` adapters ([#6814](https://github.com/axios/axios/issues/6814)) ([ec159e5](https://github.com/axios/axios/commit/ec159e507bdf08c04ba1a10fe7710094e9e50ec9))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/3238291?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Ashcon Partovi](https://github.com/Electroid "+6/-0 (#6811 )")
+- <img src="https://avatars.githubusercontent.com/u/28559054?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [StefanBRas](https://github.com/StefanBRas "+4/-0 (#6818 )")
+- <img src="https://avatars.githubusercontent.com/u/8029107?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Marc Hassan](https://github.com/mhassan1 "+2/-2 (#6814 )")
+
 ## [1.8.2](https://github.com/axios/axios/compare/v1.8.1...v1.8.2) (2025-03-07)
 
 

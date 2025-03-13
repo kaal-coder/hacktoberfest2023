@@ -138,6 +138,12 @@ Using pnpm:
 $ pnpm add axios
 ```
 
+Using bun:
+
+```bash
+$ bun add axios
+```
+
 Once the package is installed, you can import the library using `import` or `require` approach:
 
 ```js

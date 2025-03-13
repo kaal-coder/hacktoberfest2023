@@ -1,4 +1,4 @@
-/*! Axios v1.8.2 Copyright (c) 2025 Matt Zabriskie and contributors */
+/*! Axios v1.8.3 Copyright (c) 2025 Matt Zabriskie and contributors */
 'use strict';
 
 function bind(fn, thisArg) {
@@ -2343,7 +2343,7 @@ var resolveConfig = (config) => {
 
   newConfig.headers = headers = AxiosHeaders$1.from(headers);
 
-  newConfig.url = buildURL(buildFullPath(newConfig.baseURL, newConfig.url), config.params, config.paramsSerializer);
+  newConfig.url = buildURL(buildFullPath(newConfig.baseURL, newConfig.url, newConfig.allowAbsoluteUrls), config.params, config.paramsSerializer);
 
   // HTTP basic authentication
   if (auth) {
@@ -3068,7 +3068,7 @@ function dispatchRequest(config) {
   });
 }
 
-const VERSION = "1.8.2";
+const VERSION = "1.8.3";
 
 const validators$1 = {};
 

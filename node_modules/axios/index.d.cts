@@ -376,6 +376,7 @@ declare namespace axios {
     url?: string;
     method?: Method | string;
     baseURL?: string;
+    allowAbsoluteUrls?: boolean;
     transformRequest?: AxiosRequestTransformer | AxiosRequestTransformer[];
     transformResponse?: AxiosResponseTransformer | AxiosResponseTransformer[];
     headers?: (RawAxiosRequestHeaders & MethodsHeaders) | AxiosHeaders;
