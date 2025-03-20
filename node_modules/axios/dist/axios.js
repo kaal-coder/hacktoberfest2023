@@ -1,4 +1,4 @@
-/*! Axios v1.8.3 Copyright (c) 2025 Matt Zabriskie and contributors */
+/*! Axios v1.8.4 Copyright (c) 2025 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -2703,7 +2703,7 @@
    */
   function buildFullPath(baseURL, requestedURL, allowAbsoluteUrls) {
     var isRelativeUrl = !isAbsoluteURL(requestedURL);
-    if (baseURL && isRelativeUrl || allowAbsoluteUrls == false) {
+    if (baseURL && (isRelativeUrl || allowAbsoluteUrls == false)) {
       return combineURLs(baseURL, requestedURL);
     }
     return requestedURL;
@@ -3658,7 +3658,7 @@
     });
   }
 
-  var VERSION = "1.8.3";
+  var VERSION = "1.8.4";
 
   var validators$1 = {};
 

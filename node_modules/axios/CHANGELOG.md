@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.8.4](https://github.com/axios/axios/compare/v1.8.3...v1.8.4) (2025-03-19)
+
+
+### Bug Fixes
+
+* **buildFullPath:** handle `allowAbsoluteUrls: false` without `baseURL` ([#6833](https://github.com/axios/axios/issues/6833)) ([f10c2e0](https://github.com/axios/axios/commit/f10c2e0de7fde0051f848609a29c2906d0caa1d9))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/8029107?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Marc Hassan](https://github.com/mhassan1 "+5/-1 (#6833 )")
+
 ## [1.8.3](https://github.com/axios/axios/compare/v1.8.2...v1.8.3) (2025-03-10)
 
 
