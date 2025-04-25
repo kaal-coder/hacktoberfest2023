@@ -1,5 +1,32 @@
 # Changelog
 
+# [1.9.0](https://github.com/axios/axios/compare/v1.8.4...v1.9.0) (2025-04-24)
+
+
+### Bug Fixes
+
+* **core:** fix the Axios constructor implementation to treat the config argument as optional; ([#6881](https://github.com/axios/axios/issues/6881)) ([6c5d4cd](https://github.com/axios/axios/commit/6c5d4cd69286868059c5e52d45085cb9a894a983))
+* **fetch:** fixed ERR_NETWORK mapping for Safari browsers; ([#6767](https://github.com/axios/axios/issues/6767)) ([dfe8411](https://github.com/axios/axios/commit/dfe8411c9a082c3d068bdd1f8d6e73054f387f45))
+* **headers:** allow iterable objects to be a data source for the set method; ([#6873](https://github.com/axios/axios/issues/6873)) ([1b1f9cc](https://github.com/axios/axios/commit/1b1f9ccdc15f1ea745160ec9a5223de9db4673bc))
+* **headers:** fix `getSetCookie` by using 'get' method for caseless access; ([#6874](https://github.com/axios/axios/issues/6874)) ([d4f7df4](https://github.com/axios/axios/commit/d4f7df4b304af8b373488fdf8e830793ff843eb9))
+* **headers:** fixed support for setting multiple header values from an iterated source; ([#6885](https://github.com/axios/axios/issues/6885)) ([f7a3b5e](https://github.com/axios/axios/commit/f7a3b5e0f7e5e127b97defa92a132fbf1b55cf15))
+* **http:** send minimal end multipart boundary ([#6661](https://github.com/axios/axios/issues/6661)) ([987d2e2](https://github.com/axios/axios/commit/987d2e2dd3b362757550f36eab875e60640b6ddc))
+* **types:** fix autocomplete for adapter config ([#6855](https://github.com/axios/axios/issues/6855)) ([e61a893](https://github.com/axios/axios/commit/e61a8934d8f94dd429a2f309b48c67307c700df0))
+
+
+### Features
+
+* **AxiosHeaders:** add getSetCookie method to retrieve set-cookie headers values ([#5707](https://github.com/axios/axios/issues/5707)) ([80ea756](https://github.com/axios/axios/commit/80ea756e72bcf53110fa792f5d7ab76e8b11c996))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/12586868?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dmitriy Mozgovoy](https://github.com/DigitalBrainJS "+200/-34 (#6890 #6889 #6888 #6885 #6881 #6767 #6874 #6873 )")
+- <img src="https://avatars.githubusercontent.com/u/4814473?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Jay](https://github.com/jasonsaayman "+26/-1 ()")
+- <img src="https://avatars.githubusercontent.com/u/22686401?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Willian Agostini](https://github.com/WillianAgostini "+21/-0 (#5707 )")
+- <img src="https://avatars.githubusercontent.com/u/2500247?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [George Cheng](https://github.com/Gerhut "+3/-3 (#5096 )")
+- <img src="https://avatars.githubusercontent.com/u/30260221?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [FatahChan](https://github.com/FatahChan "+2/-2 (#6855 )")
+- <img src="https://avatars.githubusercontent.com/u/49002?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Ionuț G. Stan](https://github.com/igstan "+1/-1 (#6661 )")
+
 ## [1.8.4](https://github.com/axios/axios/compare/v1.8.3...v1.8.4) (2025-03-19)
 
 
