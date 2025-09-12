@@ -1,13 +1,15 @@
 import utils from '../utils.js';
 import httpAdapter from './http.js';
 import xhrAdapter from './xhr.js';
-import fetchAdapter from './fetch.js';
+import * as fetchAdapter from './fetch.js';
 import AxiosError from "../core/AxiosError.js";
 
 const knownAdapters = {
   http: httpAdapter,
   xhr: xhrAdapter,
-  fetch: fetchAdapter
+  fetch: {
+    get: fetchAdapter.getFetch,
+  }
 }
 
 utils.forEach(knownAdapters, (fn, value) => {
@@ -26,7 +28,7 @@ const renderReason = (reason) => `- ${reason}`;
 const isResolvedHandle = (adapter) => utils.isFunction(adapter) || adapter === null || adapter === false;
 
 export default {
-  getAdapter: (adapters) => {
+  getAdapter: (adapters, config) => {
     adapters = utils.isArray(adapters) ? adapters : [adapters];
 
     const {length} = adapters;
@@ -49,7 +51,7 @@ export default {
         }
       }
 
-      if (adapter) {
+      if (adapter && (utils.isFunction(adapter) || (adapter = adapter.get(config)))) {
         break;
       }
 

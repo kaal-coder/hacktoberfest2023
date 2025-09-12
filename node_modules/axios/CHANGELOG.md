@@ -1,5 +1,40 @@
 # Changelog
 
+# [1.12.0](https://github.com/axios/axios/compare/v1.11.0...v1.12.0) (2025-09-11)
+
+
+### Bug Fixes
+
+* adding build artifacts ([9ec86de](https://github.com/axios/axios/commit/9ec86de257bfa33856571036279169f385ed92bd))
+* dont add dist on release ([a2edc36](https://github.com/axios/axios/commit/a2edc3606a4f775d868a67bb3461ff18ce7ecd11))
+* **fetch-adapter:** set correct Content-Type for Node FormData ([#6998](https://github.com/axios/axios/issues/6998)) ([a9f47af](https://github.com/axios/axios/commit/a9f47afbf3224d2ca987dbd8188789c7ea853c5d))
+* **node:** enforce maxContentLength for data: URLs ([#7011](https://github.com/axios/axios/issues/7011)) ([945435f](https://github.com/axios/axios/commit/945435fc51467303768202250debb8d4ae892593))
+* package exports ([#5627](https://github.com/axios/axios/issues/5627)) ([aa78ac2](https://github.com/axios/axios/commit/aa78ac23fc9036163308c0f6bd2bb885e7af3f36))
+* **params:** removing '[' and ']' from URL encode exclude characters ([#3316](https://github.com/axios/axios/issues/3316)) ([#5715](https://github.com/axios/axios/issues/5715)) ([6d84189](https://github.com/axios/axios/commit/6d84189349c43b1dcdd977b522610660cc4c7042))
+* release pr run ([fd7f404](https://github.com/axios/axios/commit/fd7f404488b2c4f238c2fbe635b58026a634bfd2))
+* **types:** change the type guard on isCancel ([#5595](https://github.com/axios/axios/issues/5595)) ([0dbb7fd](https://github.com/axios/axios/commit/0dbb7fd4f61dc568498cd13a681fa7f907d6ec7e))
+
+
+### Features
+
+* **adapter:** surface low‑level network error details; attach original error via cause ([#6982](https://github.com/axios/axios/issues/6982)) ([78b290c](https://github.com/axios/axios/commit/78b290c57c978ed2ab420b90d97350231c9e5d74))
+* **fetch:** add fetch, Request, Response env config variables for the adapter; ([#7003](https://github.com/axios/axios/issues/7003)) ([c959ff2](https://github.com/axios/axios/commit/c959ff29013a3bc90cde3ac7ea2d9a3f9c08974b))
+* support reviver on JSON.parse ([#5926](https://github.com/axios/axios/issues/5926)) ([2a97634](https://github.com/axios/axios/commit/2a9763426e43d996fd60d01afe63fa6e1f5b4fca)), closes [#5924](https://github.com/axios/axios/issues/5924)
+* **types:** extend AxiosResponse interface to include custom headers type ([#6782](https://github.com/axios/axios/issues/6782)) ([7960d34](https://github.com/axios/axios/commit/7960d34eded2de66ffd30b4687f8da0e46c4903e))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/22686401?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Willian Agostini](https://github.com/WillianAgostini "+132/-16760 (#7002 #5926 #6782 )")
+- <img src="https://avatars.githubusercontent.com/u/12586868?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dmitriy Mozgovoy](https://github.com/DigitalBrainJS "+4263/-293 (#7006 #7003 )")
+- <img src="https://avatars.githubusercontent.com/u/53833811?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [khani](https://github.com/mkhani01 "+111/-15 (#6982 )")
+- <img src="https://avatars.githubusercontent.com/u/7712804?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Ameer Assadi](https://github.com/AmeerAssadi "+123/-0 (#7011 )")
+- <img src="https://avatars.githubusercontent.com/u/70265727?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Emiedonmokumo Dick-Boro](https://github.com/emiedonmokumo "+55/-35 (#6998 )")
+- <img src="https://avatars.githubusercontent.com/u/47859767?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Zeroday BYTE](https://github.com/opsysdebug "+8/-8 (#6980 )")
+- <img src="https://avatars.githubusercontent.com/u/4814473?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Jason Saayman](https://github.com/jasonsaayman "+7/-7 (#6985 #6985 )")
+- <img src="https://avatars.githubusercontent.com/u/13010755?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [최예찬](https://github.com/HealGaren "+5/-7 (#5715 )")
+- <img src="https://avatars.githubusercontent.com/u/7002604?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Gligor Kotushevski](https://github.com/gligorkot "+3/-1 (#5627 )")
+- <img src="https://avatars.githubusercontent.com/u/15893?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Aleksandar Dimitrov](https://github.com/adimit "+2/-1 (#5595 )")
+
 # [1.11.0](https://github.com/axios/axios/compare/v1.10.0...v1.11.0) (2025-07-22)
 
 

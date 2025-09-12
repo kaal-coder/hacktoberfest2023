@@ -25,6 +25,7 @@ import readBlob from "../helpers/readBlob.js";
 import ZlibHeaderTransformStream from '../helpers/ZlibHeaderTransformStream.js';
 import callbackify from "../helpers/callbackify.js";
 import {progressEventReducer, progressEventDecorator, asyncDecorator} from "../helpers/progressEventReducer.js";
+import estimateDataURLDecodedBytes from '../helpers/estimateDataURLDecodedBytes.js';
 
 const zlibOptions = {
   flush: zlib.constants.Z_SYNC_FLUSH,
@@ -46,6 +47,7 @@ const supportedProtocols = platform.protocols.map(protocol => {
   return protocol + ':';
 });
 
+
 const flushOnFinish = (stream, [throttled, flush]) => {
   stream
     .on('end', flush)
@@ -53,6 +55,7 @@ const flushOnFinish = (stream, [throttled, flush]) => {
 
   return throttled;
 }
+
 
 /**
  * If the proxy or config beforeRedirects functions are defined, call them with the options
@@ -233,6 +236,21 @@ export default isHttpAdapterSupported && function httpAdapter(config) {
     const protocol = parsed.protocol || supportedProtocols[0];
 
     if (protocol === 'data:') {
+      // Apply the same semantics as HTTP: only enforce if a finite, non-negative cap is set.
+      if (config.maxContentLength > -1) {
+        // Use the exact string passed to fromDataURI (config.url); fall back to fullPath if needed.
+        const dataUrl = String(config.url || fullPath || '');
+        const estimated = estimateDataURLDecodedBytes(dataUrl);
+
+        if (estimated > config.maxContentLength) {
+          return reject(new AxiosError(
+            'maxContentLength size of ' + config.maxContentLength + ' exceeded',
+            AxiosError.ERR_BAD_RESPONSE,
+            config
+          ));
+        }
+      }
+
       let convertedData;
 
       if (method !== 'GET') {
