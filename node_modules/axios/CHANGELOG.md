@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.12.1](https://github.com/axios/axios/compare/v1.12.0...v1.12.1) (2025-09-12)
+
+
+### Bug Fixes
+
+* **types:** fixed env config types; ([#7020](https://github.com/axios/axios/issues/7020)) ([b5f26b7](https://github.com/axios/axios/commit/b5f26b75bdd9afa95016fb67d0cab15fc74cbf05))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/12586868?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dmitriy Mozgovoy](https://github.com/DigitalBrainJS "+10/-4 (#7020 )")
+
 # [1.12.0](https://github.com/axios/axios/compare/v1.11.0...v1.12.0) (2025-09-11)
 
 
