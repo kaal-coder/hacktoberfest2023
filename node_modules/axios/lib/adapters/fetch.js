@@ -12,9 +12,9 @@ const DEFAULT_CHUNK_SIZE = 64 * 1024;
 
 const {isFunction} = utils;
 
-const globalFetchAPI = (({fetch, Request, Response}) => ({
-    fetch, Request, Response
-  }))(utils.global);
+const globalFetchAPI = (({Request, Response}) => ({
+  Request, Response
+}))(utils.global);
 
 const {
   ReadableStream, TextEncoder
@@ -30,8 +30,12 @@ const test = (fn, ...args) => {
 }
 
 const factory = (env) => {
-  const {fetch, Request, Response} = Object.assign({}, globalFetchAPI, env);
-  const isFetchSupported = isFunction(fetch);
+  env = utils.merge.call({
+    skipUndefined: true
+  }, globalFetchAPI, env);
+
+  const {fetch: envFetch, Request, Response} = env;
+  const isFetchSupported = envFetch ? isFunction(envFetch) : typeof fetch === 'function';
   const isRequestSupported = isFunction(Request);
   const isResponseSupported = isFunction(Response);
 
@@ -134,6 +138,8 @@ const factory = (env) => {
       fetchOptions
     } = resolveConfig(config);
 
+    let _fetch = envFetch || fetch;
+
     responseType = responseType ? (responseType + '').toLowerCase() : 'text';
 
     let composedSignal = composeSignals([signal, cancelToken && cancelToken.toAbortSignal()], timeout);
@@ -193,7 +199,7 @@ const factory = (env) => {
 
       request = isRequestSupported && new Request(url, resolvedOptions);
 
-      let response = await (isRequestSupported ? fetch(request, fetchOptions) : fetch(url, resolvedOptions));
+      let response = await (isRequestSupported ? _fetch(request, fetchOptions) : _fetch(url, resolvedOptions));
 
       const isStreamResponse = supportsResponseStream && (responseType === 'stream' || responseType === 'response');
 
@@ -256,12 +262,8 @@ const factory = (env) => {
 const seedCache = new Map();
 
 export const getFetch = (config) => {
-  let env = utils.merge.call({
-    skipUndefined: true
-  }, globalFetchAPI, config ? config.env : null);
-
+  let env = config ? config.env : {};
   const {fetch, Request, Response} = env;
-
   const seeds = [
     Request, Response, fetch
   ];

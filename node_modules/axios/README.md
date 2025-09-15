@@ -83,6 +83,9 @@
   - [🆕 Rate limiting](#-progress-capturing)
   - [🆕 AxiosHeaders](#-axiosheaders)
   - [🔥 Fetch adapter](#-fetch-adapter)
+    - [🔥 Custom fetch](#-custom-fetch)
+      - [🔥 Using with Tauri](#-using-with-tauri)
+      - [🔥 Using with SvelteKit](#-using-with-sveltekit-)
   - [Semver](#semver)
   - [Promises](#promises)
   - [TypeScript](#typescript)
@@ -1625,6 +1628,77 @@ const {data} = fetchAxios.get(url);
 
 The adapter supports the same functionality as `xhr` adapter, **including upload and download progress capturing**. 
 Also, it supports additional response types such as `stream` and `formdata` (if supported by the environment).
+
+### 🔥 Custom fetch
+
+Starting from `v1.12.0`, you can customize the fetch adapter to use a custom fetch API instead of environment globals.
+You can pass a custom `fetch` function, `Request`, and `Response` constructors via env config.
+This can be helpful in case of custom environments & app frameworks.
+
+Also, when using a custom fetch, you may need to set custom Request and Response too. If you don't set them, global objects will be used.
+If your custom fetch api does not have these objects, and the globals are incompatible with a custom fetch,
+you must disable their use inside the fetch adapter by passing null.
+
+> Note: Setting `Request` & `Response` to `null` will make it impossible for the fetch adapter to capture the upload & download progress.
+
+Basic example:
+
+```js
+import customFetchFunction from 'customFetchModule';
+
+const instance = axios.create({
+  adapter: 'fetch',
+  onDownloadProgress(e) {
+    console.log('downloadProgress', e);
+  },
+  env: {
+    fetch: customFetchFunction,
+    Request: null, // undefined -> use the global constructor
+    Response: null
+  }
+});
+```
+
+#### 🔥 Using with Tauri
+
+A minimal example of setting up Axios for use in a [Tauri](https://tauri.app/plugin/http-client/) app with a platform fetch function that ignores CORS policy for requests.
+
+```js
+import { fetch } from "@tauri-apps/plugin-http";
+import axios from "axios";
+
+const instance = axios.create({
+  adapter: 'fetch',
+  onDownloadProgress(e) {
+    console.log('downloadProgress', e);
+  },
+  env: {
+    fetch
+  }
+});
+
+ const {data} = await instance.get("https://google.com");
+```
+
+#### 🔥 Using with SvelteKit 
+
+[SvelteKit](https://svelte.dev/docs/kit/web-standards#Fetch-APIs) framework has a custom implementation of the fetch function for server rendering (so called `load` functions), and also uses relative paths,
+which makes it incompatible with the standard URL API. So, Axios must be configured to use the custom fetch API:
+
+```js
+export async function load({ fetch }) {
+  const {data: post} = await axios.get('https://jsonplaceholder.typicode.com/posts/1', {
+    adapter: 'fetch',
+    env: {
+      fetch,
+      Request: null,
+      Response: null
+    }
+  });
+
+  return { post };
+}
+```
 
 ## Semver
 
