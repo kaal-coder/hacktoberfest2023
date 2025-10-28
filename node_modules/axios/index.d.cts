@@ -436,6 +436,10 @@ declare namespace axios {
         ((hostname: string, options: object) => Promise<[address: LookupAddressEntry | LookupAddressEntry[], family?: AddressFamily] | LookupAddress>);
     withXSRFToken?: boolean | ((config: InternalAxiosRequestConfig) => boolean | undefined);
     fetchOptions?: Omit<RequestInit, 'body' | 'headers' | 'method' | 'signal'> | Record<string, any>;
+    httpVersion?: 1 | 2;
+    http2Options?: Record<string, any> & {
+      sessionTimeout?: number;
+    };
   }
 
   // Alias

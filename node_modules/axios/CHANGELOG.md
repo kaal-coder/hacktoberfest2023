@@ -1,5 +1,38 @@
 # Changelog
 
+# [1.13.0](https://github.com/axios/axios/compare/v1.12.2...v1.13.0) (2025-10-27)
+
+
+### Bug Fixes
+
+* **fetch:** prevent TypeError when config.env is undefined ([#7155](https://github.com/axios/axios/issues/7155)) ([015faec](https://github.com/axios/axios/commit/015faeca9f26db76f9562760f04bb9f8229f4db1))
+* resolve issue [#7131](https://github.com/axios/axios/issues/7131) (added spacing in mergeConfig.js) ([#7133](https://github.com/axios/axios/issues/7133)) ([9b9ec98](https://github.com/axios/axios/commit/9b9ec98548d93e9f2204deea10a5f1528bf3ce62))
+
+
+### Features
+
+* **http:** add HTTP2 support; ([#7150](https://github.com/axios/axios/issues/7150)) ([d676df7](https://github.com/axios/axios/commit/d676df772244726533ca320f42e967f5af056bac))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/12586868?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dmitriy Mozgovoy](https://github.com/DigitalBrainJS "+794/-180 (#7186 #7150 #7039 )")
+- <img src="https://avatars.githubusercontent.com/u/189505037?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Noritaka Kobayashi](https://github.com/noritaka1166 "+24/-509 (#7032 )")
+- <img src="https://avatars.githubusercontent.com/u/195581631?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Aviraj2929](https://github.com/Aviraj2929 "+211/-93 (#7136 #7135 #7134 #7112 )")
+- <img src="https://avatars.githubusercontent.com/u/181717941?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [prasoon patel](https://github.com/Prasoon52 "+167/-6 (#7099 )")
+- <img src="https://avatars.githubusercontent.com/u/141911040?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Samyak Dandge](https://github.com/Samy-in "+134/-0 (#7171 )")
+- <img src="https://avatars.githubusercontent.com/u/128113546?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Anchal Singh](https://github.com/imanchalsingh "+53/-56 (#7170 )")
+- <img src="https://avatars.githubusercontent.com/u/146073621?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Rahul Kumar](https://github.com/jaiyankargupta "+28/-28 (#7073 )")
+- <img src="https://avatars.githubusercontent.com/u/148716794?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Amit Verma](https://github.com/Amitverma0509 "+24/-13 (#7129 )")
+- <img src="https://avatars.githubusercontent.com/u/141427581?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Abhishek3880](https://github.com/abhishekmaniy "+23/-4 (#7119 #7117 #7116 #7115 )")
+- <img src="https://avatars.githubusercontent.com/u/91522146?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dhvani Maktuporia](https://github.com/Dhvani365 "+14/-5 (#7175 )")
+- <img src="https://avatars.githubusercontent.com/u/41838423?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Usama Ayoub](https://github.com/sam3690 "+4/-4 (#7133 )")
+- <img src="https://avatars.githubusercontent.com/u/79366821?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [ikuy1203](https://github.com/ikuy1203 "+3/-3 (#7166 )")
+- <img src="https://avatars.githubusercontent.com/u/74639234?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Nikhil Simon Toppo](https://github.com/Kirito-Excalibur "+1/-1 (#7172 )")
+- <img src="https://avatars.githubusercontent.com/u/200562195?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Jane Wangari](https://github.com/Wangarijane "+1/-1 (#7155 )")
+- <img src="https://avatars.githubusercontent.com/u/78318848?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Supakorn Ieamgomol](https://github.com/Supakornn "+1/-1 (#7065 )")
+- <img src="https://avatars.githubusercontent.com/u/134518?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Kian-Meng Ang](https://github.com/kianmeng "+1/-1 (#7046 )")
+- <img src="https://avatars.githubusercontent.com/u/13148112?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [UTSUMI Keiji](https://github.com/k-utsumi "+1/-1 (#7037 )")
+
 ## [1.12.2](https://github.com/axios/axios/compare/v1.12.1...v1.12.2) (2025-09-14)
 
 
@@ -1292,4 +1325,5 @@ This functionality is considered as a fix.
 - [Marco Weber](https://github.com/mrcwbr)
 - [Luca Pizzini](https://github.com/lpizzinidev)
 - [Willian Agostini](https://github.com/WillianAgostini)
+
 - [Huyen Nguyen](https://github.com/huyenltnguyen)
