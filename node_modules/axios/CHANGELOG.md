@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.13.1](https://github.com/axios/axios/compare/v1.13.0...v1.13.1) (2025-10-28)
+
+
+### Bug Fixes
+
+* **http:** fixed a regression that caused the data stream to be interrupted for responses with non-OK HTTP statuses; ([#7193](https://github.com/axios/axios/issues/7193)) ([bcd5581](https://github.com/axios/axios/commit/bcd5581d208cd372055afdcb2fd10b68ca40613c))
+
+### Contributors to this release
+
+- <img src="https://avatars.githubusercontent.com/u/128113546?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Anchal Singh](https://github.com/imanchalsingh "+220/-111 (#7173 )")
+- <img src="https://avatars.githubusercontent.com/u/12586868?v&#x3D;4&amp;s&#x3D;18" alt="avatar" width="18"/> [Dmitriy Mozgovoy](https://github.com/DigitalBrainJS "+18/-1 (#7193 )")
+
 # [1.13.0](https://github.com/axios/axios/compare/v1.12.2...v1.13.0) (2025-10-27)
 
 

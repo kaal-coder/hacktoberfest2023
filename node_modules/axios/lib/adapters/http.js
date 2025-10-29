@@ -737,7 +737,7 @@ export default isHttpAdapterSupported && function httpAdapter(config) {
 
       if (responseType === 'stream') {
         response.data = responseStream;
-        settle(resolve, abort, response);
+        settle(resolve, reject, response);
       } else {
         const responseBuffer = [];
         let totalResponseBytes = 0;
