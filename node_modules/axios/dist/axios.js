@@ -1,4 +1,4 @@
-/*! Axios v1.13.5 Copyright (c) 2026 Matt Zabriskie and contributors */
+/*! Axios v1.13.6 Copyright (c) 2026 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -600,7 +600,7 @@
    *
    * @returns {boolean} True if the value is undefined, otherwise false
    */
-  var isUndefined = typeOfTest("undefined");
+  var isUndefined = typeOfTest('undefined');
 
   /**
    * Determine if a value is a Buffer
@@ -620,7 +620,7 @@
    *
    * @returns {boolean} True if value is an ArrayBuffer, otherwise false
    */
-  var isArrayBuffer = kindOfTest("ArrayBuffer");
+  var isArrayBuffer = kindOfTest('ArrayBuffer');
 
   /**
    * Determine if a value is a view on an ArrayBuffer
@@ -631,7 +631,7 @@
    */
   function isArrayBufferView(val) {
     var result;
-    if (typeof ArrayBuffer !== "undefined" && ArrayBuffer.isView) {
+    if (typeof ArrayBuffer !== 'undefined' && ArrayBuffer.isView) {
       result = ArrayBuffer.isView(val);
     } else {
       result = val && val.buffer && isArrayBuffer(val.buffer);
@@ -646,7 +646,7 @@
    *
    * @returns {boolean} True if value is a String, otherwise false
    */
-  var isString = typeOfTest("string");
+  var isString = typeOfTest('string');
 
   /**
    * Determine if a value is a Function
@@ -654,7 +654,7 @@
    * @param {*} val The value to test
    * @returns {boolean} True if value is a Function, otherwise false
    */
-  var isFunction$1 = typeOfTest("function");
+  var isFunction$1 = typeOfTest('function');
 
   /**
    * Determine if a value is a Number
@@ -663,7 +663,7 @@
    *
    * @returns {boolean} True if value is a Number, otherwise false
    */
-  var isNumber = typeOfTest("number");
+  var isNumber = typeOfTest('number');
 
   /**
    * Determine if a value is an Object
@@ -673,7 +673,7 @@
    * @returns {boolean} True if value is an Object, otherwise false
    */
   var isObject = function isObject(thing) {
-    return thing !== null && _typeof(thing) === "object";
+    return thing !== null && _typeof(thing) === 'object';
   };
 
   /**
@@ -694,7 +694,7 @@
    * @returns {boolean} True if value is a plain Object, otherwise false
    */
   var isPlainObject = function isPlainObject(val) {
-    if (kindOf(val) !== "object") {
+    if (kindOf(val) !== 'object') {
       return false;
     }
     var prototype = getPrototypeOf(val);
@@ -728,7 +728,7 @@
    *
    * @returns {boolean} True if value is a Date, otherwise false
    */
-  var isDate = kindOfTest("Date");
+  var isDate = kindOfTest('Date');
 
   /**
    * Determine if a value is a File
@@ -737,7 +737,34 @@
    *
    * @returns {boolean} True if value is a File, otherwise false
    */
-  var isFile = kindOfTest("File");
+  var isFile = kindOfTest('File');
+
+  /**
+   * Determine if a value is a React Native Blob
+   * React Native "blob": an object with a `uri` attribute. Optionally, it can
+   * also have a `name` and `type` attribute to specify filename and content type
+   *
+   * @see https://github.com/facebook/react-native/blob/26684cf3adf4094eb6c405d345a75bf8c7c0bf88/Libraries/Network/FormData.js#L68-L71
+   * 
+   * @param {*} value The value to test
+   * 
+   * @returns {boolean} True if value is a React Native Blob, otherwise false
+   */
+  var isReactNativeBlob = function isReactNativeBlob(value) {
+    return !!(value && typeof value.uri !== 'undefined');
+  };
+
+  /**
+   * Determine if environment is React Native
+   * ReactNative `FormData` has a non-standard `getParts()` method
+   * 
+   * @param {*} formData The formData to test
+   * 
+   * @returns {boolean} True if environment is React Native, otherwise false
+   */
+  var isReactNative = function isReactNative(formData) {
+    return formData && typeof formData.getParts !== 'undefined';
+  };
 
   /**
    * Determine if a value is a Blob
@@ -746,7 +773,7 @@
    *
    * @returns {boolean} True if value is a Blob, otherwise false
    */
-  var isBlob = kindOfTest("Blob");
+  var isBlob = kindOfTest('Blob');
 
   /**
    * Determine if a value is a FileList
@@ -755,7 +782,7 @@
    *
    * @returns {boolean} True if value is a File, otherwise false
    */
-  var isFileList = kindOfTest("FileList");
+  var isFileList = kindOfTest('FileList');
 
   /**
    * Determine if a value is a Stream
@@ -775,11 +802,20 @@
    *
    * @returns {boolean} True if value is an FormData, otherwise false
    */
+  function getGlobal() {
+    if (typeof globalThis !== 'undefined') return globalThis;
+    if (typeof self !== 'undefined') return self;
+    if (typeof window !== 'undefined') return window;
+    if (typeof global !== 'undefined') return global;
+    return {};
+  }
+  var G = getGlobal();
+  var FormDataCtor = typeof G.FormData !== 'undefined' ? G.FormData : undefined;
   var isFormData = function isFormData(thing) {
     var kind;
-    return thing && (typeof FormData === "function" && thing instanceof FormData || isFunction$1(thing.append) && ((kind = kindOf(thing)) === "formdata" ||
+    return thing && (FormDataCtor && thing instanceof FormDataCtor || isFunction$1(thing.append) && ((kind = kindOf(thing)) === 'formdata' ||
     // detect form-data instance
-    kind === "object" && isFunction$1(thing.toString) && thing.toString() === "[object FormData]"));
+    kind === 'object' && isFunction$1(thing.toString) && thing.toString() === '[object FormData]'));
   };
 
   /**
@@ -789,8 +825,8 @@
    *
    * @returns {boolean} True if value is a URLSearchParams object, otherwise false
    */
-  var isURLSearchParams = kindOfTest("URLSearchParams");
-  var _map = ["ReadableStream", "Request", "Response", "Headers"].map(kindOfTest),
+  var isURLSearchParams = kindOfTest('URLSearchParams');
+  var _map = ['ReadableStream', 'Request', 'Response', 'Headers'].map(kindOfTest),
     _map2 = _slicedToArray(_map, 4),
     isReadableStream = _map2[0],
     isRequest = _map2[1],
@@ -805,9 +841,8 @@
    * @returns {String} The String freed of excess whitespace
    */
   var trim = function trim(str) {
-    return str.trim ? str.trim() : str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
+    return str.trim ? str.trim() : str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
   };
-
   /**
    * Iterate over an Array or an Object invoking a function for each item.
    *
@@ -829,14 +864,14 @@
       _ref$allOwnKeys = _ref.allOwnKeys,
       allOwnKeys = _ref$allOwnKeys === void 0 ? false : _ref$allOwnKeys;
     // Don't bother if no value provided
-    if (obj === null || typeof obj === "undefined") {
+    if (obj === null || typeof obj === 'undefined') {
       return;
     }
     var i;
     var l;
 
     // Force an array if not already something iterable
-    if (_typeof(obj) !== "object") {
+    if (_typeof(obj) !== 'object') {
       /*eslint no-param-reassign:0*/
       obj = [obj];
     }
@@ -861,6 +896,15 @@
       }
     }
   }
+
+  /**
+   * Finds a key in an object, case-insensitive, returning the actual key name.
+   * Returns null if the object is a Buffer or if no match is found.
+   *
+   * @param {Object} obj - The object to search.
+   * @param {string} key - The key to find (case-insensitive).
+   * @returns {?string} The actual key name if found, otherwise null.
+   */
   function findKey(obj, key) {
     if (isBuffer(obj)) {
       return null;
@@ -879,8 +923,8 @@
   }
   var _global = function () {
     /*eslint no-undef:0*/
-    if (typeof globalThis !== "undefined") return globalThis;
-    return typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : global;
+    if (typeof globalThis !== 'undefined') return globalThis;
+    return typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : global;
   }();
   var isContextDefined = function isContextDefined(context) {
     return !isUndefined(context) && context !== _global;
@@ -912,7 +956,7 @@
     var result = {};
     var assignValue = function assignValue(val, key) {
       // Skip dangerous property names to prevent prototype pollution
-      if (key === "__proto__" || key === "constructor" || key === "prototype") {
+      if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
         return;
       }
       var targetKey = caseless && findKey(result, key) || key;
@@ -993,13 +1037,13 @@
    */
   var inherits = function inherits(constructor, superConstructor, props, descriptors) {
     constructor.prototype = Object.create(superConstructor.prototype, descriptors);
-    Object.defineProperty(constructor.prototype, "constructor", {
+    Object.defineProperty(constructor.prototype, 'constructor', {
       value: constructor,
       writable: true,
       enumerable: false,
       configurable: true
     });
-    Object.defineProperty(constructor, "super", {
+    Object.defineProperty(constructor, 'super', {
       value: superConstructor.prototype
     });
     props && Object.assign(constructor.prototype, props);
@@ -1089,7 +1133,7 @@
     return function (thing) {
       return TypedArray && thing instanceof TypedArray;
     };
-  }(typeof Uint8Array !== "undefined" && getPrototypeOf(Uint8Array));
+  }(typeof Uint8Array !== 'undefined' && getPrototypeOf(Uint8Array));
 
   /**
    * For each entry in the object, call the function with the key and value.
@@ -1127,7 +1171,7 @@
   };
 
   /* Checking if the kindOfTest function returns true when passed an HTMLFormElement. */
-  var isHTMLForm = kindOfTest("HTMLFormElement");
+  var isHTMLForm = kindOfTest('HTMLFormElement');
   var toCamelCase = function toCamelCase(str) {
     return str.toLowerCase().replace(/[-_\s]([a-z\d])(\w*)/g, function replacer(m, p1, p2) {
       return p1.toUpperCase() + p2;
@@ -1149,7 +1193,7 @@
    *
    * @returns {boolean} True if value is a RegExp object, otherwise false
    */
-  var isRegExp = kindOfTest("RegExp");
+  var isRegExp = kindOfTest('RegExp');
   var reduceDescriptors = function reduceDescriptors(obj, reducer) {
     var descriptors = Object.getOwnPropertyDescriptors(obj);
     var reducedDescriptors = {};
@@ -1170,13 +1214,13 @@
   var freezeMethods = function freezeMethods(obj) {
     reduceDescriptors(obj, function (descriptor, name) {
       // skip restricted props in strict mode
-      if (isFunction$1(obj) && ["arguments", "caller", "callee"].indexOf(name) !== -1) {
+      if (isFunction$1(obj) && ['arguments', 'caller', 'callee'].indexOf(name) !== -1) {
         return false;
       }
       var value = obj[name];
       if (!isFunction$1(value)) return;
       descriptor.enumerable = false;
-      if ("writable" in descriptor) {
+      if ('writable' in descriptor) {
         descriptor.writable = false;
         return;
       }
@@ -1187,6 +1231,15 @@
       }
     });
   };
+
+  /**
+   * Converts an array or a delimited string into an object set with values as keys and true as values.
+   * Useful for fast membership checks.
+   *
+   * @param {Array|string} arrayOrString - The array or string to convert.
+   * @param {string} delimiter - The delimiter to use if input is a string.
+   * @returns {Object} An object with keys from the array or string, values set to true.
+   */
   var toObjectSet = function toObjectSet(arrayOrString, delimiter) {
     var obj = {};
     var define = function define(arr) {
@@ -1210,8 +1263,15 @@
    * @returns {boolean}
    */
   function isSpecCompliantForm(thing) {
-    return !!(thing && isFunction$1(thing.append) && thing[toStringTag] === "FormData" && thing[iterator]);
+    return !!(thing && isFunction$1(thing.append) && thing[toStringTag] === 'FormData' && thing[iterator]);
   }
+
+  /**
+   * Recursively converts an object to a JSON-compatible object, handling circular references and Buffers.
+   *
+   * @param {Object} obj - The object to convert.
+   * @returns {Object} The JSON-compatible object.
+   */
   var toJSONObject = function toJSONObject(obj) {
     var stack = new Array(10);
     var _visit = function visit(source, i) {
@@ -1224,7 +1284,7 @@
         if (isBuffer(source)) {
           return source;
         }
-        if (!("toJSON" in source)) {
+        if (!('toJSON' in source)) {
           stack[i] = source;
           var target = isArray(source) ? [] : {};
           forEach(source, function (value, key) {
@@ -1239,7 +1299,21 @@
     };
     return _visit(obj, 0);
   };
-  var isAsyncFn = kindOfTest("AsyncFunction");
+
+  /**
+   * Determines if a value is an async function.
+   *
+   * @param {*} thing - The value to test.
+   * @returns {boolean} True if value is an async function, otherwise false.
+   */
+  var isAsyncFn = kindOfTest('AsyncFunction');
+
+  /**
+   * Determines if a value is thenable (has then and catch methods).
+   *
+   * @param {*} thing - The value to test.
+   * @returns {boolean} True if value is thenable, otherwise false.
+   */
   var isThenable = function isThenable(thing) {
     return thing && (isObject(thing) || isFunction$1(thing)) && isFunction$1(thing.then) && isFunction$1(thing["catch"]);
   };
@@ -1247,12 +1321,20 @@
   // original code
   // https://github.com/DigitalBrainJS/AxiosPromise/blob/16deab13710ec09779922131f3fa5954320f83ab/lib/utils.js#L11-L34
 
+  /**
+   * Provides a cross-platform setImmediate implementation.
+   * Uses native setImmediate if available, otherwise falls back to postMessage or setTimeout.
+   *
+   * @param {boolean} setImmediateSupported - Whether setImmediate is supported.
+   * @param {boolean} postMessageSupported - Whether postMessage is supported.
+   * @returns {Function} A function to schedule a callback asynchronously.
+   */
   var _setImmediate = function (setImmediateSupported, postMessageSupported) {
     if (setImmediateSupported) {
       return setImmediate;
     }
     return postMessageSupported ? function (token, callbacks) {
-      _global.addEventListener("message", function (_ref5) {
+      _global.addEventListener('message', function (_ref5) {
         var source = _ref5.source,
           data = _ref5.data;
         if (source === _global && data === token) {
@@ -1261,13 +1343,20 @@
       }, false);
       return function (cb) {
         callbacks.push(cb);
-        _global.postMessage(token, "*");
+        _global.postMessage(token, '*');
       };
     }("axios@".concat(Math.random()), []) : function (cb) {
       return setTimeout(cb);
     };
-  }(typeof setImmediate === "function", isFunction$1(_global.postMessage));
-  var asap = typeof queueMicrotask !== "undefined" ? queueMicrotask.bind(_global) : typeof process !== "undefined" && process.nextTick || _setImmediate;
+  }(typeof setImmediate === 'function', isFunction$1(_global.postMessage));
+
+  /**
+   * Schedules a microtask or asynchronous callback as soon as possible.
+   * Uses queueMicrotask if available, otherwise falls back to process.nextTick or _setImmediate.
+   *
+   * @type {Function}
+   */
+  var asap = typeof queueMicrotask !== 'undefined' ? queueMicrotask.bind(_global) : typeof process !== 'undefined' && process.nextTick || _setImmediate;
 
   // *********************
 
@@ -1293,6 +1382,8 @@
     isUndefined: isUndefined,
     isDate: isDate,
     isFile: isFile,
+    isReactNativeBlob: isReactNativeBlob,
+    isReactNative: isReactNative,
     isBlob: isBlob,
     isRegExp: isRegExp,
     isFunction: isFunction$1,
@@ -1351,6 +1442,16 @@
       var _this;
       _classCallCheck(this, AxiosError);
       _this = _callSuper(this, AxiosError, [message]);
+
+      // Make message enumerable to maintain backward compatibility
+      // The native Error constructor sets message as non-enumerable,
+      // but axios < v1.13.3 had it as enumerable
+      Object.defineProperty(_this, 'message', {
+        value: message,
+        enumerable: true,
+        writable: true,
+        configurable: true
+      });
       _this.name = 'AxiosError';
       _this.isAxiosError = true;
       code && (_this.code = code);
@@ -1390,6 +1491,11 @@
         var axiosError = new AxiosError(error.message, code || error.code, config, request, response);
         axiosError.cause = error;
         axiosError.name = error.name;
+
+        // Preserve status from the original error if not already set from response
+        if (error.status != null && axiosError.status == null) {
+          axiosError.status = error.status;
+        }
         customProps && Object.assign(axiosError, customProps);
         return axiosError;
       }
@@ -1545,6 +1651,10 @@
      */
     function defaultVisitor(value, key, path) {
       var arr = value;
+      if (utils$1.isReactNative(formData) && utils$1.isReactNativeBlob(value)) {
+        formData.append(renderKey(path, key, dots), convertValue(value));
+        return false;
+      }
       if (value && !path && _typeof(value) === 'object') {
         if (utils$1.endsWith(key, '{}')) {
           // eslint-disable-next-line no-param-reassign
@@ -1680,7 +1790,7 @@
       serializedParams = utils$1.isURLSearchParams(params) ? params.toString() : new AxiosURLSearchParams(params, _options).toString(_encode);
     }
     if (serializedParams) {
-      var hashmarkIndex = url.indexOf("#");
+      var hashmarkIndex = url.indexOf('#');
       if (hashmarkIndex !== -1) {
         url = url.slice(0, hashmarkIndex);
       }
@@ -2035,7 +2145,7 @@
     },
     headers: {
       common: {
-        'Accept': 'application/json, text/plain, */*',
+        Accept: 'application/json, text/plain, */*',
         'Content-Type': undefined
       }
     }
@@ -2322,7 +2432,7 @@
     }, {
       key: "getSetCookie",
       value: function getSetCookie() {
-        return this.get("set-cookie") || [];
+        return this.get('set-cookie') || [];
       }
     }, {
       key: Symbol.toStringTag,
@@ -2776,7 +2886,7 @@
       }
     };
     utils$1.forEach(Object.keys(_objectSpread2(_objectSpread2({}, config1), config2)), function computeConfigValue(prop) {
-      if (prop === "__proto__" || prop === "constructor" || prop === "prototype") return;
+      if (prop === '__proto__' || prop === 'constructor' || prop === 'prototype') return;
       var merge = utils$1.hasOwnProp(mergeMap, prop) ? mergeMap[prop] : mergeDeepProperties;
       var configValue = merge(config1[prop], config2[prop], prop);
       utils$1.isUndefined(configValue) && merge !== mergeDirectKeys || (config[prop] = configValue);
@@ -3450,7 +3560,7 @@
               _request = new Request(url, {
                 method: 'POST',
                 body: data,
-                duplex: "half"
+                duplex: 'half'
               });
               if (utils$1.isFormData(data) && (contentTypeHeader = _request.headers.get('content-type'))) {
                 headers.setContentType(contentTypeHeader);
@@ -3466,13 +3576,13 @@
 
               // Cloudflare Workers throws when credentials are defined
               // see https://github.com/cloudflare/workerd/issues/902
-              isCredentialsSupported = isRequestSupported && "credentials" in Request.prototype;
+              isCredentialsSupported = isRequestSupported && 'credentials' in Request.prototype;
               resolvedOptions = _objectSpread2(_objectSpread2({}, fetchOptions), {}, {
                 signal: composedSignal,
                 method: method.toUpperCase(),
                 headers: headers.normalize().toJSON(),
                 body: data,
-                duplex: "half",
+                duplex: 'half',
                 credentials: isCredentialsSupported ? withCredentials : undefined
               });
               request = isRequestSupported && new Request(url, resolvedOptions);
@@ -3563,7 +3673,7 @@
    * - `http` for Node.js
    * - `xhr` for browsers
    * - `fetch` for fetch API-based requests
-   * 
+   *
    * @type {Object<string, Function|Object>}
    */
   var knownAdapters = {
@@ -3592,7 +3702,7 @@
 
   /**
    * Render a rejection reason string for unknown or unsupported adapters
-   * 
+   *
    * @param {string} reason
    * @returns {string}
    */
@@ -3602,7 +3712,7 @@
 
   /**
    * Check if the adapter is resolved (function, null, or false)
-   * 
+   *
    * @param {Function|null|false} adapter
    * @returns {boolean}
    */
@@ -3614,7 +3724,7 @@
    * Get the first suitable adapter from the provided list.
    * Tries each adapter in order until a supported one is found.
    * Throws an AxiosError if no adapter is suitable.
-   * 
+   *
    * @param {Array<string|Function>|string|Function} adapters - Adapter(s) by name or function.
    * @param {Object} config - Axios request configuration
    * @throws {AxiosError} If no suitable adapter is available
@@ -3725,7 +3835,7 @@
     });
   }
 
-  var VERSION = "1.13.5";
+  var VERSION = "1.13.6";
 
   var validators$1 = {};
 
@@ -3748,7 +3858,7 @@
    */
   validators$1.transitional = function transitional(validator, version, message) {
     function formatMessage(opt, desc) {
-      return '[Axios v' + VERSION + '] Transitional option \'' + opt + '\'' + desc + (message ? '. ' + message : '');
+      return '[Axios v' + VERSION + "] Transitional option '" + opt + "'" + desc + (message ? '. ' + message : '');
     }
 
     // eslint-disable-next-line func-names
