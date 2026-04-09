@@ -1,4 +1,4 @@
-/*! Axios v1.14.0 Copyright (c) 2026 Matt Zabriskie and contributors */
+/*! Axios v1.15.0 Copyright (c) 2026 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -2196,14 +2196,42 @@
   });
 
   var $internals = Symbol('internals');
+  var isValidHeaderValue = function isValidHeaderValue(value) {
+    return !/[\r\n]/.test(value);
+  };
+  function assertValidHeaderValue(value, header) {
+    if (value === false || value == null) {
+      return;
+    }
+    if (utils$1.isArray(value)) {
+      value.forEach(function (v) {
+        return assertValidHeaderValue(v, header);
+      });
+      return;
+    }
+    if (!isValidHeaderValue(String(value))) {
+      throw new Error("Invalid character in header content [\"".concat(header, "\"]"));
+    }
+  }
   function normalizeHeader(header) {
     return header && String(header).trim().toLowerCase();
+  }
+  function stripTrailingCRLF(str) {
+    var end = str.length;
+    while (end > 0) {
+      var charCode = str.charCodeAt(end - 1);
+      if (charCode !== 10 && charCode !== 13) {
+        break;
+      }
+      end -= 1;
+    }
+    return end === str.length ? str : str.slice(0, end);
   }
   function normalizeValue(value) {
     if (value === false || value == null) {
       return value;
     }
-    return utils$1.isArray(value) ? value.map(normalizeValue) : String(value).replace(/[\r\n]+$/, '');
+    return utils$1.isArray(value) ? value.map(normalizeValue) : stripTrailingCRLF(String(value));
   }
   function parseTokens(str) {
     var tokens = Object.create(null);
@@ -2264,6 +2292,7 @@
           }
           var key = utils$1.findKey(self, lHeader);
           if (!key || self[key] === undefined || _rewrite === true || _rewrite === undefined && self[key] !== false) {
+            assertValidHeaderValue(_value, _header);
             self[key || _header] = normalizeValue(_value);
           }
         }
@@ -3831,7 +3860,7 @@
     });
   }
 
-  var VERSION = "1.14.0";
+  var VERSION = "1.15.0";
 
   var validators$1 = {};
 
@@ -3946,7 +3975,7 @@
       key: "request",
       value: (function () {
         var _request2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(configOrUrl, config) {
-          var dummy, stack, _t;
+          var dummy, stack, firstNewlineIndex, secondNewlineIndex, stackWithoutTwoTopLines, _t;
           return _regenerator().w(function (_context) {
             while (1) switch (_context.p = _context.n) {
               case 0:
@@ -3963,13 +3992,24 @@
                   Error.captureStackTrace ? Error.captureStackTrace(dummy) : dummy = new Error();
 
                   // slice off the Error: ... line
-                  stack = dummy.stack ? dummy.stack.replace(/^.+\n/, '') : '';
+                  stack = function () {
+                    if (!dummy.stack) {
+                      return '';
+                    }
+                    var firstNewlineIndex = dummy.stack.indexOf('\n');
+                    return firstNewlineIndex === -1 ? '' : dummy.stack.slice(firstNewlineIndex + 1);
+                  }();
                   try {
                     if (!_t.stack) {
                       _t.stack = stack;
                       // match without the 2 top stack lines
-                    } else if (stack && !String(_t.stack).endsWith(stack.replace(/^.+\n.+\n/, ''))) {
-                      _t.stack += '\n' + stack;
+                    } else if (stack) {
+                      firstNewlineIndex = stack.indexOf('\n');
+                      secondNewlineIndex = firstNewlineIndex === -1 ? -1 : stack.indexOf('\n', firstNewlineIndex + 1);
+                      stackWithoutTwoTopLines = secondNewlineIndex === -1 ? '' : stack.slice(secondNewlineIndex + 1);
+                      if (!String(_t.stack).endsWith(stackWithoutTwoTopLines)) {
+                        _t.stack += '\n' + stack;
+                      }
                     }
                   } catch (e) {
                     // ignore the case where "stack" is an un-writable property
