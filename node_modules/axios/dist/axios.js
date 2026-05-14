@@ -1,4 +1,4 @@
-/*! Axios v1.16.0 Copyright (c) 2026 Matt Zabriskie and contributors */
+/*! Axios v1.16.1 Copyright (c) 2026 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -1291,10 +1291,10 @@
    * @returns {Object} The JSON-compatible object.
    */
   var toJSONObject = function toJSONObject(obj) {
-    var stack = new Array(10);
-    var _visit = function visit(source, i) {
+    var visited = new WeakSet();
+    var _visit = function visit(source) {
       if (isObject(source)) {
-        if (stack.indexOf(source) >= 0) {
+        if (visited.has(source)) {
           return;
         }
 
@@ -1303,19 +1303,20 @@
           return source;
         }
         if (!('toJSON' in source)) {
-          stack[i] = source;
+          // add-on descent / delete-on-ascent: preserves path semantics, so DAG nodes serialise at every occurrence (see #7230).
+          visited.add(source);
           var target = isArray(source) ? [] : {};
           forEach(source, function (value, key) {
-            var reducedValue = _visit(value, i + 1);
+            var reducedValue = _visit(value);
             !isUndefined(reducedValue) && (target[key] = reducedValue);
           });
-          stack[i] = undefined;
+          visited["delete"](source);
           return target;
         }
       }
       return source;
     };
-    return _visit(obj, 0);
+    return _visit(obj);
   };
 
   /**
@@ -1487,8 +1488,6 @@
     return parsed;
   });
 
-  var $internals = Symbol('internals');
-  var INVALID_HEADER_VALUE_CHARS_RE = /[^\x09\x20-\x7E\x80-\xFF]/g;
   function trimSPorHTAB(str) {
     var start = 0;
     var end = str.length;
@@ -1508,11 +1507,37 @@
     }
     return start === 0 && end === str.length ? str : str.slice(start, end);
   }
+
+  // The control-code ranges are intentional: header sanitization strips C0/DEL bytes.
+  // eslint-disable-next-line no-control-regex
+  var INVALID_UNICODE_HEADER_VALUE_CHARS = new RegExp("[\\u0000-\\u0008\\u000a-\\u001f\\u007f]+", 'g');
+  // eslint-disable-next-line no-control-regex
+  var INVALID_BYTE_STRING_HEADER_VALUE_CHARS = new RegExp("[^\\u0009\\u0020-\\u007e\\u0080-\\u00ff]+", 'g');
+  function sanitizeValue(value, invalidChars) {
+    if (utils$1.isArray(value)) {
+      return value.map(function (item) {
+        return sanitizeValue(item, invalidChars);
+      });
+    }
+    return trimSPorHTAB(String(value).replace(invalidChars, ''));
+  }
+  var sanitizeHeaderValue = function sanitizeHeaderValue(value) {
+    return sanitizeValue(value, INVALID_UNICODE_HEADER_VALUE_CHARS);
+  };
+  var sanitizeByteStringHeaderValue = function sanitizeByteStringHeaderValue(value) {
+    return sanitizeValue(value, INVALID_BYTE_STRING_HEADER_VALUE_CHARS);
+  };
+  function toByteStringHeaderObject(headers) {
+    var byteStringHeaders = Object.create(null);
+    utils$1.forEach(headers.toJSON(), function (value, header) {
+      byteStringHeaders[header] = sanitizeByteStringHeaderValue(value);
+    });
+    return byteStringHeaders;
+  }
+
+  var $internals = Symbol('internals');
   function normalizeHeader(header) {
     return header && String(header).trim().toLowerCase();
-  }
-  function sanitizeHeaderValue(str) {
-    return trimSPorHTAB(str.replace(INVALID_HEADER_VALUE_CHARS_RE, ''));
   }
   function normalizeValue(value) {
     if (value === false || value == null) {
@@ -2477,7 +2502,7 @@
         }
         return !isNumericKey;
       }
-      if (!target[name] || !utils$1.isObject(target[name])) {
+      if (!utils$1.hasOwnProp(target, name) || !utils$1.isObject(target[name])) {
         target[name] = [];
       }
       var result = buildPath(path, value, target[name], index);
@@ -2777,6 +2802,9 @@
     var bytesNotified = 0;
     var _speedometer = speedometer(50, 250);
     return throttle(function (e) {
+      if (!e || typeof e.loaded !== 'number') {
+        return;
+      }
       var rawLoaded = e.loaded;
       var total = e.lengthComputable ? e.total : undefined;
       var loaded = total != null ? Math.min(rawLoaded, total) : rawLoaded;
@@ -3249,7 +3277,7 @@
 
       // Add headers to the request
       if ('setRequestHeader' in request) {
-        utils$1.forEach(requestHeaders.toJSON(), function setRequestHeader(val, key) {
+        utils$1.forEach(toByteStringHeaderObject(requestHeaders), function setRequestHeader(val, key) {
           request.setRequestHeader(key, val);
         });
       }
@@ -3311,42 +3339,43 @@
   };
 
   var composeSignals = function composeSignals(signals, timeout) {
-    var _signals = signals = signals ? signals.filter(Boolean) : [],
-      length = _signals.length;
-    if (timeout || length) {
-      var controller = new AbortController();
-      var aborted;
-      var onabort = function onabort(reason) {
-        if (!aborted) {
-          aborted = true;
-          unsubscribe();
-          var err = reason instanceof Error ? reason : this.reason;
-          controller.abort(err instanceof AxiosError ? err : new CanceledError(err instanceof Error ? err.message : err));
-        }
-      };
-      var timer = timeout && setTimeout(function () {
-        timer = null;
-        onabort(new AxiosError("timeout of ".concat(timeout, "ms exceeded"), AxiosError.ETIMEDOUT));
-      }, timeout);
-      var unsubscribe = function unsubscribe() {
-        if (signals) {
-          timer && clearTimeout(timer);
-          timer = null;
-          signals.forEach(function (signal) {
-            signal.unsubscribe ? signal.unsubscribe(onabort) : signal.removeEventListener('abort', onabort);
-          });
-          signals = null;
-        }
-      };
-      signals.forEach(function (signal) {
-        return signal.addEventListener('abort', onabort);
-      });
-      var signal = controller.signal;
-      signal.unsubscribe = function () {
-        return utils$1.asap(unsubscribe);
-      };
-      return signal;
+    signals = signals ? signals.filter(Boolean) : [];
+    if (!timeout && !signals.length) {
+      return;
     }
+    var controller = new AbortController();
+    var aborted = false;
+    var onabort = function onabort(reason) {
+      if (!aborted) {
+        aborted = true;
+        unsubscribe();
+        var err = reason instanceof Error ? reason : this.reason;
+        controller.abort(err instanceof AxiosError ? err : new CanceledError(err instanceof Error ? err.message : err));
+      }
+    };
+    var timer = timeout && setTimeout(function () {
+      timer = null;
+      onabort(new AxiosError("timeout of ".concat(timeout, "ms exceeded"), AxiosError.ETIMEDOUT));
+    }, timeout);
+    var unsubscribe = function unsubscribe() {
+      if (!signals) {
+        return;
+      }
+      timer && clearTimeout(timer);
+      timer = null;
+      signals.forEach(function (signal) {
+        signal.unsubscribe ? signal.unsubscribe(onabort) : signal.removeEventListener('abort', onabort);
+      });
+      signals = null;
+    };
+    signals.forEach(function (signal) {
+      return signal.addEventListener('abort', onabort);
+    });
+    var signal = controller.signal;
+    signal.unsubscribe = function () {
+      return utils$1.asap(unsubscribe);
+    };
+    return signal;
   };
 
   var streamChunk = /*#__PURE__*/_regenerator().m(function streamChunk(chunk, chunkSize) {
@@ -3644,7 +3673,7 @@
     return bytes;
   }
 
-  var VERSION = "1.16.0";
+  var VERSION = "1.16.1";
 
   var DEFAULT_CHUNK_SIZE = 64 * 1024;
   var isFunction = utils$1.isFunction;
@@ -3659,8 +3688,7 @@
     }
   };
   var factory = function factory(env) {
-    var _utils$global;
-    var globalObject = (_utils$global = utils$1.global) !== null && _utils$global !== void 0 ? _utils$global : globalThis;
+    var globalObject = utils$1.global !== undefined && utils$1.global !== null ? utils$1.global : globalThis;
     var ReadableStream = globalObject.ReadableStream,
       TextEncoder = globalObject.TextEncoder;
     env = utils$1.merge.call({
@@ -3900,7 +3928,7 @@
               resolvedOptions = _objectSpread2(_objectSpread2({}, fetchOptions), {}, {
                 signal: composedSignal,
                 method: method.toUpperCase(),
-                headers: headers.normalize().toJSON(),
+                headers: toByteStringHeaderObject(headers.normalize()),
                 body: data,
                 duplex: 'half',
                 credentials: isCredentialsSupported ? withCredentials : undefined
