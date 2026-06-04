@@ -1,4 +1,4 @@
-/*! Axios v1.16.1 Copyright (c) 2026 Matt Zabriskie and contributors */
+/*! Axios v1.17.0 Copyright (c) 2026 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -964,7 +964,10 @@
       if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
         return;
       }
-      var targetKey = caseless && findKey(result, key) || key;
+
+      // findKey lowercases the key, so caseless lookup only applies to strings —
+      // symbol keys are identity-matched.
+      var targetKey = caseless && typeof key === 'string' && findKey(result, key) || key;
       // Read via own-prop only — a bare `result[targetKey]` walks the prototype
       // chain, so a polluted Object.prototype value could surface here and get
       // copied into the merged result.
@@ -979,11 +982,22 @@
         result[targetKey] = val;
       }
     };
-    for (var _len = arguments.length, objs = new Array(_len), _key2 = 0; _key2 < _len; _key2++) {
-      objs[_key2] = arguments[_key2];
-    }
-    for (var i = 0, l = objs.length; i < l; i++) {
-      objs[i] && forEach(objs[i], assignValue);
+    for (var i = 0, l = arguments.length; i < l; i++) {
+      var source = i < 0 || arguments.length <= i ? undefined : arguments[i];
+      if (!source || isBuffer(source)) {
+        continue;
+      }
+      forEach(source, assignValue);
+      if (_typeof(source) !== 'object' || isArray(source)) {
+        continue;
+      }
+      var symbols = Object.getOwnPropertySymbols(source);
+      for (var j = 0; j < symbols.length; j++) {
+        var symbol = symbols[j];
+        if (propertyIsEnumerable.call(source, symbol)) {
+          assignValue(source[symbol], symbol);
+        }
+      }
     }
     return result;
   }
@@ -1203,6 +1217,7 @@
       return hasOwnProperty.call(obj, prop);
     };
   }(Object.prototype);
+  var propertyIsEnumerable = Object.prototype.propertyIsEnumerable;
 
   /**
    * Determine if a value is a RegExp object
@@ -1603,7 +1618,7 @@
         function setHeader(_value, _header, _rewrite) {
           var lHeader = normalizeHeader(_header);
           if (!lHeader) {
-            throw new Error('header name must be a non-empty string');
+            return;
           }
           var key = utils$1.findKey(self, lHeader);
           if (!key || self[key] === undefined || _rewrite === true || _rewrite === undefined && self[key] !== false) {
@@ -1629,7 +1644,7 @@
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var entry = _step.value;
               if (!utils$1.isArray(entry)) {
-                throw TypeError('Object iterator must return a key-value pair');
+                throw new TypeError('Object iterator must return a key-value pair');
               }
               obj[key = entry[0]] = (dest = obj[key]) ? utils$1.isArray(dest) ? [].concat(_toConsumableArray(dest), [entry[1]]) : [dest, entry[1]] : entry[1];
             }
@@ -2171,7 +2186,7 @@
         throw new AxiosError('Object is too deeply nested (' + depth + ' levels). Max depth: ' + maxDepth, AxiosError.ERR_FORM_DATA_DEPTH_EXCEEDED);
       }
       if (stack.indexOf(value) !== -1) {
-        throw Error('Circular reference detected in ' + path.join('.'));
+        throw new Error('Circular reference detected in ' + path.join('.'));
       }
       stack.push(value);
       utils$1.forEach(value, function each(el, key) {
@@ -2363,7 +2378,8 @@
     silentJSONParsing: true,
     forcedJSONParsing: true,
     clarifyTimeoutError: false,
-    legacyInterceptorReqResOrdering: true
+    legacyInterceptorReqResOrdering: true,
+    advertiseZstdAcceptEncoding: false
   };
 
   var URLSearchParams$1 = typeof URLSearchParams !== 'undefined' ? URLSearchParams : AxiosURLSearchParams;
@@ -3098,12 +3114,12 @@
    *
    * @returns {string} UTF-8 bytes as a Latin-1 string
    */
-  var encodeUTF8 = function encodeUTF8(str) {
+  var encodeUTF8$1 = function encodeUTF8(str) {
     return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi, function (_, hex) {
       return String.fromCharCode(parseInt(hex, 16));
     });
   };
-  var resolveConfig = (function (config) {
+  function resolveConfig(config) {
     var newConfig = mergeConfig({}, config);
 
     // Read only own properties to prevent prototype pollution gadgets
@@ -3121,15 +3137,15 @@
     var allowAbsoluteUrls = own('allowAbsoluteUrls');
     var url = own('url');
     newConfig.headers = headers = AxiosHeaders.from(headers);
-    newConfig.url = buildURL(buildFullPath(baseURL, url, allowAbsoluteUrls), config.params, config.paramsSerializer);
+    newConfig.url = buildURL(buildFullPath(baseURL, url, allowAbsoluteUrls), own('params'), own('paramsSerializer'));
 
     // HTTP basic authentication
     if (auth) {
-      headers.set('Authorization', 'Basic ' + btoa((auth.username || '') + ':' + (auth.password ? encodeUTF8(auth.password) : '')));
+      headers.set('Authorization', 'Basic ' + btoa((auth.username || '') + ':' + (auth.password ? encodeUTF8$1(auth.password) : '')));
     }
     if (utils$1.isFormData(data)) {
-      if (platform.hasStandardBrowserEnv || platform.hasStandardBrowserWebWorkerEnv) {
-        headers.setContentType(undefined); // browser handles it
+      if (platform.hasStandardBrowserEnv || platform.hasStandardBrowserWebWorkerEnv || utils$1.isReactNative(data)) {
+        headers.setContentType(undefined); // browser/web worker/RN handles it
       } else if (utils$1.isFunction(data.getHeaders)) {
         // Node.js FormData (like form-data package)
         setFormDataHeaders(headers, data.getHeaders(), own('formDataHeaderPolicy'));
@@ -3157,7 +3173,7 @@
       }
     }
     return newConfig;
-  });
+  }
 
   var isXHRAdapterSupported = typeof XMLHttpRequest !== 'undefined';
   var xhrAdapter = isXHRAdapterSupported && function (config) {
@@ -3673,10 +3689,39 @@
     return bytes;
   }
 
-  var VERSION = "1.16.1";
+  var VERSION = "1.17.0";
 
   var DEFAULT_CHUNK_SIZE = 64 * 1024;
   var isFunction = utils$1.isFunction;
+
+  /**
+   * Encode a UTF-8 string to a Latin-1 byte string for use with btoa().
+   * This is a modern replacement for the deprecated unescape(encodeURIComponent(str)) pattern.
+   *
+   * @param {string} str The string to encode
+   *
+   * @returns {string} UTF-8 bytes as a Latin-1 string
+   */
+  var encodeUTF8 = function encodeUTF8(str) {
+    return encodeURIComponent(str).replace(/%([0-9A-F]{2})/gi, function (_, hex) {
+      return String.fromCharCode(parseInt(hex, 16));
+    });
+  };
+
+  // Node's WHATWG URL parser returns `username` and `password` percent-encoded.
+  // Decode before composing the `auth` option so credentials such as
+  // `my%40email.com:pass` are sent as `my@email.com:pass`. Falls back to the
+  // original value for malformed input so a bad encoding never throws.
+  var decodeURIComponentSafe = function decodeURIComponentSafe(value) {
+    if (!utils$1.isString(value)) {
+      return value;
+    }
+    try {
+      return decodeURIComponent(value);
+    } catch (error) {
+      return value;
+    }
+  };
   var test = function test(fn) {
     try {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -3686,6 +3731,14 @@
     } catch (e) {
       return false;
     }
+  };
+  var maybeWithAuthCredentials = function maybeWithAuthCredentials(url) {
+    var protocolIndex = url.indexOf('://');
+    var urlToCheck = url;
+    if (protocolIndex !== -1) {
+      urlToCheck = urlToCheck.slice(protocolIndex + 3);
+    }
+    return urlToCheck.includes('@') || urlToCheck.includes(':');
   };
   var factory = function factory(env) {
     var globalObject = utils$1.global !== undefined && utils$1.global !== null ? utils$1.global : globalThis;
@@ -3840,13 +3893,16 @@
     }();
     return /*#__PURE__*/function () {
       var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(config) {
-        var _resolveConfig, url, method, data, signal, cancelToken, timeout, onDownloadProgress, onUploadProgress, responseType, headers, _resolveConfig$withCr, withCredentials, fetchOptions, maxContentLength, maxBodyLength, hasMaxContentLength, hasMaxBodyLength, _fetch, composedSignal, request, unsubscribe, requestContentLength, estimated, outboundLength, _request, contentTypeHeader, _progressEventDecorat, _progressEventDecorat2, onProgress, flush, isCredentialsSupported, contentType, resolvedOptions, response, declaredLength, isStreamResponse, options, responseContentLength, _ref5, _ref6, _onProgress, _flush, bytesRead, onChunkProgress, responseData, materializedSize, canceledError, _t3, _t4, _t5;
+        var _resolveConfig, url, method, data, signal, cancelToken, timeout, onDownloadProgress, onUploadProgress, responseType, headers, _resolveConfig$withCr, withCredentials, fetchOptions, maxContentLength, maxBodyLength, hasMaxContentLength, hasMaxBodyLength, own, _fetch, composedSignal, request, unsubscribe, requestContentLength, auth, configAuth, username, password, parsedURL, urlUsername, urlPassword, estimated, outboundLength, _request, contentTypeHeader, _progressEventDecorat, _progressEventDecorat2, onProgress, flush, isCredentialsSupported, contentType, resolvedOptions, response, declaredLength, isStreamResponse, options, responseContentLength, _ref5, _ref6, _onProgress, _flush, bytesRead, onChunkProgress, responseData, materializedSize, canceledError, _t3, _t4, _t5;
         return _regenerator().w(function (_context4) {
           while (1) switch (_context4.p = _context4.n) {
             case 0:
               _resolveConfig = resolveConfig(config), url = _resolveConfig.url, method = _resolveConfig.method, data = _resolveConfig.data, signal = _resolveConfig.signal, cancelToken = _resolveConfig.cancelToken, timeout = _resolveConfig.timeout, onDownloadProgress = _resolveConfig.onDownloadProgress, onUploadProgress = _resolveConfig.onUploadProgress, responseType = _resolveConfig.responseType, headers = _resolveConfig.headers, _resolveConfig$withCr = _resolveConfig.withCredentials, withCredentials = _resolveConfig$withCr === void 0 ? 'same-origin' : _resolveConfig$withCr, fetchOptions = _resolveConfig.fetchOptions, maxContentLength = _resolveConfig.maxContentLength, maxBodyLength = _resolveConfig.maxBodyLength;
               hasMaxContentLength = utils$1.isNumber(maxContentLength) && maxContentLength > -1;
               hasMaxBodyLength = utils$1.isNumber(maxBodyLength) && maxBodyLength > -1;
+              own = function own(key) {
+                return utils$1.hasOwnProp(config, key) ? config[key] : undefined;
+              };
               _fetch = envFetch || fetch;
               responseType = responseType ? (responseType + '').toLowerCase() : 'text';
               composedSignal = composeSignals([signal, cancelToken && cancelToken.toAbortSignal()], timeout);
@@ -3855,6 +3911,41 @@
                 composedSignal.unsubscribe();
               };
               _context4.p = 1;
+              // HTTP basic authentication
+              auth = undefined;
+              configAuth = own('auth');
+              if (configAuth) {
+                username = configAuth.username || '';
+                password = configAuth.password || '';
+                auth = {
+                  username: username,
+                  password: password
+                };
+              }
+              if (maybeWithAuthCredentials(url)) {
+                parsedURL = new URL(url, platform.origin);
+                if (!auth && (parsedURL.username || parsedURL.password)) {
+                  urlUsername = decodeURIComponentSafe(parsedURL.username);
+                  urlPassword = decodeURIComponentSafe(parsedURL.password);
+                  auth = {
+                    username: urlUsername,
+                    password: urlPassword
+                  };
+                }
+                if (parsedURL.username || parsedURL.password) {
+                  parsedURL.username = '';
+                  parsedURL.password = '';
+                  url = parsedURL.href;
+                }
+              }
+              if (auth) {
+                headers["delete"]('authorization');
+                headers.set('Authorization', 'Basic ' + btoa(encodeUTF8((auth.username || '') + ':' + (auth.password || ''))));
+              }
+
+              // Enforce maxContentLength for data: URLs up-front so we never materialize
+              // an oversized payload. The HTTP adapter applies the same check (see http.js
+              // "if (protocol === 'data:')" branch).
               if (!(hasMaxContentLength && typeof url === 'string' && url.startsWith('data:'))) {
                 _context4.n = 2;
                 break;
@@ -4440,7 +4531,8 @@
             silentJSONParsing: validators.transitional(validators["boolean"]),
             forcedJSONParsing: validators.transitional(validators["boolean"]),
             clarifyTimeoutError: validators.transitional(validators["boolean"]),
-            legacyInterceptorReqResOrdering: validators.transitional(validators["boolean"])
+            legacyInterceptorReqResOrdering: validators.transitional(validators["boolean"]),
+            advertiseZstdAcceptEncoding: validators.transitional(validators["boolean"])
           }, false);
         }
         if (paramsSerializer != null) {
