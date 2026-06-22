@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rental Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#listings">Listings</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="content">
+            <h1>Welcome to Your House Rental Website</h1>
+            <p>Find your dream home today.</p>
+            <a href="#listings" class="btn">View Listings</a>
+        </div>
+    </section>
+
+    <section id="listings" class="section">
+        <h2>Available Listings</h2>
+        <div class="listing">
+            <img src="house1.jpg" alt="House 1">
+            <h3>Beautiful 3-Bedroom House</h3>
+            <p>Price: $2,500/month</p>
+            <button class="btn">Contact for Details</button>
+        </div>
+
+        <div class="listing">
+            <img src="house2.jpg" alt="House 2">
+            <h3>Luxury Villa with Pool</h3>
+            <p>Price: $5,000/month</p>
+            <button class="btn">Contact for Details</button>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>We are a leading house rental agency dedicated to helping you find your perfect home.</p>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 House Rental Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
