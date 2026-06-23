@@ -1,4 +1,4 @@
-/*! Axios v1.18.0 Copyright (c) 2026 Matt Zabriskie and contributors */
+/*! Axios v1.18.1 Copyright (c) 2026 Matt Zabriskie and contributors */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -2040,7 +2040,19 @@
       key: "from",
       value: function from(error, code, config, request, response, customProps) {
         var axiosError = new AxiosError(error.message, code || error.code, config, request, response);
-        axiosError.cause = error;
+        // Match native `Error` `cause` semantics: non-enumerable. The wrapped
+        // error often carries circular internals (sockets, requests, agents), so
+        // an enumerable `cause` makes structured loggers (pino/winston) and any
+        // own-property walk throw "Converting circular structure to JSON".
+        // Regression from #6982; see #7205. `__proto__: null` mirrors the
+        // `message` descriptor below (prototype-pollution-safe descriptor).
+        Object.defineProperty(axiosError, 'cause', {
+          __proto__: null,
+          value: error,
+          writable: true,
+          enumerable: false,
+          configurable: true
+        });
         axiosError.name = error.name;
 
         // Preserve status from the original error if not already set from response
@@ -2192,7 +2204,13 @@
         throw new AxiosError('Blob is not supported. Use a Buffer instead.');
       }
       if (utils$1.isArrayBuffer(value) || utils$1.isTypedArray(value)) {
-        return useBlob && typeof Blob === 'function' ? new Blob([value]) : Buffer.from(value);
+        if (useBlob && typeof _Blob === 'function') {
+          return new _Blob([value]);
+        }
+        if (typeof Buffer !== 'undefined') {
+          return Buffer.from(value);
+        }
+        throw new AxiosError('Blob is not supported. Use a Buffer instead.', AxiosError.ERR_NOT_SUPPORT);
       }
       return value;
     }
@@ -2325,8 +2343,9 @@
     this._pairs.push([name, value]);
   };
   prototype.toString = function toString(encoder) {
+    var _this = this;
     var _encode = encoder ? function (value) {
-      return encoder.call(this, value, encode$1);
+      return encoder.call(_this, value, encode$1);
     } : encode$1;
     return this._pairs.map(function each(pair) {
       return _encode(pair[0]) + '=' + _encode(pair[1]);
@@ -2358,6 +2377,7 @@
     if (!params) {
       return url;
     }
+    url = url || '';
     var _options = utils$1.isFunction(options) ? {
       serialize: options
     } : options;
@@ -3005,7 +3025,11 @@
         var cookie = cookies[i].replace(/^\s+/, '');
         var eq = cookie.indexOf('=');
         if (eq !== -1 && cookie.slice(0, eq) === name) {
-          return decodeURIComponent(cookie.slice(eq + 1));
+          try {
+            return decodeURIComponent(cookie.slice(eq + 1));
+          } catch (e) {
+            return cookie.slice(eq + 1);
+          }
         }
       }
       return null;
@@ -3105,6 +3129,7 @@
    */
   function mergeConfig(config1, config2) {
     // eslint-disable-next-line no-param-reassign
+    config1 = config1 || {};
     config2 = config2 || {};
 
     // Use a null-prototype object so that downstream reads such as `config.auth`
@@ -3240,7 +3265,7 @@
       headers.set(formHeaders);
       return;
     }
-    Object.entries(formHeaders).forEach(function (_ref) {
+    Object.entries(formHeaders || {}).forEach(function (_ref) {
       var _ref2 = _slicedToArray(_ref, 2),
         key = _ref2[0],
         val = _ref2[1];
@@ -3287,7 +3312,11 @@
     if (auth) {
       var username = utils$1.getSafeProp(auth, 'username') || '';
       var password = utils$1.getSafeProp(auth, 'password') || '';
-      headers.set('Authorization', 'Basic ' + btoa(username + ':' + (password ? encodeUTF8$1(password) : '')));
+      try {
+        headers.set('Authorization', 'Basic ' + btoa(username + ':' + (password ? encodeUTF8$1(password) : '')));
+      } catch (e) {
+        throw AxiosError.from(e, AxiosError.ERR_BAD_OPTION_VALUE, config);
+      }
     }
     if (utils$1.isFormData(data)) {
       if (platform.hasStandardBrowserEnv || platform.hasStandardBrowserWebWorkerEnv || utils$1.isReactNative(data)) {
@@ -3492,6 +3521,7 @@
       var protocol = parseProtocol(_config.url);
       if (protocol && !platform.protocols.includes(protocol)) {
         reject(new AxiosError('Unsupported protocol ' + protocol + ':', AxiosError.ERR_BAD_REQUEST, config));
+        done();
         return;
       }
 
@@ -3531,7 +3561,9 @@
       signals = null;
     };
     signals.forEach(function (signal) {
-      return signal.addEventListener('abort', onabort);
+      return signal.addEventListener('abort', onabort, {
+        once: true
+      });
     });
     var signal = controller.signal;
     signal.unsubscribe = function () {
@@ -3841,7 +3873,7 @@
     return bytes;
   }
 
-  var VERSION = "1.18.0";
+  var VERSION = "1.18.1";
 
   var DEFAULT_CHUNK_SIZE = 64 * 1024;
   var isFunction = utils$1.isFunction;
@@ -4045,7 +4077,7 @@
     }();
     return /*#__PURE__*/function () {
       var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee4(config) {
-        var _resolveConfig, url, method, data, signal, cancelToken, timeout, onDownloadProgress, onUploadProgress, responseType, headers, _resolveConfig$withCr, withCredentials, fetchOptions, maxContentLength, maxBodyLength, hasMaxContentLength, hasMaxBodyLength, own, _fetch, composedSignal, request, unsubscribe, requestContentLength, pendingBodyError, maxBodyLengthError, auth, configAuth, username, password, parsedURL, urlUsername, urlPassword, estimated, outboundLength, mustEnforceStreamBody, trackRequestStream, _request, contentTypeHeader, _ref5, _ref6, onProgress, flush, isCredentialsSupported, contentType, resolvedOptions, response, responseHeaders, declaredLength, isStreamResponse, options, responseContentLength, _ref7, _ref8, _onProgress, _flush, bytesRead, onChunkProgress, responseData, materializedSize, canceledError, _t3, _t4;
+        var _resolveConfig, url, method, data, signal, cancelToken, timeout, onDownloadProgress, onUploadProgress, responseType, headers, _resolveConfig$withCr, withCredentials, fetchOptions, maxContentLength, maxBodyLength, hasMaxContentLength, hasMaxBodyLength, own, _fetch, composedSignal, request, unsubscribe, requestContentLength, pendingBodyError, maxBodyLengthError, auth, configAuth, username, password, parsedURL, urlUsername, urlPassword, estimated, outboundLength, mustEnforceStreamBody, trackRequestStream, _request, contentTypeHeader, _ref5, _ref6, onProgress, flush, isCredentialsSupported, contentType, resolvedOptions, response, responseHeaders, declaredLength, isStreamResponse, options, responseContentLength, _ref7, _ref8, _onProgress, _flush, bytesRead, onChunkProgress, responseData, materializedSize, canceledError, networkError, _t3, _t4;
         return _regenerator().w(function (_context4) {
           while (1) switch (_context4.p = _context4.n) {
             case 0:
@@ -4317,7 +4349,17 @@
               canceledError = composedSignal.reason;
               canceledError.config = config;
               request && (canceledError.request = request);
-              _t4 !== canceledError && (canceledError.cause = _t4);
+              if (_t4 !== canceledError) {
+                // Non-enumerable to match native Error `cause` semantics so loggers
+                // don't recurse into circular fetch internals (see #7205).
+                Object.defineProperty(canceledError, 'cause', {
+                  __proto__: null,
+                  value: _t4,
+                  writable: true,
+                  enumerable: false,
+                  configurable: true
+                });
+              }
               throw canceledError;
             case 17:
               if (!pendingBodyError) {
@@ -4338,9 +4380,16 @@
                 _context4.n = 20;
                 break;
               }
-              throw Object.assign(new AxiosError('Network Error', AxiosError.ERR_NETWORK, config, request, _t4 && _t4.response), {
-                cause: _t4.cause || _t4
+              networkError = new AxiosError('Network Error', AxiosError.ERR_NETWORK, config, request, _t4 && _t4.response); // Non-enumerable to match native Error `cause` semantics so loggers
+              // don't recurse into circular fetch internals (see #7205).
+              Object.defineProperty(networkError, 'cause', {
+                __proto__: null,
+                value: _t4.cause || _t4,
+                writable: true,
+                enumerable: false,
+                configurable: true
               });
+              throw networkError;
             case 20:
               throw AxiosError.from(_t4, _t4 && _t4.code, config, request, _t4 && _t4.response);
             case 21:
@@ -4472,7 +4521,7 @@
         return "adapter ".concat(id, " ") + (state === false ? 'is not supported by the environment' : 'is not available in the build');
       });
       var s = length ? reasons.length > 1 ? 'since :\n' + reasons.map(renderReason).join('\n') : ' ' + renderReason(reasons[0]) : 'as no adapter specified';
-      throw new AxiosError("There is no suitable adapter to dispatch the request " + s, 'ERR_NOT_SUPPORT');
+      throw new AxiosError("There is no suitable adapter to dispatch the request " + s, AxiosError.ERR_NOT_SUPPORT);
     }
     return adapter;
   }
@@ -4615,7 +4664,7 @@
    */
 
   function assertOptions(options, schema, allowUnknown) {
-    if (_typeof(options) !== 'object') {
+    if (_typeof(options) !== 'object' || options === null) {
       throw new AxiosError('options must be an object', AxiosError.ERR_BAD_OPTION_VALUE);
     }
     var keys = Object.keys(options);
