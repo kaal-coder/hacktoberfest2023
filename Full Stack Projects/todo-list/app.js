@@ -1,48 +1,59 @@
-const express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-const bodyParser = require('body-parser');
-var i = 0;
-var newItem = [];
-var workItem = [];
+const PORT = process.env.PORT || 3000;
+
+let personalItems = [];
+let workItems = [];
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
-app.set('view engine', "ejs");
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
+// Helper function
+const getFormattedDate = () => {
+  const today = new Date();
+  const options = { weekday: 'long', day: 'numeric', month: 'long' };
+  return today.toLocaleDateString('en-US', options);
+};
+
+// Routes
 app.get('/', (req, res) => {
-    var today = new Date();
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-    var day = today.toLocaleDateString('en-US', options);
-
-    res.render('list', { listTitle: day, newListItem: newItem, i: i });
+  res.render('list', {
+    listTitle: getFormattedDate(),
+    items: personalItems,
+    placeholder: 'Add a new task...',
+    route: '/'
+  });
 });
 
-app.post("/", function (req, res) {
-
-    let Item = req.body.item;
-    if (req.body.list === "Work") {
-        workItem.push(Item);
-        res.redirect('/work');
-    } else {
-
-        newItem.push(Item);
-        res.redirect("/");
-    }
+app.post('/', (req, res) => {
+  const item = req.body.item?.trim();
+  if (item) personalItems.push(item);
+  res.redirect('/');
 });
 
-app.get('/work', function (req, res) {
-
-    res.render('list', { listTitle: "Work Item", newListItem: workItem });
-
+app.get('/work', (req, res) => {
+  res.render('list', {
+    listTitle: '💼 Work List',
+    items: workItems,
+    placeholder: 'Add a new work task...',
+    route: '/work'
+  });
 });
 
-
-
-app.listen(3000, () => {
-    console.log('Example app listening on port port!');
+app.post('/work', (req, res) => {
+  const item = req.body.item?.trim();
+  if (item) workItems.push(item);
+  res.redirect('/work');
 });
 
+app.listen(PORT, () => {
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
