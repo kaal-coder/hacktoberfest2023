@@ -161,7 +161,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/IshitaPathak" target="_blank"><img src="https://avatars.githubusercontent.com/u/75848598?v=4" alt="IshitaPathak" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/DevyDhanish" target="_blank"><img src="https://avatars.githubusercontent.com/u/105561827?v=4" alt="DevyDhanish" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/chanakyha" target="_blank"><img src="https://avatars.githubusercontent.com/u/66877639?v=4" alt="chanakyha" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/Akshada-26" target="_blank"><img src="https://avatars.githubusercontent.com/u/130067077?v=4" alt="Akshada-26" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/Aman1143" target="_blank"><img src="https://avatars.githubusercontent.com/u/100416012?v=4" alt="Aman1143" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/subratkumar46" target="_blank"><img src="https://avatars.githubusercontent.com/u/100276349?v=4" alt="subratkumar46" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/ujen5173" target="_blank"><img src="https://avatars.githubusercontent.com/u/115857092?v=4" alt="ujen5173" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/YC1425" target="_blank"><img src="https://avatars.githubusercontent.com/u/85687327?v=4" alt="YC1425" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -174,7 +174,7 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/techfreakSahil" target="_blank"><img src="https://avatars.githubusercontent.com/u/116283802?v=4" alt="techfreakSahil" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Shoyebaktar-shirol" target="_blank"><img src="https://avatars.githubusercontent.com/u/113618917?v=4" alt="Shoyebaktar-shirol" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Damon248" target="_blank"><img src="https://avatars.githubusercontent.com/u/91674984?v=4" alt="Damon248" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/Aman1143" target="_blank"><img src="https://avatars.githubusercontent.com/u/100416012?v=4" alt="Aman1143" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/Akshada-26" target="_blank"><img src="https://avatars.githubusercontent.com/u/130067077?v=4" alt="Akshada-26" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/elguitarraverde" target="_blank"><img src="https://avatars.githubusercontent.com/u/2836337?v=4" alt="elguitarraverde" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/rustyanurag" target="_blank"><img src="https://avatars.githubusercontent.com/u/88226411?v=4" alt="rustyanurag" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/apurwa-lohia" target="_blank"><img src="https://avatars.githubusercontent.com/u/74809495?v=4" alt="apurwa-lohia" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -184,9 +184,8 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/himadeepthi1" target="_blank"><img src="https://avatars.githubusercontent.com/u/133694562?v=4" alt="himadeepthi1" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Khushi-74" target="_blank"><img src="https://avatars.githubusercontent.com/u/118386335?v=4" alt="Khushi-74" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Kirti-Pant" target="_blank"><img src="https://avatars.githubusercontent.com/u/116485012?v=4" alt="Kirti-Pant" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/DebugsBunny1648" target="_blank"><img src="https://avatars.githubusercontent.com/u/102528343?v=4" alt="DebugsBunny1648" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/MananAgr2003" target="_blank"><img src="https://avatars.githubusercontent.com/u/92633110?v=4" alt="MananAgr2003" style="border-radius: 50%; width: 50px; height: 50px;"></a>
-<a href="https://github.com/YashDhirajOza" target="_blank"><img src="https://avatars.githubusercontent.com/u/144452060?v=4" alt="YashDhirajOza" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/DebugsBunny1648" target="_blank"><img src="https://avatars.githubusercontent.com/u/102528343?v=4" alt="DebugsBunny1648" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/snehpr966" target="_blank"><img src="https://avatars.githubusercontent.com/u/96184885?v=4" alt="snehpr966" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/SpardhaVarshney" target="_blank"><img src="https://avatars.githubusercontent.com/u/146191871?v=4" alt="SpardhaVarshney" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/SumitMangrati" target="_blank"><img src="https://avatars.githubusercontent.com/u/113664757?v=4" alt="SumitMangrati" style="border-radius: 50%; width: 50px; height: 50px;"></a>
@@ -228,4 +227,5 @@ To get approval of the pull request much quicker (`Follow Me`)🚀
 <a href="https://github.com/runtimeerror11" target="_blank"><img src="https://avatars.githubusercontent.com/u/100688278?v=4" alt="runtimeerror11" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/sameep-sadotra" target="_blank"><img src="https://avatars.githubusercontent.com/u/140482112?v=4" alt="sameep-sadotra" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 <a href="https://github.com/Sebastianshrisunder" target="_blank"><img src="https://avatars.githubusercontent.com/u/98313845?v=4" alt="Sebastianshrisunder" style="border-radius: 50%; width: 50px; height: 50px;"></a>
+<a href="https://github.com/shivangi241103" target="_blank"><img src="https://avatars.githubusercontent.com/u/115358526?v=4" alt="shivangi241103" style="border-radius: 50%; width: 50px; height: 50px;"></a>
 
